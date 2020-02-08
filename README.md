@@ -1,8 +1,8 @@
-# Jlcao Blog
+# Morece Blog
 
 ### [中文文档](README.zh.md)
 
-### [View Live Jlcao Blog &rarr;](https://caojiele.com)
+### [View Live Morece Blog &rarr;](https://morece.github.io)
 
 ![blog-desktop](https://cdn.nlark.com/yuque/0/2019/jpeg/338441/1562635447723-4ad1235c-92d9-4552-a87a-5ef4e418b459.jpeg)
 
@@ -11,10 +11,10 @@
 Want to clone a boilerplate instead of my buzz blog? Here comes this!
 
 ```
-$ git clone git@github.com:caojiele/Jlcaoblog-boilerplate.git
+$ git clone git@github.com:morece/morece.github.io.git
 ```
 
-**[View Boilerplate Here &rarr;](https://caojiele.com/Jlcaoblog-boilerplate/)**
+**[View Boilerplate Here &rarr;](https://morece.github.io/Moreceblog-boilerplate/)**
 
 ## Version
 
@@ -72,13 +72,13 @@ You can easily get started by modifying `_config.yml`:
 
 ```
 # Site settings
-title: Jlcao Blog           # title of your website
+title: Morece Blog           # title of your website
 SEOTitle: Jack Blog         # check out docs for more detail
 description: "Cool Blog"    # ...
 
 # SNS settings      
-github_username: caojiele   # modify this account to yours
-weibo_username: caojiele    # the footer woule be auto-updated.
+github_username: morece   # modify this account to yours
+weibo_username: morece    # the footer woule be auto-updated.
 
 # Build settings
 # paginate: 10              # nums of posts in one page
@@ -98,7 +98,7 @@ layout:     post
 title:      "Hello 2019"
 subtitle:   "Hello World, Hello Blog"
 date:       2019-01-01 00:00:00
-author:     "Jlcao"
+author:     "Morece"
 header-img: "img/post-bg-2019.jpg"
 tags:
     - Life
@@ -177,7 +177,7 @@ Under the hood, a `iframe` is used to include webpage from outer source, so the 
 ```
 ---
 layout:     keynote
-iframe:     "https://caojiele.com/js-module-introduce-myself"
+iframe:     "https://morece.github.io/js-module-introduce-myself"
 ---
 ```
 
@@ -197,7 +197,7 @@ So can only use `gitalk`.
 **First**,to apply for a Github OAuth Application。
 > Head of Github the drop-down menu > Settings > Developer settings > OAuth Application > Register a new application,fill in the relevant information
 
-**ps**: Blog site callback address, be sure to fill in the domain name of your blog.Such as my domain name is: https://caojiele.com, so `Homepage URL`&`Authorization callback URL` fill in this domain address，Please refer to this [article](https://jacobpan3g.github.io/cn/2017/07/17/gitment-in-jekyll/)。
+**ps**: Blog site callback address, be sure to fill in the domain name of your blog.Such as my domain name is: https://morece.github.io, so `Homepage URL`&`Authorization callback URL` fill in this domain address，Please refer to this [article](https://jacobpan3g.github.io/cn/2017/07/17/gitment-in-jekyll/)。
 
 **Second**, Will `gitalk` configuration code, pulling away into one file `comments.html`, url: `_includes/comments`; as follows:
 ```
@@ -242,11 +242,11 @@ And then in `post.html` add a comment box, because before pulled out a `comments
 # gitalk settings
 gitalk:
    enable: true
-   owner: caojiele
-   repo: caojiele.github.io
+   owner: morece
+   repo: morece.github.io
    clientID: ****4566f502c0a73ba
    clientSecret: ****406b08f33cc8118d02eb9332cfb707f13bf0
-   admin: caojiele
+   admin: morece
 ```
 The inside of the parameters and the first step in the Application of `Github OAuth Application`.
 
@@ -273,11 +273,11 @@ so `reward.css` in my project corresponding`css`file, clone down can be used dir
                 <div id="QR" style="display: none;">
                      
                 <div id="wechat" style="display: inline-block">
-                <img id="wechat_qr" src="/img/payimg/weipayimg.jpg" alt="caojiele 微信支付"/>
+                <img id="wechat_qr" src="/img/payimg/weipayimg.jpg" alt="morece 微信支付"/>
                 <p>微信支付</p>
                 </div>
                 <div id="alipay" style="display: inline-block">
-                <img id="alipay_qr" src="/img/payimg/alipayimg.jpg" alt="caojiele 支付宝"/>
+                <img id="alipay_qr" src="/img/payimg/alipayimg.jpg" alt="morece 支付宝"/>
                 <p>支付宝</p>
                 </div>                        
              </div>
@@ -296,7 +296,7 @@ ba_track_id: 4cc1f2d8f3067386cc5cdb626a202900
 
 # Google Analytics
 ga_track_id: 'UA-49627206-1'            # 你用Google账号去注册一个就会给你一个这样的id
-ga_domain: caojiele.com			# 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto。
+ga_domain: morece.github.io			# 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto。
 ```
 
 Just checkout the code offered by Google/Baidu, and copy paste here, all the rest is already done for you.
@@ -348,7 +348,7 @@ At the bottom of each page has a corresponding traffic statistics, refer to: [ib
 
 #### SEO Title
 
-It's possible that you want the two things different. For me, my site-title is **“Jlcao Blog”** but I want the title shows in search engine is **“曹杰乐的博客 | Jlcao Blog”** which is multi-language.
+It's possible that you want the two things different. For me, my site-title is **“Morece Blog”** but I want the title shows in search engine is **“曹杰乐的博客 | Morece Blog”** which is multi-language.
 
 So, the SEO Title is introduced to solve this problem, you can set `SEOTitle` different from `title`, and it would be only used to generate HTML `<title>` and setting DuoShuo Sharing.
 

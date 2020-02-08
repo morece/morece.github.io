@@ -1,18 +1,18 @@
-# Jlcao Blog
+# Morece Blog
 
-### [我的博客传送门 &rarr;](https://caojiele.com)
+### [我的博客传送门 &rarr;](https://morece.github.io)
 
 ![blog-desktop](https://cdn.nlark.com/yuque/0/2019/jpeg/338441/1562635447723-4ad1235c-92d9-4552-a87a-5ef4e418b459.jpeg)
 
 ## 关于模板(beta)
 
-我的博客仓库——`caojiele.github.io`，是经常修改的，而且还会有人乱提交代码，因此给大家做了一个稳定版的模板。大家可以直接fork模板——`Jlcaoblog-boilerplate`,要改的地方我都说明了。或者可以直接下载zip到本地自己去修改。
+我的博客仓库——`morece.github.io`，是经常修改的，而且还会有人乱提交代码，因此给大家做了一个稳定版的模板。大家可以直接fork模板——`Moreceblog-boilerplate`,要改的地方我都说明了。或者可以直接下载zip到本地自己去修改。
 
 ```
-$ git clone git@github.com:caojiele/Jlcaoblog-boilerplate.git
+$ git clone git@github.com:morece/morece.github.io.git
 ```
 
-**[在这里预览模板 &rarr;](https://caojiele.com/Jlcaoblog-boilerplate/)**
+**[在这里预览模板 &rarr;](https://morece.github.io/Moreceblog-boilerplate/)**
 
 ## 新版本特性
 
@@ -27,7 +27,7 @@ $ git clone git@github.com:caojiele/Jlcaoblog-boilerplate.git
 ## 支持
 
 * 你可以自由的fork。如果你能将主题作者和 github 的地址保留在你的页面底部，我将非常感谢你。
-* 如果你喜欢我的这个博客模板，请在`caojiele.github.io`这个repository点个赞——右上角**star**一下。
+* 如果你喜欢我的这个博客模板，请在`morece.github.io`这个repository点个赞——右上角**star**一下。
 
 ## 说明文档
 
@@ -67,13 +67,13 @@ $ git clone git@github.com:caojiele/Jlcaoblog-boilerplate.git
 
 ```
 # Site settings
-title: Jlcao Blog           # 你的博客网站标题
+title: Morece Blog           # 你的博客网站标题
 SEOTitle: Jack Blog         # 在后面会详细谈到
 description: "Cool Blog"    # 随便说点，描述一下
 
 # SNS settings      
-github_username: caojiele   # 你的github账号
-weibo_username: caojiele    # 你的微博账号，底部链接会自动更新的。
+github_username: morece   # 你的github账号
+weibo_username: morece    # 你的微博账号，底部链接会自动更新的。
 
 # Build settings
 # paginate: 10              # 一页你准备放几篇文章
@@ -93,7 +93,7 @@ layout:     post
 title:      "Hello 2019"
 subtitle:   "Hello World, Hello Blog"
 date:       2019-01-01 00:00:00
-author:     "Jlcao"
+author:     "Morece"
 header-img: "img/post-bg-2019.jpg"
 tags:
     - Life
@@ -170,7 +170,7 @@ HTML5幻灯片的排版：
 ```
 ---
 layout:     keynote
-iframe:     "https://caojiele.com/js-module-introduce-myself"
+iframe:     "https://morece.github.io/js-module-introduce-myself"
 ---
 ```
 
@@ -190,7 +190,7 @@ iframe在不同的设备中，将会自动的调整大小。保留内边距是�
 **首先**申请一个Github OAuth Application。
 > Github头像下拉菜单 > Settings > 左边Developer settings下的OAuth Application > Register a new application，填写相关信息
 
-**ps**:博客网站的回调地址，一定要填写博客的域名。比如我的是域名是：https://caojiele.com，其中`Homepage URL`&`Authorization callback URL`都填这个域名地址，具体可以参考这篇[文章](https://jacobpan3g.github.io/cn/2017/07/17/gitment-in-jekyll/)。
+**ps**:博客网站的回调地址，一定要填写博客的域名。比如我的是域名是：https://morece.github.io，其中`Homepage URL`&`Authorization callback URL`都填这个域名地址，具体可以参考这篇[文章](https://jacobpan3g.github.io/cn/2017/07/17/gitment-in-jekyll/)。
 
 **然后**将 gitalk 配置的代码,抽离成一个文件 `comments.html`，路径: `_includes/comments`；具体内容如下：
 ```
@@ -235,11 +235,11 @@ gitalk.render('gitalk-container')
 # gitalk settings
 gitalk:
    enable: true
-   owner: caojiele
-   repo: caojiele.github.io
+   owner: morece
+   repo: morece.github.io
    clientID: ****4566f502c0a73ba
    clientSecret: ****406b08f33cc8118d02eb9332cfb707f13bf0
-   admin: caojiele
+   admin: morece
 ```
 里面的参数和第一步申请的`Github OAuth Application`有关。
 
@@ -266,11 +266,11 @@ gitalk:
                 <div id="QR" style="display: none;">
                      
                 <div id="wechat" style="display: inline-block">
-                <img id="wechat_qr" src="/img/payimg/weipayimg.jpg" alt="caojiele 微信支付"/>
+                <img id="wechat_qr" src="/img/payimg/weipayimg.jpg" alt="morece 微信支付"/>
                 <p>微信支付</p>
                 </div>
                 <div id="alipay" style="display: inline-block">
-                <img id="alipay_qr" src="/img/payimg/alipayimg.jpg" alt="caojiele 支付宝"/>
+                <img id="alipay_qr" src="/img/payimg/alipayimg.jpg" alt="morece 支付宝"/>
                 <p>支付宝</p>
                 </div>                        
              </div>
@@ -289,7 +289,7 @@ ba_track_id: 4cc1f2d8f3067386cc5cdb626a202900
 
 # Google Analytics
 ga_track_id: 'UA-49627206-1'            # 你用Google账号去注册一个就会给你一个这样的id
-ga_domain: caojiele.com			# 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto。
+ga_domain: morece.github.io			# 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto。
 ```
 
 #### 自定义
@@ -320,7 +320,7 @@ JavaScript 的压缩混淆、Less 的编译、Apache 2.0 许可通告的添加�
 
 #### 全局搜索
 
-在页面左上角添加搜索功能，请先参考[soptq.me 关于全局搜索功能](https://soptq.me/2019/04/03/implement-search/)，后续我会写该功能实现的文章，请关注我的[博客](https://caojiele.com)。
+在页面左上角添加搜索功能，请先参考[soptq.me 关于全局搜索功能](https://soptq.me/2019/04/03/implement-search/)，后续我会写该功能实现的文章，请关注我的[博客](https://morece.github.io)。
 
 #### 标题底图
 
@@ -333,11 +333,11 @@ JavaScript 的压缩混淆、Less 的编译、Apache 2.0 许可通告的添加�
 
 #### 站点访问量统计
 
-每个页面底部都有对应的访问量统计，具体参考:[不蒜子](http://ibruce.info/2015/04/04/busuanzi/)。后续请关注我的[博客](https://caojiele.com)。
+每个页面底部都有对应的访问量统计，具体参考:[不蒜子](http://ibruce.info/2015/04/04/busuanzi/)。后续请关注我的[博客](https://morece.github.io)。
 
 #### 搜索展示标题-头文件
 
-我的博客标题是 **“Jlcao Blog”** 但是我想要在搜索的时候显示 **“曹杰乐的博客 | Jlcao Blog”** ，这个就需要SEO Title来定义了。
+我的博客标题是 **“Morece Blog”** 但是我想要在搜索的时候显示 **“曹杰乐的博客 | Morece Blog”** ，这个就需要SEO Title来定义了。
 
 其实这个SEO Title就是定义了<head><title>标题</title></head>这个里面的东西和多说分享的标题，你可以自行修改的。
 
