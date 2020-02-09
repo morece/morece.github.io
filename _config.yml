@@ -69,7 +69,7 @@ simple_jekyll_search:
     limit: 10
 
 # Disqus settings
-disqus_username: morece
+# disqus_username: morece
 
 # Netease settings
 netease_comment: false
