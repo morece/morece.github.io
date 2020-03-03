@@ -1,0 +1,75 @@
+I"<blockquote>
+  <p>Think of what you want to know what you need.</p>
+</blockquote>
+
+<p>Hey, I’m Haitao Zhang, Java engineer. At present is mainly responsible for group App backend development and maintenance, micro services infrastructure, infrastructure construction.</p>
+
+<ul>
+  <li>QQ: 2636461000</li>
+  <li>Wechat: zhang02085301</li>
+  <li>Github: <a href="http://github.com/morece">http://github.com/morece</a></li>
+  <li>Gitee:  <a href="https://gitee.com/zht417">https://gitee.com/zht417</a></li>
+</ul>
+
+<!-- ## Online Courses
+
+- jianshu
+    - [「Personal Homepage」](https://www.jianshu.com/u/faa01fa59ea3)
+
+- zhihu
+    - [「Personal Homepage」](https://www.zhihu.com/people/wang-le-6-62/activities)
+    
+- imooc
+    - [「Personal Homepage」](https://www.imooc.com/u/4024769/articles)
+
+- segmentfault
+    - [「Personal Homepage」](https://segmentfault.com/u/xiaomage_5c10d17d26987) -->
+
+<h2 id="concerned-open-source-projects">Concerned Open Source Projects</h2>
+
+<ul>
+  <li>Apache
+    <ul>
+      <li><a href="https://github.com/apache/dubbo">dubbo</a></li>
+      <li><a href="https://github.com/apache/rocketmq">rocketmq</a></li>
+      <li><a href="https://github.com/apache/dubbo-website">dubbo-website</a>: <a href="http://dubbo.apache.org">http://dubbo.apache.org</a></li>
+    </ul>
+  </li>
+  <li>Alibaba
+    <ul>
+      <li><a href="https://github.com/alibaba/nacos">nacos</a></li>
+      <li><a href="https://github.com/nacos-group/nacos-group.github.io">nacos-website</a>: <a href="https://nacos.io">https://nacos.io</a>
+&lt;!– - Personal</li>
+      <li><a href="https://github.com/caojiele/automation-report">Automation-report</a></li>
+      <li><a href="https://github.com/caojiele/Spring-official-reference">Spring-official-reference</a></li>
+      <li><a href="https://github.com/caojiele/JavaMonitor">JavaMonitor</a>: <a href="http://116.85.23.6:8888">https://caojiele.com/java-monitor</a></li>
+      <li><a href="https://github.com/caojiele/online-resume">Online-resume</a>: <a href="https://caojiele.com/online-resume/">https://caojiele.com/online-resume/</a></li>
+      <li><a href="https://github.com/caojiele/Jlcaoblog-boilerplate">Jlcaoblog-boilerplate</a>: <a href="https://caojiele.com/Jlcaoblog-boilerplate/">https://caojiele.com/Jlcaoblog-boilerplate/</a> –&gt;</li>
+    </ul>
+  </li>
+</ul>
+
+<!-- ##### My Programming Languages Spectrum
+
+I generally prefer languages that are close to ML ("Meta Language"), i.e. _mostly functional programming_. This should explain most of my picks e.g. JavaScript within dynamically-typed's, Scala within JVM's, Rust within unmanaged's.
+
+> __Left-right__ is how much I prefer it.  __Top-down__ is how much I know it. __Versions__ are lower bounds.
+
+|     | 💔️           | ❤️ ️                   | ❤️❤️ ️             | ❤️❤️❤️ ️               |
+| --- | ------------- | ---------------------- | ------------------ | ---------------------- |
+| 😅  | `PHP` `BASIC` | `ObjC` `Prolog` `Hack` | `Kotlin` `Dart`    | `Swift` `Agda` `Idris` |
+| 🧐  |               | `Asm` `C++`  `Lisp*`   | `C++11` `C#` `AS3` | `Scala` `Rust`         |
+| 😏  | `Shell`       | `C` `Java` `Python`    | `Typed JS*` `Wasm` | `Haskell` `Coq` `ML*`  |
+| 🤓  |               | `JavaScript`           | `ECMAScript6`      | `λ` `Λ` `Π` `Σ`        |
+
+> __`ML*`__: `OCaml` `ReasonML` `Standard ML`  
+> __`Lisp*`__: `Clojure` `Scheme` `Racket`  
+> __`Typed JS*`__：`Flow` `TypeScript` -->
+
+<h5 id="talks">Talks</h5>
+
+<ul>
+  <li><a href="//www.zaowandushu.com/">天津万卷书网络科技有限公司</a> · 2020</li>
+</ul>
+
+:ET
