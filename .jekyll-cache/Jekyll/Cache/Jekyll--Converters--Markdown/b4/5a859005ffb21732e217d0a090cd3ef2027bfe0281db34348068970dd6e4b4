@@ -1,0 +1,71 @@
+I",<h2 id="scrum开发">SCRUM开发</h2>
+
+<blockquote>
+  <p>SCRUM 则是一种开发流程框架，<strong>更侧重于管理 – 项目管理</strong>，也可以说是一种<strong>套路</strong>。SCRUM 框架中包含三个角色，三个工件，四个会议，听起来很复杂，其目的是为了有效地完成每一次迭代周期的工作。</p>
+</blockquote>
+
+<h3 id="scrum-的工作流程">SCRUM 的工作流程</h3>
+
+<blockquote>
+  <p>为什么用小纸条大白板：实体化的东西更有仪式感！（个体和互动高于流程和工具）</p>
+</blockquote>
+
+<p>学习 Scrum 之前，我们先要了解几个基本术语：</p>
+
+<ul>
+  <li><strong>Sprint</strong>：冲刺周期，通俗的讲就是实现一个“小目标”的周期。一般需要 2-6 周时间，很多公司采用2周一个迭代的方案。</li>
+  <li><strong>User Story</strong>：用户的外在业务需求。拿银行系统来举例的话，一个 Story 可以是用户的存款行为，或者是查询余额等等。也就是所谓的小目标本身。
+    <ul>
+      <li>当要完成一个业务的时候，给它编造一个故事 – 落地流程/画像。</li>
+      <li>任何复杂的业务都能在现实生活中找到缩影，从而编造为故事。</li>
+      <li>示例：用户推着购物车，选购完商品，来到收银台结算。</li>
+    </ul>
+  </li>
+  <li>Task：由 User Story 拆分成的具体开发任务。
+    <ul>
+      <li>用户推着购物车</li>
+      <li>选购商品</li>
+      <li>收银台结算</li>
+    </ul>
+  </li>
+  <li>Backlog：需求列表，可以看成是小目标的清单。分为 Sprint Backlog（冲刺清单） 和 Product Backlog（产品清单）。
+    <ul>
+      <li>《清单革命》</li>
+      <li>多看管理书籍，会有大局观、全局观，对开发有好处，在你负责的开发模块里，你就是上帝。</li>
+    </ul>
+  </li>
+  <li>Daily meeting：每天的站会，用于监控项目进度。有些公司直接称其为 Scrum。
+    <ul>
+      <li>站会 – 10-15分钟，汇报今日目标，问题，完成度。</li>
+    </ul>
+  </li>
+  <li>Sprint Review meeting: 冲刺评审会议，让团队成员们演示成果。
+    <ul>
+      <li>演示成果</li>
+      <li>代码评审</li>
+    </ul>
+  </li>
+  <li>Sprint burn down：冲刺燃尽图，说白了就是记录当前周期的需求完成情况。</li>
+  <li>Release：开发周期完成，项目发布新的可用版本。</li>
+</ul>
+
+<p><img src="http://www.qfdmy.com/wp-content/uploads/2019/08/db8a80c3c9e7c21.jpeg" alt="img" /></p>
+
+<p>如上图所示，在项目启动之前，会由团队的产品负责人（Product owner）按照需求优先级来明确出一份 Product Backlog，为项目做出整体排期。</p>
+
+<p>随后在每一个小的迭代周期里，团队会根据计划（Sprint Plan Meeting）确定本周期的 Sprint Backlog，再细化成一个个 Task，分配给团队成员，进行具体开发工作。每一天，团队成员都会进行 Daily meeting，根据情况更新自己的 Task 状态，整个团队更新 Sprint burn down chart。</p>
+
+<p>当这一周期的 Sprint backlog 全部完成，团队会进行 Spring review meeting，也就是<strong>评审会议</strong>。一切顺利的话，会发布出这一版本的 Release，并且进行 Sprint 回顾会议（Sprint Retrospective Meeting）。</p>
+
+<p>那么，现实中的 Scrum 是什么样的情景呢？看看下面的照片就知道了：</p>
+
+<p><img src="http://www.qfdmy.com/wp-content/uploads/2019/08/509ef70a5772cd0.jpeg" alt="img" /></p>
+
+<p><img src="http://www.qfdmy.com/wp-content/uploads/2019/08/2875168f59cdd46.jpeg" alt="img" /></p>
+
+<p><img src="http://www.qfdmy.com/wp-content/uploads/2019/08/9b37b1fdf56c924.jpeg" alt="img" /></p>
+
+<blockquote>
+  <p>转载自: <a href="http://www.qfdmy.com">千峰达摩院</a></p>
+</blockquote>
+:ET
