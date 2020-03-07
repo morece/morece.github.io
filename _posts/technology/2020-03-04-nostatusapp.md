@@ -31,4 +31,4 @@ tags:
 
 我们在开发微服务时，一种实现方式是将所有的需要的数据进行透传。比如，当业务上需要从 User 类中获取 country 国家这个属性时，如果不是基于 stateless app，那么初期就会将获取用户身上的 country 散落在各个服务中。一旦 user 类上属性发生变化，例如 country 更加语义的被修改为 countryCode，那么带来的修改量时巨大的，而且很有可能部署之后才发现对其他服务的影响。使用 stateless app，则事情变的简单了，还是上面的例子，每个服务都是通过 API 的参数来获取 country 的 value，即时 user 类中的属性发生的变化，也不会突然波及很多服务。
 
-> 转载自: [千峰达摩院](http://www.qfdmy.com)
+> 参考: [千峰达摩院](http://www.qfdmy.com)

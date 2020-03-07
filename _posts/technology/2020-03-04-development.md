@@ -203,4 +203,4 @@ DevOps 是 Development 和 Operations 的合成词，其目标是要加强开发
 
 ![img](http://www.qfdmy.com/wp-content/uploads/2019/08/d833c1a281cf269.jpeg)
 
->转载自: [千峰达摩院](http://www.qfdmy.com)
+>参考: [千峰达摩院](http://www.qfdmy.com)
