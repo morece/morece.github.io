@@ -1,4 +1,4 @@
-I".(<blockquote>
+I"A(<blockquote>
   <p>本文来自于我的<a href="https://www.imooc.com/u/4024769">慕课网手记</a>：<a href="https://www.imooc.com/article/286100">简单聊会 Docker</a>，转载请保留链接 ;)</p>
 </blockquote>
 
@@ -22,7 +22,7 @@
 
 <p>执行如下命令，即可启动一个Nginx容器</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>docker run -d -p 91:80 nginx
 </pre></td></tr></tbody></table></code></pre></div></div>
 

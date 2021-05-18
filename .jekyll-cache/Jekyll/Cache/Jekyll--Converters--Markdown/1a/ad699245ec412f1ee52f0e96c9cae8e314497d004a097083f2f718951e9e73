@@ -1,4 +1,4 @@
-I"�<h2 id="敏捷开发工具禅道">敏捷开发工具：禅道</h2>
+I"<h2 id="敏捷开发工具禅道">敏捷开发工具：禅道</h2>
 
 <blockquote>
   <p>禅道是采用PHP编写的。</p>
@@ -68,9 +68,9 @@
 
 <h3 id="compose">Compose</h3>
 
-<p>解压 <code class="highlighter-rouge">docker_zentao.zip</code> 后修改目录名为 <code class="highlighter-rouge">build</code>，增加 <code class="highlighter-rouge">docker-compose.yml</code> 配置如下</p>
+<p>解压 <code class="language-plaintext highlighter-rouge">docker_zentao.zip</code> 后修改目录名为 <code class="language-plaintext highlighter-rouge">build</code>，增加 <code class="language-plaintext highlighter-rouge">docker-compose.yml</code> 配置如下</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre>version: '3.1'services:  zendao:    build: build    restart: always    container_name: zendao    environment:      MYSQL_ROOT_PASSWORD: 123456    ports:      - 80:80    volumes:      - ./app:/app/zentaopms      - ./data:/var/lib/mysql
 # 构建镜像docker-compose build# 启动容器docker-compose up -d

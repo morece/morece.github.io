@@ -4,16 +4,6 @@
 
 ![blog-desktop](https://cdn.nlark.com/yuque/0/2019/jpeg/338441/1562635447723-4ad1235c-92d9-4552-a87a-5ef4e418b459.jpeg)
 
-## 关于模板(beta)
-
-我的博客仓库——`morece.github.io`，是经常修改的，而且还会有人乱提交代码，因此给大家做了一个稳定版的模板。大家可以直接fork模板——`Moreceblog-boilerplate`,要改的地方我都说明了。或者可以直接下载zip到本地自己去修改。
-
-```
-$ git clone git@github.com:morece/morece.github.io.git
-```
-
-**[在这里预览模板 &rarr;](https://morece.github.io/Moreceblog-boilerplate/)**
-
 ## 新版本特性
 
 ##### New Feature
@@ -59,7 +49,7 @@ $ git clone git@github.com:morece/morece.github.io.git
 
 如果你安装了jekyll，那你只需要在命令行输入`jekyll serve`就能在本地浏览器预览主题。你还可以输入`jekyll serve --watch`，这样可以边修改边自动运行修改后的文件。
 
-经 [@BrucZhaoR](https://github.com/BruceZhaoR)的测试，好像两个命令都是可以自动运行修改后的文件的，刷新后可以实时预览。官方文件是建议安装`bundler`，这样你在本地的效果就跟在github上面是一样的。详情请见这里：https://help.github.com/articles/using-jekyll-with-pages/#installing-jekyll
+两个命令都是可以自动运行修改后的文件的，刷新后可以实时预览。官方文件是建议安装`bundler`，这样你在本地的效果就跟在github上面是一样的。详情请见这里：https://help.github.com/articles/using-jekyll-with-pages/#installing-jekyll
 
 #### 开始
 
@@ -67,8 +57,8 @@ $ git clone git@github.com:morece/morece.github.io.git
 
 ```
 # Site settings
-title: Morece Blog           # 你的博客网站标题
-SEOTitle: Jack Blog         # 在后面会详细谈到
+title: Morece Blog          # 你的博客网站标题
+SEOTitle: Morece Blog       # 在后面会详细谈到
 description: "Cool Blog"    # 随便说点，描述一下
 
 # SNS settings      
@@ -132,7 +122,7 @@ featured-condition-size: 1     # A tag will be featured if the size of it is mor
 ```
 
 唯一需要注意的是`featured-condition-size`: 如果一个标签的 SIZE，也就是使用该标签的文章数大于上面设定的条件值，这个标签就会在首页上被推荐。
- 
+
 内部有一个条件模板 `{% if tag[1].size > {{site.featured-condition-size}} %}` 是用来做筛选过滤的.
 
 #### 好友链接
@@ -326,7 +316,7 @@ JavaScript 的压缩混淆、Less 的编译、Apache 2.0 许可通告的添加�
 
 标题底图是可以自己选的，看看几篇示例post你就知道如何设置了。在
   [issue #6 ](https://github.com/Huxpro/huxpro.github.io/issues/6) 中我被问到：怎么样才能让标题底图好看呢？
-  
+
 标题底图的选取完全是看个人的审美了，我也帮不了你。每一篇文章可以有不同的底图，你想放什么就放什么，最后宽度要够，大小不要太大，否则加载慢啊。
 
 但是需要注意的是本模板的标题是**白色**的，所以背景色要设置为**灰色**或者**黑色**，总之深色系就对了。当然你还可以自定义修改字体颜色，总之，用github pages就是可以完全的个性定制自己的博客。

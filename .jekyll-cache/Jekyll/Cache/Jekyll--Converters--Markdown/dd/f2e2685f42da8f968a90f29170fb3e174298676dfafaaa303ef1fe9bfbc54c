@@ -1,118 +1,118 @@
-I"P<h2 id="目录">目录</h2>
+I"�\<h2 id="目录">目录</h2>
 
 <h3 id="array-数组相关">Array (数组相关)</h3>
 
 <ul>
-  <li><a href="#chunk"><code class="highlighter-rouge">chunk</code></a></li>
-  <li><a href="#countoccurrences"><code class="highlighter-rouge">countOccurrences</code></a></li>
-  <li><a href="#deepflatten"><code class="highlighter-rouge">deepFlatten</code></a></li>
-  <li><a href="#difference"><code class="highlighter-rouge">difference</code></a></li>
-  <li><a href="#differencewith"><code class="highlighter-rouge">differenceWith</code></a></li>
-  <li><a href="#distinctvaluesofarray"><code class="highlighter-rouge">distinctValuesOfArray</code></a></li>
-  <li><a href="#dropelements"><code class="highlighter-rouge">dropElements</code></a></li>
-  <li><a href="#dropright"><code class="highlighter-rouge">dropRight</code></a></li>
-  <li><a href="#everynth"><code class="highlighter-rouge">everyNth</code></a></li>
-  <li><a href="#filternonunique"><code class="highlighter-rouge">filterNonUnique</code></a></li>
-  <li><a href="#flatten"><code class="highlighter-rouge">flatten</code></a></li>
-  <li><a href="#flattendepth"><code class="highlighter-rouge">flattenDepth</code></a></li>
-  <li><a href="#groupby"><code class="highlighter-rouge">groupBy</code></a></li>
-  <li><a href="#initial"><code class="highlighter-rouge">initial</code></a></li>
-  <li><a href="#initializearraywithrange"><code class="highlighter-rouge">initializeArrayWithRange</code></a></li>
-  <li><a href="#initializearraywithvalues"><code class="highlighter-rouge">initializeArrayWithValues</code></a></li>
-  <li><a href="#intersection"><code class="highlighter-rouge">intersection</code></a></li>
-  <li><a href="#issorted"><code class="highlighter-rouge">isSorted</code></a></li>
-  <li><a href="#join"><code class="highlighter-rouge">join</code></a></li>
-  <li><a href="#nthelement"><code class="highlighter-rouge">nthElement</code></a></li>
-  <li><a href="#pick"><code class="highlighter-rouge">pick</code></a></li>
-  <li><a href="#reducedfilter"><code class="highlighter-rouge">reducedFilter</code></a></li>
-  <li><a href="#sample"><code class="highlighter-rouge">sample</code></a></li>
-  <li><a href="#samplesize"><code class="highlighter-rouge">sampleSize</code></a></li>
-  <li><a href="#shuffle"><code class="highlighter-rouge">shuffle</code></a></li>
-  <li><a href="#similarity"><code class="highlighter-rouge">similarity</code></a></li>
-  <li><a href="#sortedindex"><code class="highlighter-rouge">sortedIndex</code></a></li>
-  <li><a href="#symmetricdifference"><code class="highlighter-rouge">symmetricDifference</code></a></li>
-  <li><a href="#tail"><code class="highlighter-rouge">tail</code></a></li>
-  <li><a href="#take"><code class="highlighter-rouge">take</code></a></li>
-  <li><a href="#takeright"><code class="highlighter-rouge">takeRight</code></a></li>
-  <li><a href="#union"><code class="highlighter-rouge">union</code></a></li>
-  <li><a href="#without"><code class="highlighter-rouge">without</code></a></li>
-  <li><a href="#zip"><code class="highlighter-rouge">zip</code></a></li>
-  <li><a href="#zipobject"><code class="highlighter-rouge">zipObject</code></a></li>
+  <li><a href="#chunk"><code class="language-plaintext highlighter-rouge">chunk</code></a></li>
+  <li><a href="#countoccurrences"><code class="language-plaintext highlighter-rouge">countOccurrences</code></a></li>
+  <li><a href="#deepflatten"><code class="language-plaintext highlighter-rouge">deepFlatten</code></a></li>
+  <li><a href="#difference"><code class="language-plaintext highlighter-rouge">difference</code></a></li>
+  <li><a href="#differencewith"><code class="language-plaintext highlighter-rouge">differenceWith</code></a></li>
+  <li><a href="#distinctvaluesofarray"><code class="language-plaintext highlighter-rouge">distinctValuesOfArray</code></a></li>
+  <li><a href="#dropelements"><code class="language-plaintext highlighter-rouge">dropElements</code></a></li>
+  <li><a href="#dropright"><code class="language-plaintext highlighter-rouge">dropRight</code></a></li>
+  <li><a href="#everynth"><code class="language-plaintext highlighter-rouge">everyNth</code></a></li>
+  <li><a href="#filternonunique"><code class="language-plaintext highlighter-rouge">filterNonUnique</code></a></li>
+  <li><a href="#flatten"><code class="language-plaintext highlighter-rouge">flatten</code></a></li>
+  <li><a href="#flattendepth"><code class="language-plaintext highlighter-rouge">flattenDepth</code></a></li>
+  <li><a href="#groupby"><code class="language-plaintext highlighter-rouge">groupBy</code></a></li>
+  <li><a href="#initial"><code class="language-plaintext highlighter-rouge">initial</code></a></li>
+  <li><a href="#initializearraywithrange"><code class="language-plaintext highlighter-rouge">initializeArrayWithRange</code></a></li>
+  <li><a href="#initializearraywithvalues"><code class="language-plaintext highlighter-rouge">initializeArrayWithValues</code></a></li>
+  <li><a href="#intersection"><code class="language-plaintext highlighter-rouge">intersection</code></a></li>
+  <li><a href="#issorted"><code class="language-plaintext highlighter-rouge">isSorted</code></a></li>
+  <li><a href="#join"><code class="language-plaintext highlighter-rouge">join</code></a></li>
+  <li><a href="#nthelement"><code class="language-plaintext highlighter-rouge">nthElement</code></a></li>
+  <li><a href="#pick"><code class="language-plaintext highlighter-rouge">pick</code></a></li>
+  <li><a href="#reducedfilter"><code class="language-plaintext highlighter-rouge">reducedFilter</code></a></li>
+  <li><a href="#sample"><code class="language-plaintext highlighter-rouge">sample</code></a></li>
+  <li><a href="#samplesize"><code class="language-plaintext highlighter-rouge">sampleSize</code></a></li>
+  <li><a href="#shuffle"><code class="language-plaintext highlighter-rouge">shuffle</code></a></li>
+  <li><a href="#similarity"><code class="language-plaintext highlighter-rouge">similarity</code></a></li>
+  <li><a href="#sortedindex"><code class="language-plaintext highlighter-rouge">sortedIndex</code></a></li>
+  <li><a href="#symmetricdifference"><code class="language-plaintext highlighter-rouge">symmetricDifference</code></a></li>
+  <li><a href="#tail"><code class="language-plaintext highlighter-rouge">tail</code></a></li>
+  <li><a href="#take"><code class="language-plaintext highlighter-rouge">take</code></a></li>
+  <li><a href="#takeright"><code class="language-plaintext highlighter-rouge">takeRight</code></a></li>
+  <li><a href="#union"><code class="language-plaintext highlighter-rouge">union</code></a></li>
+  <li><a href="#without"><code class="language-plaintext highlighter-rouge">without</code></a></li>
+  <li><a href="#zip"><code class="language-plaintext highlighter-rouge">zip</code></a></li>
+  <li><a href="#zipobject"><code class="language-plaintext highlighter-rouge">zipObject</code></a></li>
 </ul>
 
 <h3 id="math-数学相关">Math (数学相关)</h3>
 
 <ul>
-  <li><a href="#average"><code class="highlighter-rouge">average</code></a></li>
-  <li><a href="#gcd"><code class="highlighter-rouge">gcd</code></a></li>
-  <li><a href="#lcm"><code class="highlighter-rouge">lcm</code></a></li>
-  <li><a href="#findnextpositivepoweroftwo"><code class="highlighter-rouge">findNextPositivePowerOfTwo</code></a></li>
-  <li><a href="#iseven"><code class="highlighter-rouge">isEven</code></a></li>
-  <li><a href="#ispoweroftwo"><code class="highlighter-rouge">isPowerOfTwo</code></a></li>
-  <li><a href="#generaterandomint"><code class="highlighter-rouge">generateRandomInt</code></a></li>
+  <li><a href="#average"><code class="language-plaintext highlighter-rouge">average</code></a></li>
+  <li><a href="#gcd"><code class="language-plaintext highlighter-rouge">gcd</code></a></li>
+  <li><a href="#lcm"><code class="language-plaintext highlighter-rouge">lcm</code></a></li>
+  <li><a href="#findnextpositivepoweroftwo"><code class="language-plaintext highlighter-rouge">findNextPositivePowerOfTwo</code></a></li>
+  <li><a href="#iseven"><code class="language-plaintext highlighter-rouge">isEven</code></a></li>
+  <li><a href="#ispoweroftwo"><code class="language-plaintext highlighter-rouge">isPowerOfTwo</code></a></li>
+  <li><a href="#generaterandomint"><code class="language-plaintext highlighter-rouge">generateRandomInt</code></a></li>
 </ul>
 
 <h3 id="string-字符串相关">String (字符串相关)</h3>
 
 <ul>
-  <li><a href="#anagrams"><code class="highlighter-rouge">anagrams</code></a></li>
-  <li><a href="#bytesize"><code class="highlighter-rouge">byteSize</code></a></li>
-  <li><a href="#capitalize"><code class="highlighter-rouge">capitalize</code></a></li>
-  <li><a href="#capitalizeeveryword"><code class="highlighter-rouge">capitalizeEveryWord</code></a></li>
-  <li><a href="#countvowels"><code class="highlighter-rouge">countVowels</code></a></li>
-  <li><a href="#escaperegexp"><code class="highlighter-rouge">escapeRegExp</code></a></li>
-  <li><a href="#fromcamelcase"><code class="highlighter-rouge">fromCamelCase</code></a></li>
-  <li><a href="#isabsoluteurl"><code class="highlighter-rouge">isAbsoluteURL</code></a></li>
-  <li><a href="#islowercase"><code class="highlighter-rouge">isLowerCase</code></a></li>
-  <li><a href="#isuppercase"><code class="highlighter-rouge">isUpperCase</code></a></li>
-  <li><a href="#ispalindrome"><code class="highlighter-rouge">isPalindrome</code></a></li>
-  <li><a href="#isnumeric"><code class="highlighter-rouge">isNumeric</code></a></li>
-  <li><a href="#mask"><code class="highlighter-rouge">mask</code></a></li>
-  <li><a href="#reversestring"><code class="highlighter-rouge">reverseString</code></a></li>
-  <li><a href="#sortcharactersinstring"><code class="highlighter-rouge">sortCharactersInString</code></a></li>
-  <li><a href="#splitlines"><code class="highlighter-rouge">splitLines</code></a></li>
-  <li><a href="#tocamelcase"><code class="highlighter-rouge">toCamelCase</code></a></li>
-  <li><a href="#tokebabcase"><code class="highlighter-rouge">toKebabCase</code></a></li>
-  <li><a href="#match"><code class="highlighter-rouge">match</code></a></li>
-  <li><a href="#tosnakecase"><code class="highlighter-rouge">toSnakeCase</code></a></li>
-  <li><a href="#truncatestring"><code class="highlighter-rouge">truncateString</code></a></li>
-  <li><a href="#words"><code class="highlighter-rouge">words</code></a></li>
-  <li><a href="#stringtointegers"><code class="highlighter-rouge">stringToIntegers</code></a></li>
+  <li><a href="#anagrams"><code class="language-plaintext highlighter-rouge">anagrams</code></a></li>
+  <li><a href="#bytesize"><code class="language-plaintext highlighter-rouge">byteSize</code></a></li>
+  <li><a href="#capitalize"><code class="language-plaintext highlighter-rouge">capitalize</code></a></li>
+  <li><a href="#capitalizeeveryword"><code class="language-plaintext highlighter-rouge">capitalizeEveryWord</code></a></li>
+  <li><a href="#countvowels"><code class="language-plaintext highlighter-rouge">countVowels</code></a></li>
+  <li><a href="#escaperegexp"><code class="language-plaintext highlighter-rouge">escapeRegExp</code></a></li>
+  <li><a href="#fromcamelcase"><code class="language-plaintext highlighter-rouge">fromCamelCase</code></a></li>
+  <li><a href="#isabsoluteurl"><code class="language-plaintext highlighter-rouge">isAbsoluteURL</code></a></li>
+  <li><a href="#islowercase"><code class="language-plaintext highlighter-rouge">isLowerCase</code></a></li>
+  <li><a href="#isuppercase"><code class="language-plaintext highlighter-rouge">isUpperCase</code></a></li>
+  <li><a href="#ispalindrome"><code class="language-plaintext highlighter-rouge">isPalindrome</code></a></li>
+  <li><a href="#isnumeric"><code class="language-plaintext highlighter-rouge">isNumeric</code></a></li>
+  <li><a href="#mask"><code class="language-plaintext highlighter-rouge">mask</code></a></li>
+  <li><a href="#reversestring"><code class="language-plaintext highlighter-rouge">reverseString</code></a></li>
+  <li><a href="#sortcharactersinstring"><code class="language-plaintext highlighter-rouge">sortCharactersInString</code></a></li>
+  <li><a href="#splitlines"><code class="language-plaintext highlighter-rouge">splitLines</code></a></li>
+  <li><a href="#tocamelcase"><code class="language-plaintext highlighter-rouge">toCamelCase</code></a></li>
+  <li><a href="#tokebabcase"><code class="language-plaintext highlighter-rouge">toKebabCase</code></a></li>
+  <li><a href="#match"><code class="language-plaintext highlighter-rouge">match</code></a></li>
+  <li><a href="#tosnakecase"><code class="language-plaintext highlighter-rouge">toSnakeCase</code></a></li>
+  <li><a href="#truncatestring"><code class="language-plaintext highlighter-rouge">truncateString</code></a></li>
+  <li><a href="#words"><code class="language-plaintext highlighter-rouge">words</code></a></li>
+  <li><a href="#stringtointegers"><code class="language-plaintext highlighter-rouge">stringToIntegers</code></a></li>
 </ul>
 
 <h3 id="io-io流相关">IO (IO流相关)</h3>
 
 <ul>
-  <li><a href="#convertinputstreamtostring"><code class="highlighter-rouge">convertInputStreamToString</code></a></li>
-  <li><a href="#readfileasstring"><code class="highlighter-rouge">readFileAsString</code></a></li>
-  <li><a href="#getcurrentworkingdirectorypath"><code class="highlighter-rouge">getCurrentWorkingDirectoryPath</code></a></li>
-  <li><a href="#tmpdirname"><code class="highlighter-rouge">tmpDirName</code></a></li>
+  <li><a href="#convertinputstreamtostring"><code class="language-plaintext highlighter-rouge">convertInputStreamToString</code></a></li>
+  <li><a href="#readfileasstring"><code class="language-plaintext highlighter-rouge">readFileAsString</code></a></li>
+  <li><a href="#getcurrentworkingdirectorypath"><code class="language-plaintext highlighter-rouge">getCurrentWorkingDirectoryPath</code></a></li>
+  <li><a href="#tmpdirname"><code class="language-plaintext highlighter-rouge">tmpDirName</code></a></li>
 </ul>
 
 <h3 id="exception-异常相关">Exception (异常相关)</h3>
 
 <ul>
-  <li><a href="#stacktraceasstring"><code class="highlighter-rouge">stackTraceAsString</code></a></li>
+  <li><a href="#stacktraceasstring"><code class="language-plaintext highlighter-rouge">stackTraceAsString</code></a></li>
 </ul>
 
 <h3 id="system-系统相关">System (系统相关)</h3>
 
 <ul>
-  <li><a href="#osname"><code class="highlighter-rouge">osName</code></a></li>
-  <li><a href="#isdebuggerenabled"><code class="highlighter-rouge">isDebuggerEnabled</code></a></li>
+  <li><a href="#osname"><code class="language-plaintext highlighter-rouge">osName</code></a></li>
+  <li><a href="#isdebuggerenabled"><code class="language-plaintext highlighter-rouge">isDebuggerEnabled</code></a></li>
 </ul>
 
 <h3 id="class-类相关">Class (类相关)</h3>
 
 <ul>
-  <li><a href="#getallinterfaces"><code class="highlighter-rouge">getAllInterfaces</code></a></li>
-  <li><a href="#isinnerclass"><code class="highlighter-rouge">IsInnerClass</code></a></li>
+  <li><a href="#getallinterfaces"><code class="language-plaintext highlighter-rouge">getAllInterfaces</code></a></li>
+  <li><a href="#isinnerclass"><code class="language-plaintext highlighter-rouge">IsInnerClass</code></a></li>
 </ul>
 
 <h3 id="enum-枚举相关">Enum (枚举相关)</h3>
 
 <ul>
-  <li><a href="#getenummap"><code class="highlighter-rouge">getEnumMap</code></a></li>
+  <li><a href="#getenummap"><code class="language-plaintext highlighter-rouge">getEnumMap</code></a></li>
 </ul>
 
 <h2 id="array">Array</h2>
@@ -159,7 +159,7 @@
 
 <p>计算数组中某个值出现的次数。</p>
 
-<p>使用 <code class="highlighter-rouge">Arrays.stream().filter().count()</code> 计算等于指定值的值的总数。</p>
+<p>使用 <code class="language-plaintext highlighter-rouge">Arrays.stream().filter().count()</code> 计算等于指定值的值的总数。</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -179,7 +179,7 @@
 
 <p>数组扁平化。</p>
 
-<p>使用递归实现，<code class="highlighter-rouge">Arrays.stream().flatMapToInt()</code></p>
+<p>使用递归实现，<code class="language-plaintext highlighter-rouge">Arrays.stream().flatMapToInt()</code></p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -207,7 +207,7 @@
 
 <p>返回两个数组之间的差异。</p>
 
-<p>从 b 中创建一个集合，然后在 a 上使用 <code class="highlighter-rouge">Arrays.stream().filter()</code> 只保留 b 中不包含的值。</p>
+<p>从 b 中创建一个集合，然后在 a 上使用 <code class="language-plaintext highlighter-rouge">Arrays.stream().filter()</code> 只保留 b 中不包含的值。</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -231,7 +231,7 @@
 
 <p>int的比较器是使用IntbinaryPerator函数来实现的。</p>
 
-<p>使用 <code class="highlighter-rouge">Arrays.stream().filter()</code> 和 <code class="highlighter-rouge">Arrays.stream().noneMatch()</code> 查找相应的值。</p>
+<p>使用 <code class="language-plaintext highlighter-rouge">Arrays.stream().filter()</code> 和 <code class="language-plaintext highlighter-rouge">Arrays.stream().noneMatch()</code> 查找相应的值。</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -255,7 +255,7 @@
 
 <p>返回数组的所有不同值。</p>
 
-<p>使用 <code class="highlighter-rouge">Arrays.stream().distinct()</code> 去除所有重复的值。</p>
+<p>使用 <code class="language-plaintext highlighter-rouge">Arrays.stream().distinct()</code> 去除所有重复的值。</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -293,7 +293,7 @@
 
 <p>返回一个新数组，从右边移除n个元素。</p>
 
-<p>检查n是否短于给定的数组，并使用 <code class="highlighter-rouge">Array.copyOfRange()</code> 以便对其进行相应的切片或返回一个空数组。</p>
+<p>检查n是否短于给定的数组，并使用 <code class="language-plaintext highlighter-rouge">Array.copyOfRange()</code> 以便对其进行相应的切片或返回一个空数组。</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -319,7 +319,7 @@
 
 <p>返回数组中的每个第n个元素。</p>
 
-<p>使用 <code class="highlighter-rouge">IntStream.range().filter()</code> 创建一个新数组，该数组包含给定数组的每个第n个元素。</p>
+<p>使用 <code class="language-plaintext highlighter-rouge">IntStream.range().filter()</code> 创建一个新数组，该数组包含给定数组的每个第n个元素。</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -341,7 +341,7 @@
 
 <p>查找数组中元素的索引，在不存在元素的情况下返回-1。</p>
 
-<p>使用 <code class="highlighter-rouge">IntStream.range().filter()</code> 查找数组中元素的索引。</p>
+<p>使用 <code class="language-plaintext highlighter-rouge">IntStream.range().filter()</code> 查找数组中元素的索引。</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -363,7 +363,7 @@
 
 <p>查找数组中元素的最后索引，在不存在元素的情况下返回-1。</p>
 
-<p>使用 <code class="highlighter-rouge">IntStream.iterate().limit().filter()</code> 查找数组中元素的索引。</p>
+<p>使用 <code class="language-plaintext highlighter-rouge">IntStream.iterate().limit().filter()</code> 查找数组中元素的索引。</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -387,7 +387,7 @@
 
 <p>筛选出数组中的非唯一值。</p>
 
-<p>对只包含唯一值的数组使用 <code class="highlighter-rouge">Arrays.stream().filter()</code>。</p>
+<p>对只包含唯一值的数组使用 <code class="language-plaintext highlighter-rouge">Arrays.stream().filter()</code>。</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -407,7 +407,7 @@
 
 <p>使数组扁平。</p>
 
-<p>使用 <code class="highlighter-rouge">Arrays.stream().flatMapToInt().toArray()</code> 创建一个新数组。</p>
+<p>使用 <code class="language-plaintext highlighter-rouge">Arrays.stream().flatMapToInt().toArray()</code> 创建一个新数组。</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -463,7 +463,7 @@
 
 <p>根据给定函数对数组元素进行分组。</p>
 
-<p>使用 <code class="highlighter-rouge">Arrays.stream().collect(Collectors.groupingBy())</code> 分组。</p>
+<p>使用 <code class="language-plaintext highlighter-rouge">Arrays.stream().collect(Collectors.groupingBy())</code> 分组。</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -479,7 +479,7 @@
 
 <p>返回数组中除去最后一个的所有元素。</p>
 
-<p>使用 <code class="highlighter-rouge">Arrays.copyOfRange()</code> 返回除最后一个之外的所有元素。</p>
+<p>使用 <code class="language-plaintext highlighter-rouge">Arrays.copyOfRange()</code> 返回除最后一个之外的所有元素。</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -493,7 +493,7 @@
 
 <h3 id="initializearraywithrange">initializeArrayWithRange</h3>
 
-<p>初始化一个数组，该数组包含在指定范围内的数字，传入 <code class="highlighter-rouge">start</code> 和 <code class="highlighter-rouge">end</code>。</p>
+<p>初始化一个数组，该数组包含在指定范围内的数字，传入 <code class="language-plaintext highlighter-rouge">start</code> 和 <code class="language-plaintext highlighter-rouge">end</code>。</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -523,7 +523,7 @@
 
 <p>返回两个数组中存在的元素列表。</p>
 
-<p>从第二步创建一个集合，然后在 a 上使用 <code class="highlighter-rouge">Arrays.stream().filter()</code> 来保存包含在 b 中的值。</p>
+<p>从第二步创建一个集合，然后在 a 上使用 <code class="language-plaintext highlighter-rouge">Arrays.stream().filter()</code> 来保存包含在 b 中的值。</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -543,10 +543,10 @@
 
 <h3 id="issorted">isSorted</h3>
 
-<p>如果数组按升序排序，则返回 <code class="highlighter-rouge">1</code>，如果数组按降序排序，返回 <code class="highlighter-rouge">-1</code>，如果没有排序，则返回 <code class="highlighter-rouge">0</code>。</p>
+<p>如果数组按升序排序，则返回 <code class="language-plaintext highlighter-rouge">1</code>，如果数组按降序排序，返回 <code class="language-plaintext highlighter-rouge">-1</code>，如果没有排序，则返回 <code class="language-plaintext highlighter-rouge">0</code>。</p>
 
-<p>计算前两个元素的排序 <code class="highlighter-rouge">direction</code>。使用for循环对数组进行迭代，并对它们进行成对比较。如果 <code class="highlighter-rouge">direction</code> 发生变化，则返回 <code class="highlighter-rouge">0</code>，
-如果到达最后一个元素，则返回 <code class="highlighter-rouge">direction</code>。</p>
+<p>计算前两个元素的排序 <code class="language-plaintext highlighter-rouge">direction</code>。使用for循环对数组进行迭代，并对它们进行成对比较。如果 <code class="language-plaintext highlighter-rouge">direction</code> 发生变化，则返回 <code class="language-plaintext highlighter-rouge">0</code>，
+如果到达最后一个元素，则返回 <code class="language-plaintext highlighter-rouge">direction</code>。</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -574,7 +574,7 @@
 
 <p>将数组的所有元素连接到字符串中，并返回此字符串。</p>
 
-<p>使用 <code class="highlighter-rouge">IntStream.range</code> 创建一个指定索引的数组。然后，使用 <code class="highlighter-rouge">Stream.reduce</code> 将元素组合成字符串。</p>
+<p>使用 <code class="language-plaintext highlighter-rouge">IntStream.range</code> 创建一个指定索引的数组。然后，使用 <code class="language-plaintext highlighter-rouge">Stream.reduce</code> 将元素组合成字符串。</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -598,7 +598,7 @@
 
 <p>返回数组的第n个元素。</p>
 
-<p>Use <code class="highlighter-rouge">Arrays.copyOfRange()</code> 优先得到包含第n个元素的数组。</p>
+<p>Use <code class="language-plaintext highlighter-rouge">Arrays.copyOfRange()</code> 优先得到包含第n个元素的数组。</p>
 
 <pre><code class="language-Java">public static &lt;T&gt; T nthElement(T[] arr, int n) {
     if (n &gt; 0) {
@@ -614,7 +614,7 @@
 
 <p>从对象中选择与给定键对应的键值对。</p>
 
-<p>使用 <code class="highlighter-rouge">Arrays.stream</code> 过滤 <code class="highlighter-rouge">arr</code> 中存在的所有键。然后，使用 <code class="highlighter-rouge">Collectors.toMap</code> 将所有的key转换为Map。</p>
+<p>使用 <code class="language-plaintext highlighter-rouge">Arrays.stream</code> 过滤 <code class="language-plaintext highlighter-rouge">arr</code> 中存在的所有键。然后，使用 <code class="language-plaintext highlighter-rouge">Collectors.toMap</code> 将所有的key转换为Map。</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -634,8 +634,8 @@
 
 <p>根据条件筛选对象数组，同时筛选出未指定的键。</p>
 
-<p>使用 <code class="highlighter-rouge">Arrays.stream().filter()</code> 根据谓词 <code class="highlighter-rouge">fn</code> 过滤数组，以便返回条件为真的对象。
-对于每个过滤的Map对象，创建一个新的Map，其中包含 <code class="highlighter-rouge">keys</code> 中的键。最后，将Map对象收集到一个数组中。</p>
+<p>使用 <code class="language-plaintext highlighter-rouge">Arrays.stream().filter()</code> 根据谓词 <code class="language-plaintext highlighter-rouge">fn</code> 过滤数组，以便返回条件为真的对象。
+对于每个过滤的Map对象，创建一个新的Map，其中包含 <code class="language-plaintext highlighter-rouge">keys</code> 中的键。最后，将Map对象收集到一个数组中。</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -659,7 +659,7 @@
 
 <p>从数组中返回一个随机元素。</p>
 
-<p>使用 <code class="highlighter-rouge">Math.Randoman()</code> 生成一个随机数，然后将它乘以数组的 <code class="highlighter-rouge">length</code>，然后使用 <code class="highlighter-rouge">Math.floor()</code> 获得一个最近的整数，该方法也适用于字符串。</p>
+<p>使用 <code class="language-plaintext highlighter-rouge">Math.Randoman()</code> 生成一个随机数，然后将它乘以数组的 <code class="language-plaintext highlighter-rouge">length</code>，然后使用 <code class="language-plaintext highlighter-rouge">Math.floor()</code> 获得一个最近的整数，该方法也适用于字符串。</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -673,9 +673,9 @@
 
 <h3 id="samplesize">sampleSize</h3>
 
-<p>从 <code class="highlighter-rouge">array</code> 到 <code class="highlighter-rouge">array</code> 大小的唯一键获取 <code class="highlighter-rouge">n</code> 个随机元素。</p>
+<p>从 <code class="language-plaintext highlighter-rouge">array</code> 到 <code class="language-plaintext highlighter-rouge">array</code> 大小的唯一键获取 <code class="language-plaintext highlighter-rouge">n</code> 个随机元素。</p>
 
-<p>根据<a href="https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle">Fisher-Yates算法</a>，使用 <code class="highlighter-rouge">Array.copyOfRange()</code> 获得优先的 <code class="highlighter-rouge">n</code> 个元素。</p>
+<p>根据<a href="https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle">Fisher-Yates算法</a>，使用 <code class="language-plaintext highlighter-rouge">Array.copyOfRange()</code> 获得优先的 <code class="language-plaintext highlighter-rouge">n</code> 个元素。</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -743,7 +743,7 @@
 
 <p>返回出现在两个数组中的元素数组。</p>
 
-<p>使用 <code class="highlighter-rouge">Arrays.stream().filter()</code> 移除，然后使用 <code class="highlighter-rouge">Arrays.stream().anyMatch()</code> 匹配 <code class="highlighter-rouge">second</code> 部分的值。</p>
+<p>使用 <code class="language-plaintext highlighter-rouge">Arrays.stream().filter()</code> 移除，然后使用 <code class="language-plaintext highlighter-rouge">Arrays.stream().anyMatch()</code> 匹配 <code class="language-plaintext highlighter-rouge">second</code> 部分的值。</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -765,7 +765,7 @@
 
 <p>返回值应该插入到数组中的最低索引，以保持其排序顺序。</p>
 
-<p>检查数组是否按降序（松散地）排序。 使用 <code class="highlighter-rouge">IntStream.range().filter()</code> 来找到元素应该被插入的合适的索引。</p>
+<p>检查数组是否按降序（松散地）排序。 使用 <code class="language-plaintext highlighter-rouge">IntStream.range().filter()</code> 来找到元素应该被插入的合适的索引。</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -789,7 +789,7 @@
 
 <p>返回两个数组之间的对称差异。</p>
 
-<p>从每个数组中创建一个 <code class="highlighter-rouge">Set</code>，然后使用 <code class="highlighter-rouge">Arrays.stream().filter()</code> 来保持其他值不包含的值。最后，连接两个数组并创建一个新数组并返回。</p>
+<p>从每个数组中创建一个 <code class="language-plaintext highlighter-rouge">Set</code>，然后使用 <code class="language-plaintext highlighter-rouge">Arrays.stream().filter()</code> 来保持其他值不包含的值。最后，连接两个数组并创建一个新数组并返回。</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -817,7 +817,7 @@
 
 <p>返回数组中除第一个元素外的所有元素。</p>
 
-<p>如果数组的长度大于1，则返回 <code class="highlighter-rouge">Arrays.copyOfRange(1)</code>，否则返回整个数组。</p>
+<p>如果数组的长度大于1，则返回 <code class="language-plaintext highlighter-rouge">Arrays.copyOfRange(1)</code>，否则返回整个数组。</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -851,7 +851,7 @@
 
 <p>返回从末尾移除n个元素的数组。</p>
 
-<p>使用 <code class="highlighter-rouge">Arrays.copyOfRange()</code> 用从末尾取来的 <code class="highlighter-rouge">N</code> 个元素来创建一个数组。</p>
+<p>使用 <code class="language-plaintext highlighter-rouge">Arrays.copyOfRange()</code> 用从末尾取来的 <code class="language-plaintext highlighter-rouge">N</code> 个元素来创建一个数组。</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -867,7 +867,7 @@
 
 <p>返回两个数组中任何一个中存在的每个元素一次。</p>
 
-<p>使用 <code class="highlighter-rouge">a</code> 和 <code class="highlighter-rouge">b</code> 的所有值创建一个 <code class="highlighter-rouge">Set</code>，并将其转换为数组。</p>
+<p>使用 <code class="language-plaintext highlighter-rouge">a</code> 和 <code class="language-plaintext highlighter-rouge">b</code> 的所有值创建一个 <code class="language-plaintext highlighter-rouge">Set</code>，并将其转换为数组。</p>
 
 <pre><code class="language-Java">public static &lt;T&gt; T[] union(T[] first, T[] second) {
     Set&lt;T&gt; set = new HashSet&lt;&gt;(Arrays.asList(first));
@@ -882,7 +882,7 @@
 
 <p>筛选出具有指定值之一的数组的元素。</p>
 
-<p>使用 <code class="highlighter-rouge">Arrays.strean().filter()</code> 创建一个数组，排除(使用 <code class="highlighter-rouge">!Arrays.asList(elements).contains()</code>)所有命中的值。</p>
+<p>使用 <code class="language-plaintext highlighter-rouge">Arrays.strean().filter()</code> 创建一个数组，排除(使用 <code class="language-plaintext highlighter-rouge">!Arrays.asList(elements).contains()</code>)所有命中的值。</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -968,7 +968,7 @@
 
 <p>计算一系列数字的最大公约数(gcd)。</p>
 
-<p>使用 <code class="highlighter-rouge">Arrays.stream().reduce()</code> 和 GCD（使用递归公式）计算一组数字的最大公约数。</p>
+<p>使用 <code class="language-plaintext highlighter-rouge">Arrays.stream().reduce()</code> 和 GCD（使用递归公式）计算一组数字的最大公约数。</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -1000,7 +1000,7 @@
 
 <p>计算数字数组的最低公共倍数(LCM)。</p>
 
-<p>使用 <code class="highlighter-rouge">Arrays.stream().reduce()</code> 和 LCM公式(使用递归)来计算数字数组的最低公共倍数。</p>
+<p>使用 <code class="language-plaintext highlighter-rouge">Arrays.stream().reduce()</code> 和 LCM公式(使用递归)来计算数字数组的最低公共倍数。</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -1034,12 +1034,12 @@
 
 <p>查找大于或等于该值的下一个幂。</p>
 
-<p>该方法使用左移运算符将1与右侧的值位移。右侧使用 <code class="highlighter-rouge">Integer.numberOfLeadingZeros</code>方法。
-<code class="highlighter-rouge">001 &lt;&lt; 2</code> would be <code class="highlighter-rouge">100</code>. <code class="highlighter-rouge">100</code> in decimal is equal to <code class="highlighter-rouge">4</code>.</p>
+<p>该方法使用左移运算符将1与右侧的值位移。右侧使用 <code class="language-plaintext highlighter-rouge">Integer.numberOfLeadingZeros</code>方法。
+<code class="language-plaintext highlighter-rouge">001 &lt;&lt; 2</code> would be <code class="language-plaintext highlighter-rouge">100</code>. <code class="language-plaintext highlighter-rouge">100</code> in decimal is equal to <code class="language-plaintext highlighter-rouge">4</code>.</p>
 
-<p><code class="highlighter-rouge">Integer.numberOfLeadingZeros</code> 给出了数值前导零的数目。例如，调用 <code class="highlighter-rouge">Integer.numberOfLeadingZeros(3)</code> 将赋值为30。
-这是因为3在二进制中表示为 <code class="highlighter-rouge">11</code>。由于整数有32位，所以有30位有0位。左移运算符的右边变为 <code class="highlighter-rouge">32-30 = 2</code>。
-左移1，即 <code class="highlighter-rouge">001 &lt;&lt; 2</code> 将是 <code class="highlighter-rouge">100</code>，十进制中的 <code class="highlighter-rouge">100</code> 等于 <code class="highlighter-rouge">4</code>。</p>
+<p><code class="language-plaintext highlighter-rouge">Integer.numberOfLeadingZeros</code> 给出了数值前导零的数目。例如，调用 <code class="language-plaintext highlighter-rouge">Integer.numberOfLeadingZeros(3)</code> 将赋值为30。
+这是因为3在二进制中表示为 <code class="language-plaintext highlighter-rouge">11</code>。由于整数有32位，所以有30位有0位。左移运算符的右边变为 <code class="language-plaintext highlighter-rouge">32-30 = 2</code>。
+左移1，即 <code class="language-plaintext highlighter-rouge">001 &lt;&lt; 2</code> 将是 <code class="language-plaintext highlighter-rouge">100</code>，十进制中的 <code class="language-plaintext highlighter-rouge">100</code> 等于 <code class="language-plaintext highlighter-rouge">4</code>。</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -1055,9 +1055,9 @@
 
 <p>检查数字是否是偶数。</p>
 
-<p>这个方法使用按位运算符，<code class="highlighter-rouge">0b1</code> 是1的二进制表示。
-因为Java 7可以通过用 <code class="highlighter-rouge">0b</code> 或 <code class="highlighter-rouge">0B</code> 作为前缀来编写二进制文字。
-数字为偶数时，<code class="highlighter-rouge">＆</code> 运算符将返回0。 例如，<code class="highlighter-rouge">IsEven(4)</code> 会导致 <code class="highlighter-rouge">100</code> <code class="highlighter-rouge">&amp;</code> <code class="highlighter-rouge">001</code>，<code class="highlighter-rouge">＆</code> 的结果将是 <code class="highlighter-rouge">000</code>。</p>
+<p>这个方法使用按位运算符，<code class="language-plaintext highlighter-rouge">0b1</code> 是1的二进制表示。
+因为Java 7可以通过用 <code class="language-plaintext highlighter-rouge">0b</code> 或 <code class="language-plaintext highlighter-rouge">0B</code> 作为前缀来编写二进制文字。
+数字为偶数时，<code class="language-plaintext highlighter-rouge">＆</code> 运算符将返回0。 例如，<code class="language-plaintext highlighter-rouge">IsEven(4)</code> 会导致 <code class="language-plaintext highlighter-rouge">100</code> <code class="language-plaintext highlighter-rouge">&amp;</code> <code class="language-plaintext highlighter-rouge">001</code>，<code class="language-plaintext highlighter-rouge">＆</code> 的结果将是 <code class="language-plaintext highlighter-rouge">000</code>。</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -1073,13 +1073,13 @@
 
 <p>检查一个值是2的正幂。</p>
 
-<p>为了理解它是如何工作的，让我们假设我们调用了 <code class="highlighter-rouge">IsPowerOfTwo(4)</code>。</p>
+<p>为了理解它是如何工作的，让我们假设我们调用了 <code class="language-plaintext highlighter-rouge">IsPowerOfTwo(4)</code>。</p>
 
-<p>当值大于0时，将评估 <code class="highlighter-rouge">&amp;&amp;</code> 运算符的右侧。</p>
+<p>当值大于0时，将评估 <code class="language-plaintext highlighter-rouge">&amp;&amp;</code> 运算符的右侧。</p>
 
-<p><code class="highlighter-rouge">(~value + 1)</code> 的结果等于值本身，<code class="highlighter-rouge">~100 + 001</code> =&gt; <code class="highlighter-rouge">011 + 001</code> =&gt; <code class="highlighter-rouge">100</code>。</p>
+<p><code class="language-plaintext highlighter-rouge">(~value + 1)</code> 的结果等于值本身，<code class="language-plaintext highlighter-rouge">~100 + 001</code> =&gt; <code class="language-plaintext highlighter-rouge">011 + 001</code> =&gt; <code class="language-plaintext highlighter-rouge">100</code>。</p>
 
-<p><code class="highlighter-rouge">(value &amp; value)</code> 的结果是value，<code class="highlighter-rouge">100</code> &amp; <code class="highlighter-rouge">100</code> =&gt; <code class="highlighter-rouge">100</code>.。</p>
+<p><code class="language-plaintext highlighter-rouge">(value &amp; value)</code> 的结果是value，<code class="language-plaintext highlighter-rouge">100</code> &amp; <code class="language-plaintext highlighter-rouge">100</code> =&gt; <code class="language-plaintext highlighter-rouge">100</code>.。</p>
 
 <p>当值等于值时，这将把值表达为真值。</p>
 
@@ -1092,7 +1092,7 @@
 
 <h3 id="generaterandomint">generateRandomInt</h3>
 
-<p>生成一个介于 <code class="highlighter-rouge">Integer.MIN_VALUE</code> 和 <code class="highlighter-rouge">Integer.MAX_VALUE</code> 之间的随机数。</p>
+<p>生成一个介于 <code class="language-plaintext highlighter-rouge">Integer.MIN_VALUE</code> 和 <code class="language-plaintext highlighter-rouge">Integer.MAX_VALUE</code> 之间的随机数。</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -1236,7 +1236,7 @@
 
 <h3 id="isabsoluteurl">isAbsoluteUrl</h3>
 
-<p>如果给定的字符串是绝对URL，则返回 <code class="highlighter-rouge">true</code>，否则返回 <code class="highlighter-rouge">false</code>。</p>
+<p>如果给定的字符串是绝对URL，则返回 <code class="language-plaintext highlighter-rouge">true</code>，否则返回 <code class="language-plaintext highlighter-rouge">false</code>。</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -1316,7 +1316,7 @@
 
 <h3 id="mask">mask</h3>
 
-<p>用指定的掩码字符替换除最后 <code class="highlighter-rouge">num</code> 个字符以外的所有字符。</p>
+<p>用指定的掩码字符替换除最后 <code class="language-plaintext highlighter-rouge">num</code> 个字符以外的所有字符。</p>
 
 <pre><code class="language-Java">public static String mask(String input, int num, String mask) {
     int length = input.length();
@@ -1458,7 +1458,7 @@
 
 <h3 id="tosnakecase">toSnakeCase</h3>
 
-<p>将字符串转换为蛇形小写，如 <code class="highlighter-rouge">Im_Biezhi</code>。</p>
+<p>将字符串转换为蛇形小写，如 <code class="language-plaintext highlighter-rouge">Im_Biezhi</code>。</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -1584,7 +1584,7 @@
 
 <h3 id="tmpdirname">tmpDirName</h3>
 
-<p>返回 <code class="highlighter-rouge">java.io.tmpdir</code> 系统属性的值。如果末尾没有分隔符，则追加分隔符。</p>
+<p>返回 <code class="language-plaintext highlighter-rouge">java.io.tmpdir</code> 系统属性的值。如果末尾没有分隔符，则追加分隔符。</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2

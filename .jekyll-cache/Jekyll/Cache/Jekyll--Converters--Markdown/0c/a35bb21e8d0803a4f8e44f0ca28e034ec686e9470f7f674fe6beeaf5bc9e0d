@@ -1,4 +1,4 @@
-I"?�<h2 id="xp极限编程">XP极限编程</h2>
+I"��<h2 id="xp极限编程">XP极限编程</h2>
 
 <blockquote>
   <p><strong>XP 极限编程 更侧重于实践 – 实际工作开发</strong>，并力求把实践做到极限。这一实践可以是<strong>测试先行</strong>，也可以是结对编程等，关键要看具体的应用场景。</p>
@@ -35,7 +35,7 @@
   <li>尽可能达到程序员短期利益和项目长期利益的平衡。</li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td><td class="rouge-code"><pre>相对于SCRUM，极限编程XP对个人的要求更高！
 个体跟不上团队发展，就末尾淘汰！
@@ -43,13 +43,13 @@
 
 <p>Kent Beck 曾经说过“开车”就是一个 XP 的范例，即使看上去进行得很顺利，也不要把视线从公路上移开，因为路况的变化，将使得你必须随时做出一些这样那样的调整。而在软件项目中，客户就是司机，他们也没有办法确切地知道软件应该做什么，因此程序员就需要向客户提供方向盘，并且告知我们现在的位置。</p>
 
-<p>XP 包括写什么呢？如图，<code class="highlighter-rouge">XP 由价值观、原则、实践和行为四个部分组成，它们彼此相互依赖、关联， 并通过行为贯穿于整个生命期。</code></p>
+<p>XP 包括写什么呢？如图，<code class="language-plaintext highlighter-rouge">XP 由价值观、原则、实践和行为四个部分组成，它们彼此相互依赖、关联， 并通过行为贯穿于整个生命期。</code></p>
 
 <p><img src="http://www.qfdmy.com/wp-content/uploads/2019/08/8ed46c3988e83c4.gif" alt="img" /></p>
 
 <h3 id="四大价值观">四大价值观</h3>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>XP 的核心是其总结的沟通（Communication）、简单（Simplicity）、反馈（Feedback）、勇气（Courage）四大价值观，它们是XP的基础，也是XP的灵魂。
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -295,7 +295,7 @@
 
 <p>不过有一点是需要解释的，“每周工作 40 小时”中的 40 不是一个绝对数，它所代表的意思是团队应该保证按照“正常的时间”进行工作。那么如何做到这一点呢？</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>一般每天早上9-11点、下午3点-5点工作效率最高。每个人应该测试出自己最高工作效率的时间段！	
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -333,7 +333,7 @@
 
 <p>编码标准是一个“雅俗共享”的最佳实践，不管是代表重型方法论的 RUP，PSP，还是代表敏捷方法论的 XP，都认为开发团队应该拥有一个编码标准。XP 方法论认为拥有编码标准可以避免团队在一些与开发进度无关的细节问题上发生争论，而且会给重构、结对编程带来很大麻烦。试想如果有人将你上次写的代码的变量命名法做了修改，下次你需要再改这部分代码时，会是一种什么感觉呢？</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>《阿里巴巴编码规范》
 </pre></td></tr></tbody></table></code></pre></div></div>
 

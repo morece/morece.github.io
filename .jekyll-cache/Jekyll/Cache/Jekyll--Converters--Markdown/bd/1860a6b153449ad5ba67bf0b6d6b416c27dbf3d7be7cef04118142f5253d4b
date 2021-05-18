@@ -1,4 +1,4 @@
-I"F1<h1 id="docker-常用命令">Docker 常用命令</h1>
+I"Y1<h1 id="docker-常用命令">Docker 常用命令</h1>
 
 <blockquote>
   <p>自己整理的一些Docker常用的命令集，后续会逐步更新~</p>
@@ -82,7 +82,7 @@ vim daemon.json
   <li>
     <p><strong>删：</strong>删除一个镜像</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>docker rmi image-name
 </pre></td></tr></tbody></table></code></pre></div>    </div>
   </li>

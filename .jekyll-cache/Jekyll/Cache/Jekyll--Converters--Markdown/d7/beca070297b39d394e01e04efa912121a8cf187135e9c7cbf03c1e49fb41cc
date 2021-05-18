@@ -1,24 +1,24 @@
-I"־<blockquote>
+I"�<blockquote>
   <p>Git常用命令集合，Fork于<a href="https://github.com/git-tips/tips">tips</a>项目</p>
 </blockquote>
 
 <p>Git是一个 “分布式版本管理工具”，简单的理解版本管理工具：大家在写东西的时候都用过 “回撤” 这个功能，但是回撤只能回撤几步，假如想要找回我三天之前的修改，光用 “回撤” 是找不回来的。而 “版本管理工具” 能记录每次的修改，只要提交到版本仓库，你就可以找到之前任何时刻的状态（文本状态）。</p>
 
-<p>下面的内容就是列举了常用的 Git 命令和一些小技巧，可以通过 “页面内查找” 的方式进行快速查询：<code class="highlighter-rouge">Ctrl/Command+f</code>。</p>
+<p>下面的内容就是列举了常用的 Git 命令和一些小技巧，可以通过 “页面内查找” 的方式进行快速查询：<code class="language-plaintext highlighter-rouge">Ctrl/Command+f</code>。</p>
 
 <h2 id="开卷必读">开卷必读</h2>
 <p><em>如果之前未使用过 Git，可以学习 <a href="http://rogerdudler.github.io/git-guide/index.zh.html">Git 小白教程</a>入门</em></p>
 
 <ol>
   <li><strong>一定要先测试命令的效果后</strong>，再用于工作环境中，以防造成不能弥补的后果！<strong>到时候别拿着砍刀来找我</strong></li>
-  <li>所有的命令都在<code class="highlighter-rouge">git version 2.7.4 (Apple Git-66)</code>下测试通过</li>
+  <li>所有的命令都在<code class="language-plaintext highlighter-rouge">git version 2.7.4 (Apple Git-66)</code>下测试通过</li>
   <li>统一概念：
     <ul>
       <li>工作区：改动（增删文件和内容）</li>
-      <li>暂存区：输入命令：<code class="highlighter-rouge">git add 改动的文件名</code>，此次改动就放到了 ‘暂存区’</li>
-      <li>本地仓库(简称：本地)：输入命令：<code class="highlighter-rouge">git commit 此次修改的描述</code>，此次改动就放到了 ’本地仓库’，每个 commit，我叫它为一个 ‘版本’。</li>
-      <li>远程仓库(简称：远程)：输入命令：<code class="highlighter-rouge">git push 远程仓库</code>，此次改动就放到了 ‘远程仓库’（GitHub 等)</li>
-      <li>commit-id：输出命令：<code class="highlighter-rouge">git log</code>，最上面那行 <code class="highlighter-rouge">commit xxxxxx</code>，后面的字符串就是 commit-id</li>
+      <li>暂存区：输入命令：<code class="language-plaintext highlighter-rouge">git add 改动的文件名</code>，此次改动就放到了 ‘暂存区’</li>
+      <li>本地仓库(简称：本地)：输入命令：<code class="language-plaintext highlighter-rouge">git commit 此次修改的描述</code>，此次改动就放到了 ’本地仓库’，每个 commit，我叫它为一个 ‘版本’。</li>
+      <li>远程仓库(简称：远程)：输入命令：<code class="language-plaintext highlighter-rouge">git push 远程仓库</code>，此次改动就放到了 ‘远程仓库’（GitHub 等)</li>
+      <li>commit-id：输出命令：<code class="language-plaintext highlighter-rouge">git log</code>，最上面那行 <code class="language-plaintext highlighter-rouge">commit xxxxxx</code>，后面的字符串就是 commit-id</li>
     </ul>
   </li>
 </ol>
@@ -82,7 +82,7 @@
   <li><a href="#执行-rebase-之前自动-stash">执行 rebase 之前自动 stash</a></li>
   <li><a href="#从远程仓库根据-ID-拉下某一状态-到本地分支">从远程仓库根据 ID，拉下某一状态，到本地分支</a></li>
   <li><a href="#详细展示一行中的修改">详细展示一行中的修改</a></li>
-  <li><a href="#清除-gitignore-文件中记录的文件">清除 <code class="highlighter-rouge">.gitignore</code> 文件中记录的文件</a></li>
+  <li><a href="#清除-gitignore-文件中记录的文件">清除 <code class="language-plaintext highlighter-rouge">.gitignore</code> 文件中记录的文件</a></li>
   <li><a href="#展示所有-alias-和-configs">展示所有 alias 和 configs</a></li>
   <li><a href="#展示忽略的文件">展示忽略的文件</a></li>
   <li><a href="#commit-历史中显示-Branch1-有的但是-Branch2-没有-commit">commit 历史中显示 Branch1 有的，但是 Branch2 没有 commit</a></li>
@@ -106,7 +106,7 @@
 </pre></td></tr></tbody></table></code></pre></div></div>
 <p>The command output as below:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -208,12 +208,12 @@
 
 <h2 id="关联远程分支">关联远程分支</h2>
 
-<p>关联之后，<code class="highlighter-rouge">git branch -vv</code> 就可以展示关联的远程分支名了，同时推送到远程仓库直接：<code class="highlighter-rouge">git push</code>，不需要指定远程仓库了。</p>
+<p>关联之后，<code class="language-plaintext highlighter-rouge">git branch -vv</code> 就可以展示关联的远程分支名了，同时推送到远程仓库直接：<code class="language-plaintext highlighter-rouge">git push</code>，不需要指定远程仓库了。</p>
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>git branch <span class="nt">-u</span> origin/mybranch
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<p>或者在 push 时加上 <code class="highlighter-rouge">-u</code> 参数</p>
+<p>或者在 push 时加上 <code class="language-plaintext highlighter-rouge">-u</code> 参数</p>
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>git push origin/mybranch <span class="nt">-u</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
@@ -433,7 +433,7 @@ git reset –hard &lt;commit-id&gt;  <span class="c">#彻底回退到指定commi
 
 <h2 id="把-a-分支的某一个-commit放到-b-分支上">把 A 分支的某一个 commit，放到 B 分支上</h2>
 
-<p>这个过程需要 <code class="highlighter-rouge">cherry-pick</code> 命令，<a href="http://sg552.iteye.com/blog/1300713#bc2367928">参考</a></p>
+<p>这个过程需要 <code class="language-plaintext highlighter-rouge">cherry-pick</code> 命令，<a href="http://sg552.iteye.com/blog/1300713#bc2367928">参考</a></p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>git checkout &lt;branch-name&gt; <span class="o">&amp;&amp;</span> git cherry-pick &lt;commit-id&gt;
@@ -514,7 +514,7 @@ git config <span class="nt">--global</span> alias.st status
 
 <h2 id="强制删除-untracked-的文件">强制删除 untracked 的文件</h2>
 
-<p>可以用来删除新建的文件。如果不指定文件文件名，则清空所有工作的 untracked 文件。<code class="highlighter-rouge">clean</code> 命令，<strong>注意两点</strong>：</p>
+<p>可以用来删除新建的文件。如果不指定文件文件名，则清空所有工作的 untracked 文件。<code class="language-plaintext highlighter-rouge">clean</code> 命令，<strong>注意两点</strong>：</p>
 <ol>
   <li>clean 后，删除的文件无法找回</li>
   <li>不会影响 tracked 的文件的改动，只会删除 untracked 的文件</li>
@@ -544,7 +544,7 @@ git config <span class="nt">--global</span> alias.st status
 
 <h2 id="从包中导入分支">从包中导入分支</h2>
 
-<p>新建一个分支，分支内容就是上面 <code class="highlighter-rouge">git bundle create</code> 命令导出的内容</p>
+<p>新建一个分支，分支内容就是上面 <code class="language-plaintext highlighter-rouge">git bundle create</code> 命令导出的内容</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>git clone repo.bundle &lt;repo-dir&gt; <span class="nt">-b</span> &lt;branch-name&gt;
@@ -664,7 +664,7 @@ git config <span class="nt">--global</span> <span class="nt">--list</span> <span
 
 <h2 id="把暂存区的指定-file-放到工作区中">把暂存区的指定 file 放到工作区中</h2>
 
-<p>不添加参数，默认是 <code class="highlighter-rouge">-mixed</code></p>
+<p>不添加参数，默认是 <code class="language-plaintext highlighter-rouge">-mixed</code></p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>git reset &lt;file-name&gt;

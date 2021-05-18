@@ -1,4 +1,4 @@
-I"�)<h2 id="dubbo简介">Dubbo简介</h2>
+I",*<h2 id="dubbo简介">Dubbo简介</h2>
 
 <blockquote>
   <p>分布式项目通信方式：对内RPC、对外REST</p>
@@ -11,7 +11,7 @@
     <tr>
       <td>Apache Dubbo (incubating)</td>
       <td>ˈdʌbəʊ</td>
-      <td>是一款<code class="highlighter-rouge">高性能</code>、<code class="highlighter-rouge">轻量级</code>的开源 Java RPC 分布式服务框架。她最大的特点是按照<code class="highlighter-rouge">分层</code>的方式来架构，使用这种方式可以使各个层之间解耦合（或者最大限度地松耦合）（类似于Docker）。</td>
+      <td>是一款<code class="language-plaintext highlighter-rouge">高性能</code>、<code class="language-plaintext highlighter-rouge">轻量级</code>的开源 Java RPC 分布式服务框架。她最大的特点是按照<code class="language-plaintext highlighter-rouge">分层</code>的方式来架构，使用这种方式可以使各个层之间解耦合（或者最大限度地松耦合）（类似于Docker）。</td>
     </tr>
   </tbody>
 </table>

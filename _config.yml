@@ -1,10 +1,10 @@
 # Site settings
 title: Morece Blog
-SEOTitle: 张海涛的博客 | Morece Blog
+SEOTitle: 米斯特尔·张的博客 | Morece Blog
 header-img: img/root/home-bg-fj.jpg
 email:  2636461000@qq.com
-description: "关于程序与设计以及架构 | 张海涛，Java & Mobile Lover，Software Engineer | 这里是 @morece 张海涛 的个人博客，与你一起发现更大的世界。"
-keyword: "张海涛, morece, 莫测, @morece, 张海涛的博客, Morece Blog, 博客, 个人网站, 互联网, Java, node.js, 后端, 开发"
+description: "关于程序与设计以及架构 | 米斯特尔·张，Java & Mobile Lover，Software Engineer | 这里是 @morece 米斯特尔·张 的个人博客，与你一起发现更大的世界。"
+keyword: "米斯特尔·张, morece, 莫测, @morece, 米斯特尔·张的博客, Morece Blog, 博客, 个人网站, 互联网, Java, node.js, 后端, 开发"
 url: "https://morece.github.io"              # your host, for absolute URL
 baseurl: ""                               # for example, '/blog' if your blog hosted on 'host/blog'
 
@@ -104,11 +104,11 @@ page-mathjax: false
 # Friends
 friends: [
     {
-        title: "张海涛",
+        title: "米斯特尔·张",
         href: "https://morece.github.io/"
     },{
-        title: "OkCue",
-        href: "https://www.okcue.com"
+        title: "Morece",
+        href: "https://www.morece.com"
     },{
         title: "小马哥",
         href: "https://mercyblitz.github.io/"

@@ -1,4 +1,4 @@
-I"��<h2 id="写在前面">写在前面</h2>
+I"�<h2 id="写在前面">写在前面</h2>
 
 <h3 id="常见面试题">常见面试题：</h3>
 
@@ -34,7 +34,7 @@
 <img src="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-3堆结构.png" width="400px" />
 </div>
 
-<p>上图所示的 eden区、s0区、s1区都属于新生代，tentired 区属于老年代。大部分情况，对象都会首先在 Eden 区域分配，在一次新生代垃圾回收后，如果对象还存活，则会进入 s0 或者 s1，并且对象的年龄还会加 1(Eden区-&gt;Survivor 区后对象的初始年龄变为1)，当它的年龄增加到一定程度（默认为15岁），就会被晋升到老年代中。对象晋升到老年代的年龄阈值，可以通过参数 <code class="highlighter-rouge">-XX:MaxTenuringThreshold</code> 来设置。</p>
+<p>上图所示的 eden区、s0区、s1区都属于新生代，tentired 区属于老年代。大部分情况，对象都会首先在 Eden 区域分配，在一次新生代垃圾回收后，如果对象还存活，则会进入 s0 或者 s1，并且对象的年龄还会加 1(Eden区-&gt;Survivor 区后对象的初始年龄变为1)，当它的年龄增加到一定程度（默认为15岁），就会被晋升到老年代中。对象晋升到老年代的年龄阈值，可以通过参数 <code class="language-plaintext highlighter-rouge">-XX:MaxTenuringThreshold</code> 来设置。</p>
 
 <p><img src="http://upload-images.jianshu.io/upload_images/6039661-651a01631ee60fa2.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image" /></p>
 
@@ -73,7 +73,7 @@
 <p>通过以下方式运行：
 <img src="http://upload-images.jianshu.io/upload_images/6039661-62fc30dc9e6750aa.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image" /></p>
 
-<p>添加的参数：<code class="highlighter-rouge">-XX:+PrintGCDetails</code>
+<p>添加的参数：<code class="language-plaintext highlighter-rouge">-XX:+PrintGCDetails</code>
 <img src="http://upload-images.jianshu.io/upload_images/6039661-00f0a8221cae833c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image" /></p>
 
 <p>运行结果(红色字体描述有误，应该是对应于JDK1.7的永久代)：</p>
@@ -125,7 +125,7 @@
 <h3 id="13-长期存活的对象将进入老年代">1.3 长期存活的对象将进入老年代</h3>
 <p>既然虚拟机采用了分代收集的思想来管理内存，那么内存回收时就必须能识别哪些对象应放在新生代，哪些对象应放在老年代中。为了做到这一点，虚拟机给每个对象一个对象年龄（Age）计数器。</p>
 
-<p>如果对象在 Eden 出生并经过第一次 Minor GC 后仍然能够存活，并且能被 Survivor 容纳的话，将被移动到 Survivor 空间中，并将对象年龄设为1.对象在 Survivor 中每熬过一次 MinorGC,年龄就增加1岁，当它的年龄增加到一定程度（默认为15岁），就会被晋升到老年代中。对象晋升到老年代的年龄阈值，可以通过参数 <code class="highlighter-rouge">-XX:MaxTenuringThreshold</code> 来设置。</p>
+<p>如果对象在 Eden 出生并经过第一次 Minor GC 后仍然能够存活，并且能被 Survivor 容纳的话，将被移动到 Survivor 空间中，并将对象年龄设为1.对象在 Survivor 中每熬过一次 MinorGC,年龄就增加1岁，当它的年龄增加到一定程度（默认为15岁），就会被晋升到老年代中。对象晋升到老年代的年龄阈值，可以通过参数 <code class="language-plaintext highlighter-rouge">-XX:MaxTenuringThreshold</code> 来设置。</p>
 
 <h3 id="14-动态对象年龄判定">1.4 动态对象年龄判定</h3>
 
@@ -314,7 +314,7 @@
 
 <p>Parallel Scavenge 收集器类似于ParNew 收集器。 <strong>那么它有什么特别之处呢？</strong></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
