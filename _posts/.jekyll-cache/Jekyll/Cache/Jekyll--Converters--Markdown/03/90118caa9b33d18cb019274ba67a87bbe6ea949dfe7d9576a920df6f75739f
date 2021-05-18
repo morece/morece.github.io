@@ -1,0 +1,1305 @@
+I"�.<h2 id="目录">目录</h2>
+
+<h3 id="array-数组相关">Array (数组相关)</h3>
+
+<ul>
+  <li><a href="#chunk"><code class="language-plaintext highlighter-rouge">chunk</code></a></li>
+  <li><a href="#countoccurrences"><code class="language-plaintext highlighter-rouge">countOccurrences</code></a></li>
+  <li><a href="#deepflatten"><code class="language-plaintext highlighter-rouge">deepFlatten</code></a></li>
+  <li><a href="#difference"><code class="language-plaintext highlighter-rouge">difference</code></a></li>
+  <li><a href="#differencewith"><code class="language-plaintext highlighter-rouge">differenceWith</code></a></li>
+  <li><a href="#distinctvaluesofarray"><code class="language-plaintext highlighter-rouge">distinctValuesOfArray</code></a></li>
+  <li><a href="#dropelements"><code class="language-plaintext highlighter-rouge">dropElements</code></a></li>
+  <li><a href="#dropright"><code class="language-plaintext highlighter-rouge">dropRight</code></a></li>
+  <li><a href="#everynth"><code class="language-plaintext highlighter-rouge">everyNth</code></a></li>
+  <li><a href="#filternonunique"><code class="language-plaintext highlighter-rouge">filterNonUnique</code></a></li>
+  <li><a href="#flatten"><code class="language-plaintext highlighter-rouge">flatten</code></a></li>
+  <li><a href="#flattendepth"><code class="language-plaintext highlighter-rouge">flattenDepth</code></a></li>
+  <li><a href="#groupby"><code class="language-plaintext highlighter-rouge">groupBy</code></a></li>
+  <li><a href="#initial"><code class="language-plaintext highlighter-rouge">initial</code></a></li>
+  <li><a href="#initializearraywithrange"><code class="language-plaintext highlighter-rouge">initializeArrayWithRange</code></a></li>
+  <li><a href="#initializearraywithvalues"><code class="language-plaintext highlighter-rouge">initializeArrayWithValues</code></a></li>
+  <li><a href="#intersection"><code class="language-plaintext highlighter-rouge">intersection</code></a></li>
+  <li><a href="#issorted"><code class="language-plaintext highlighter-rouge">isSorted</code></a></li>
+  <li><a href="#join"><code class="language-plaintext highlighter-rouge">join</code></a></li>
+  <li><a href="#nthelement"><code class="language-plaintext highlighter-rouge">nthElement</code></a></li>
+  <li><a href="#pick"><code class="language-plaintext highlighter-rouge">pick</code></a></li>
+  <li><a href="#reducedfilter"><code class="language-plaintext highlighter-rouge">reducedFilter</code></a></li>
+  <li><a href="#sample"><code class="language-plaintext highlighter-rouge">sample</code></a></li>
+  <li><a href="#samplesize"><code class="language-plaintext highlighter-rouge">sampleSize</code></a></li>
+  <li><a href="#shuffle"><code class="language-plaintext highlighter-rouge">shuffle</code></a></li>
+  <li><a href="#similarity"><code class="language-plaintext highlighter-rouge">similarity</code></a></li>
+  <li><a href="#sortedindex"><code class="language-plaintext highlighter-rouge">sortedIndex</code></a></li>
+  <li><a href="#symmetricdifference"><code class="language-plaintext highlighter-rouge">symmetricDifference</code></a></li>
+  <li><a href="#tail"><code class="language-plaintext highlighter-rouge">tail</code></a></li>
+  <li><a href="#take"><code class="language-plaintext highlighter-rouge">take</code></a></li>
+  <li><a href="#takeright"><code class="language-plaintext highlighter-rouge">takeRight</code></a></li>
+  <li><a href="#union"><code class="language-plaintext highlighter-rouge">union</code></a></li>
+  <li><a href="#without"><code class="language-plaintext highlighter-rouge">without</code></a></li>
+  <li><a href="#zip"><code class="language-plaintext highlighter-rouge">zip</code></a></li>
+  <li><a href="#zipobject"><code class="language-plaintext highlighter-rouge">zipObject</code></a></li>
+</ul>
+
+<h3 id="math-数学相关">Math (数学相关)</h3>
+
+<ul>
+  <li><a href="#average"><code class="language-plaintext highlighter-rouge">average</code></a></li>
+  <li><a href="#gcd"><code class="language-plaintext highlighter-rouge">gcd</code></a></li>
+  <li><a href="#lcm"><code class="language-plaintext highlighter-rouge">lcm</code></a></li>
+  <li><a href="#findnextpositivepoweroftwo"><code class="language-plaintext highlighter-rouge">findNextPositivePowerOfTwo</code></a></li>
+  <li><a href="#iseven"><code class="language-plaintext highlighter-rouge">isEven</code></a></li>
+  <li><a href="#ispoweroftwo"><code class="language-plaintext highlighter-rouge">isPowerOfTwo</code></a></li>
+  <li><a href="#generaterandomint"><code class="language-plaintext highlighter-rouge">generateRandomInt</code></a></li>
+</ul>
+
+<h3 id="string-字符串相关">String (字符串相关)</h3>
+
+<ul>
+  <li><a href="#anagrams"><code class="language-plaintext highlighter-rouge">anagrams</code></a></li>
+  <li><a href="#bytesize"><code class="language-plaintext highlighter-rouge">byteSize</code></a></li>
+  <li><a href="#capitalize"><code class="language-plaintext highlighter-rouge">capitalize</code></a></li>
+  <li><a href="#capitalizeeveryword"><code class="language-plaintext highlighter-rouge">capitalizeEveryWord</code></a></li>
+  <li><a href="#countvowels"><code class="language-plaintext highlighter-rouge">countVowels</code></a></li>
+  <li><a href="#escaperegexp"><code class="language-plaintext highlighter-rouge">escapeRegExp</code></a></li>
+  <li><a href="#fromcamelcase"><code class="language-plaintext highlighter-rouge">fromCamelCase</code></a></li>
+  <li><a href="#isabsoluteurl"><code class="language-plaintext highlighter-rouge">isAbsoluteURL</code></a></li>
+  <li><a href="#islowercase"><code class="language-plaintext highlighter-rouge">isLowerCase</code></a></li>
+  <li><a href="#isuppercase"><code class="language-plaintext highlighter-rouge">isUpperCase</code></a></li>
+  <li><a href="#ispalindrome"><code class="language-plaintext highlighter-rouge">isPalindrome</code></a></li>
+  <li><a href="#isnumeric"><code class="language-plaintext highlighter-rouge">isNumeric</code></a></li>
+  <li><a href="#mask"><code class="language-plaintext highlighter-rouge">mask</code></a></li>
+  <li><a href="#reversestring"><code class="language-plaintext highlighter-rouge">reverseString</code></a></li>
+  <li><a href="#sortcharactersinstring"><code class="language-plaintext highlighter-rouge">sortCharactersInString</code></a></li>
+  <li><a href="#splitlines"><code class="language-plaintext highlighter-rouge">splitLines</code></a></li>
+  <li><a href="#tocamelcase"><code class="language-plaintext highlighter-rouge">toCamelCase</code></a></li>
+  <li><a href="#tokebabcase"><code class="language-plaintext highlighter-rouge">toKebabCase</code></a></li>
+  <li><a href="#match"><code class="language-plaintext highlighter-rouge">match</code></a></li>
+  <li><a href="#tosnakecase"><code class="language-plaintext highlighter-rouge">toSnakeCase</code></a></li>
+  <li><a href="#truncatestring"><code class="language-plaintext highlighter-rouge">truncateString</code></a></li>
+  <li><a href="#words"><code class="language-plaintext highlighter-rouge">words</code></a></li>
+  <li><a href="#stringtointegers"><code class="language-plaintext highlighter-rouge">stringToIntegers</code></a></li>
+</ul>
+
+<h3 id="io-io流相关">IO (IO流相关)</h3>
+
+<ul>
+  <li><a href="#convertinputstreamtostring"><code class="language-plaintext highlighter-rouge">convertInputStreamToString</code></a></li>
+  <li><a href="#readfileasstring"><code class="language-plaintext highlighter-rouge">readFileAsString</code></a></li>
+  <li><a href="#getcurrentworkingdirectorypath"><code class="language-plaintext highlighter-rouge">getCurrentWorkingDirectoryPath</code></a></li>
+  <li><a href="#tmpdirname"><code class="language-plaintext highlighter-rouge">tmpDirName</code></a></li>
+</ul>
+
+<h3 id="exception-异常相关">Exception (异常相关)</h3>
+
+<ul>
+  <li><a href="#stacktraceasstring"><code class="language-plaintext highlighter-rouge">stackTraceAsString</code></a></li>
+</ul>
+
+<h3 id="system-系统相关">System (系统相关)</h3>
+
+<ul>
+  <li><a href="#osname"><code class="language-plaintext highlighter-rouge">osName</code></a></li>
+  <li><a href="#isdebuggerenabled"><code class="language-plaintext highlighter-rouge">isDebuggerEnabled</code></a></li>
+</ul>
+
+<h3 id="class-类相关">Class (类相关)</h3>
+
+<ul>
+  <li><a href="#getallinterfaces"><code class="language-plaintext highlighter-rouge">getAllInterfaces</code></a></li>
+  <li><a href="#isinnerclass"><code class="language-plaintext highlighter-rouge">IsInnerClass</code></a></li>
+</ul>
+
+<h3 id="enum-枚举相关">Enum (枚举相关)</h3>
+
+<ul>
+  <li><a href="#getenummap"><code class="language-plaintext highlighter-rouge">getEnumMap</code></a></li>
+</ul>
+
+<h2 id="array">Array</h2>
+
+<h3 id="chunk">chunk</h3>
+
+<p>将数组分割成特定大小的小数组。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[][]</span> <span class="nf">chunk</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">numbers</span><span class="o">,</span> <span class="kt">int</span> <span class="n">size</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nc">IntStream</span><span class="o">.</span><span class="na">iterate</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">i</span> <span class="o">-&gt;</span> <span class="n">i</span> <span class="o">+</span> <span class="n">size</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">limit</span><span class="o">((</span><span class="kt">long</span><span class="o">)</span> <span class="nc">Math</span><span class="o">.</span><span class="na">ceil</span><span class="o">((</span><span class="kt">double</span><span class="o">)</span> <span class="n">numbers</span><span class="o">.</span><span class="na">length</span> <span class="o">/</span> <span class="n">size</span><span class="o">))</span>
+            <span class="o">.</span><span class="na">mapToObj</span><span class="o">(</span><span class="n">cur</span> <span class="o">-&gt;</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">copyOfRange</span><span class="o">(</span><span class="n">numbers</span><span class="o">,</span> <span class="n">cur</span><span class="o">,</span> <span class="n">cur</span> <span class="o">+</span> <span class="n">size</span> <span class="o">&gt;</span> <span class="n">numbers</span><span class="o">.</span><span class="na">length</span> <span class="o">?</span> <span class="n">numbers</span><span class="o">.</span><span class="na">length</span> <span class="o">:</span> <span class="n">cur</span> <span class="o">+</span> <span class="n">size</span><span class="o">))</span>
+            <span class="o">.</span><span class="na">toArray</span><span class="o">(</span><span class="kt">int</span><span class="o">[][]::</span><span class="k">new</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="concat">concat</h3>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="no">T</span><span class="o">[]</span> <span class="nf">concat</span><span class="o">(</span><span class="no">T</span><span class="o">[]</span> <span class="n">first</span><span class="o">,</span> <span class="no">T</span><span class="o">[]</span> <span class="n">second</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nc">Stream</span><span class="o">.</span><span class="na">concat</span><span class="o">(</span>
+            <span class="nc">Stream</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">first</span><span class="o">),</span>
+            <span class="nc">Stream</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">second</span><span class="o">)</span>
+    <span class="o">).</span><span class="na">toArray</span><span class="o">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="no">T</span><span class="o">[])</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">copyOf</span><span class="o">(</span><span class="k">new</span> <span class="nc">Object</span><span class="o">[</span><span class="mi">0</span><span class="o">],</span> <span class="n">i</span><span class="o">,</span> <span class="n">first</span><span class="o">.</span><span class="na">getClass</span><span class="o">()));</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="countoccurrences">countOccurrences</h3>
+
+<p>计算数组中某个值出现的次数。</p>
+
+<p>使用 <code class="language-plaintext highlighter-rouge">Arrays.stream().filter().count()</code> 计算等于指定值的值的总数。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">long</span> <span class="nf">countOccurrences</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">numbers</span><span class="o">,</span> <span class="kt">int</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">numbers</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">number</span> <span class="o">-&gt;</span> <span class="n">number</span> <span class="o">==</span> <span class="n">value</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">count</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="deepflatten">deepFlatten</h3>
+
+<p>数组扁平化。</p>
+
+<p>使用递归实现，<code class="language-plaintext highlighter-rouge">Arrays.stream().flatMapToInt()</code></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">deepFlatten</span><span class="o">(</span><span class="nc">Object</span><span class="o">[]</span> <span class="n">input</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">input</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">flatMapToInt</span><span class="o">(</span><span class="n">o</span> <span class="o">-&gt;</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">o</span> <span class="k">instanceof</span> <span class="nc">Object</span><span class="o">[])</span> <span class="o">{</span>
+                    <span class="k">return</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">deepFlatten</span><span class="o">((</span><span class="nc">Object</span><span class="o">[])</span> <span class="n">o</span><span class="o">));</span>
+                <span class="o">}</span>
+                <span class="k">return</span> <span class="nc">IntStream</span><span class="o">.</span><span class="na">of</span><span class="o">((</span><span class="nc">Integer</span><span class="o">)</span> <span class="n">o</span><span class="o">);</span>
+            <span class="o">}).</span><span class="na">toArray</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="difference">difference</h3>
+
+<p>返回两个数组之间的差异。</p>
+
+<p>从 b 中创建一个集合，然后在 a 上使用 <code class="language-plaintext highlighter-rouge">Arrays.stream().filter()</code> 只保留 b 中不包含的值。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">difference</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">first</span><span class="o">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">second</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">Set</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">set</span> <span class="o">=</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">second</span><span class="o">).</span><span class="na">boxed</span><span class="o">().</span><span class="na">collect</span><span class="o">(</span><span class="nc">Collectors</span><span class="o">.</span><span class="na">toSet</span><span class="o">());</span>
+    <span class="k">return</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">first</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">v</span> <span class="o">-&gt;</span> <span class="o">!</span><span class="n">set</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">v</span><span class="o">))</span>
+            <span class="o">.</span><span class="na">toArray</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="differencewith">differenceWith</h3>
+
+<p>从比较器函数不返回true的数组中筛选出所有值。</p>
+
+<p>int的比较器是使用IntbinaryPerator函数来实现的。</p>
+
+<p>使用 <code class="language-plaintext highlighter-rouge">Arrays.stream().filter()</code> 和 <code class="language-plaintext highlighter-rouge">Arrays.stream().noneMatch()</code> 查找相应的值。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">differenceWith</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">first</span><span class="o">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">second</span><span class="o">,</span> <span class="nc">IntBinaryOperator</span> <span class="n">comparator</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">first</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">a</span> <span class="o">-&gt;</span>
+                    <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">second</span><span class="o">)</span>
+                            <span class="o">.</span><span class="na">noneMatch</span><span class="o">(</span><span class="n">b</span> <span class="o">-&gt;</span> <span class="n">comparator</span><span class="o">.</span><span class="na">applyAsInt</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">)</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
+            <span class="o">).</span><span class="na">toArray</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="distinctvaluesofarray">distinctValuesOfArray</h3>
+
+<p>返回数组的所有不同值。</p>
+
+<p>使用 <code class="language-plaintext highlighter-rouge">Arrays.stream().distinct()</code> 去除所有重复的值。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">distinctValuesOfArray</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">elements</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">elements</span><span class="o">).</span><span class="na">distinct</span><span class="o">().</span><span class="na">toArray</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="dropelements">dropElements</h3>
+
+<p>移除数组中的元素，直到传递的函数返回true为止。返回数组中的其余元素。</p>
+
+<p>使用数组循环遍历数组，将数组的第一个元素删除，直到函数返回的值为真为止。返回其余的元素。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">dropElements</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">elements</span><span class="o">,</span> <span class="nc">IntPredicate</span> <span class="n">condition</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">while</span> <span class="o">(</span><span class="n">elements</span><span class="o">.</span><span class="na">length</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">condition</span><span class="o">.</span><span class="na">test</span><span class="o">(</span><span class="n">elements</span><span class="o">[</span><span class="mi">0</span><span class="o">]))</span> <span class="o">{</span>
+        <span class="n">elements</span> <span class="o">=</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">copyOfRange</span><span class="o">(</span><span class="n">elements</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="n">elements</span><span class="o">.</span><span class="na">length</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">elements</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="dropright">dropRight</h3>
+
+<p>返回一个新数组，从右边移除n个元素。</p>
+
+<p>检查n是否短于给定的数组，并使用 <code class="language-plaintext highlighter-rouge">Array.copyOfRange()</code> 以便对其进行相应的切片或返回一个空数组。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">dropRight</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">elements</span><span class="o">,</span> <span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nf">IllegalArgumentException</span><span class="o">(</span><span class="s">"n is less than 0"</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="n">elements</span><span class="o">.</span><span class="na">length</span>
+            <span class="o">?</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">copyOfRange</span><span class="o">(</span><span class="n">elements</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">elements</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="n">n</span><span class="o">)</span>
+            <span class="o">:</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="everynth">everyNth</h3>
+
+<p>返回数组中的每个第n个元素。</p>
+
+<p>使用 <code class="language-plaintext highlighter-rouge">IntStream.range().filter()</code> 创建一个新数组，该数组包含给定数组的每个第n个元素。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">everyNth</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">elements</span><span class="o">,</span> <span class="kt">int</span> <span class="n">nth</span><span class="o">)</span> <span class="o">{</span>
+     <span class="k">return</span> <span class="nc">IntStream</span><span class="o">.</span><span class="na">range</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">elements</span><span class="o">.</span><span class="na">length</span><span class="o">)</span>
+             <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="n">i</span> <span class="o">%</span> <span class="n">nth</span> <span class="o">==</span> <span class="n">nth</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span>
+             <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="n">elements</span><span class="o">[</span><span class="n">i</span><span class="o">])</span>
+             <span class="o">.</span><span class="na">toArray</span><span class="o">();</span>
+ <span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="indexof">indexOf</h3>
+
+<p>查找数组中元素的索引，在不存在元素的情况下返回-1。</p>
+
+<p>使用 <code class="language-plaintext highlighter-rouge">IntStream.range().filter()</code> 查找数组中元素的索引。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">indexOf</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">elements</span><span class="o">,</span> <span class="kt">int</span> <span class="n">el</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nc">IntStream</span><span class="o">.</span><span class="na">range</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">elements</span><span class="o">.</span><span class="na">length</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">idx</span> <span class="o">-&gt;</span> <span class="n">elements</span><span class="o">[</span><span class="n">idx</span><span class="o">]</span> <span class="o">==</span> <span class="n">el</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">findFirst</span><span class="o">()</span>
+            <span class="o">.</span><span class="na">orElse</span><span class="o">(-</span><span class="mi">1</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="lastindexof">lastIndexOf</h3>
+
+<p>查找数组中元素的最后索引，在不存在元素的情况下返回-1。</p>
+
+<p>使用 <code class="language-plaintext highlighter-rouge">IntStream.iterate().limit().filter()</code> 查找数组中元素的索引。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">lastIndexOf</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">elements</span><span class="o">,</span> <span class="kt">int</span> <span class="n">el</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nc">IntStream</span><span class="o">.</span><span class="na">iterate</span><span class="o">(</span><span class="n">elements</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">,</span> <span class="n">i</span> <span class="o">-&gt;</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">limit</span><span class="o">(</span><span class="n">elements</span><span class="o">.</span><span class="na">length</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">idx</span> <span class="o">-&gt;</span> <span class="n">elements</span><span class="o">[</span><span class="n">idx</span><span class="o">]</span> <span class="o">==</span> <span class="n">el</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">findFirst</span><span class="o">()</span>
+            <span class="o">.</span><span class="na">orElse</span><span class="o">(-</span><span class="mi">1</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="filternonunique">filterNonUnique</h3>
+
+<p>筛选出数组中的非唯一值。</p>
+
+<p>对只包含唯一值的数组使用 <code class="language-plaintext highlighter-rouge">Arrays.stream().filter()</code>。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">filterNonUnique</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">elements</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">elements</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">el</span> <span class="o">-&gt;</span> <span class="n">indexOf</span><span class="o">(</span><span class="n">elements</span><span class="o">,</span> <span class="n">el</span><span class="o">)</span> <span class="o">==</span> <span class="n">lastIndexOf</span><span class="o">(</span><span class="n">elements</span><span class="o">,</span> <span class="n">el</span><span class="o">))</span>
+            <span class="o">.</span><span class="na">toArray</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="flatten">flatten</h3>
+
+<p>使数组扁平。</p>
+
+<p>使用 <code class="language-plaintext highlighter-rouge">Arrays.stream().flatMapToInt().toArray()</code> 创建一个新数组。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">flatten</span><span class="o">(</span><span class="nc">Object</span><span class="o">[]</span> <span class="n">elements</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">elements</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">flatMapToInt</span><span class="o">(</span><span class="n">el</span> <span class="o">-&gt;</span> <span class="n">el</span> <span class="k">instanceof</span> <span class="kt">int</span><span class="o">[]</span>
+                    <span class="o">?</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">((</span><span class="kt">int</span><span class="o">[])</span> <span class="n">el</span><span class="o">)</span>
+                    <span class="o">:</span> <span class="nc">IntStream</span><span class="o">.</span><span class="na">of</span><span class="o">((</span><span class="kt">int</span><span class="o">)</span> <span class="n">el</span><span class="o">)</span>
+            <span class="o">).</span><span class="na">toArray</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="flattendepth">flattenDepth</h3>
+
+<p>将数组压平到指定的深度。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="nc">Object</span><span class="o">[]</span> <span class="nf">flattenDepth</span><span class="o">(</span><span class="nc">Object</span><span class="o">[]</span> <span class="n">elements</span><span class="o">,</span> <span class="kt">int</span> <span class="n">depth</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">depth</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">elements</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">elements</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">flatMap</span><span class="o">(</span><span class="n">el</span> <span class="o">-&gt;</span> <span class="n">el</span> <span class="k">instanceof</span> <span class="nc">Object</span><span class="o">[]</span>
+                    <span class="o">?</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">flattenDepth</span><span class="o">((</span><span class="nc">Object</span><span class="o">[])</span> <span class="n">el</span><span class="o">,</span> <span class="n">depth</span> <span class="o">-</span> <span class="mi">1</span><span class="o">))</span>
+                    <span class="o">:</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="k">new</span> <span class="nc">Object</span><span class="o">[]{</span><span class="n">el</span><span class="o">})</span>
+            <span class="o">).</span><span class="na">toArray</span><span class="o">();</span>
+
+
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="groupby">groupBy</h3>
+
+<p>根据给定函数对数组元素进行分组。</p>
+
+<p>使用 <code class="language-plaintext highlighter-rouge">Arrays.stream().collect(Collectors.groupingBy())</code> 分组。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="no">T</span><span class="o">,</span> <span class="no">R</span><span class="o">&gt;</span> <span class="nc">Map</span><span class="o">&lt;</span><span class="no">R</span><span class="o">,</span> <span class="nc">List</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;&gt;</span> <span class="nf">groupBy</span><span class="o">(</span><span class="no">T</span><span class="o">[]</span> <span class="n">elements</span><span class="o">,</span> <span class="nc">Function</span><span class="o">&lt;</span><span class="no">T</span><span class="o">,</span> <span class="no">R</span><span class="o">&gt;</span> <span class="n">func</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">elements</span><span class="o">).</span><span class="na">collect</span><span class="o">(</span><span class="nc">Collectors</span><span class="o">.</span><span class="na">groupingBy</span><span class="o">(</span><span class="n">func</span><span class="o">));</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="initial">initial</h3>
+
+<p>返回数组中除去最后一个的所有元素。</p>
+
+<p>使用 <code class="language-plaintext highlighter-rouge">Arrays.copyOfRange()</code> 返回除最后一个之外的所有元素。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="no">T</span><span class="o">[]</span> <span class="nf">initial</span><span class="o">(</span><span class="no">T</span><span class="o">[]</span> <span class="n">elements</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">copyOfRange</span><span class="o">(</span><span class="n">elements</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">elements</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="initializearraywithrange">initializeArrayWithRange</h3>
+
+<p>初始化一个数组，该数组包含在指定范围内的数字，传入 <code class="language-plaintext highlighter-rouge">start</code> 和 <code class="language-plaintext highlighter-rouge">end</code>。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">initializeArrayWithRange</span><span class="o">(</span><span class="kt">int</span> <span class="n">end</span><span class="o">,</span> <span class="kt">int</span> <span class="n">start</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nc">IntStream</span><span class="o">.</span><span class="na">rangeClosed</span><span class="o">(</span><span class="n">start</span><span class="o">,</span> <span class="n">end</span><span class="o">).</span><span class="na">toArray</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="initializearraywithvalues">initializeArrayWithValues</h3>
+
+<p>使用指定的值初始化并填充数组。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">initializeArrayWithValues</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">,</span> <span class="kt">int</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nc">IntStream</span><span class="o">.</span><span class="na">generate</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="n">value</span><span class="o">).</span><span class="na">limit</span><span class="o">(</span><span class="n">n</span><span class="o">).</span><span class="na">toArray</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="intersection">intersection</h3>
+
+<p>返回两个数组中存在的元素列表。</p>
+
+<p>从第二步创建一个集合，然后在 a 上使用 <code class="language-plaintext highlighter-rouge">Arrays.stream().filter()</code> 来保存包含在 b 中的值。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">intersection</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">first</span><span class="o">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">second</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">Set</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">set</span> <span class="o">=</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">second</span><span class="o">).</span><span class="na">boxed</span><span class="o">().</span><span class="na">collect</span><span class="o">(</span><span class="nc">Collectors</span><span class="o">.</span><span class="na">toSet</span><span class="o">());</span>
+    <span class="k">return</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">first</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="nl">set:</span><span class="o">:</span><span class="n">contains</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">toArray</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="issorted">isSorted</h3>
+
+<p>如果数组按升序排序，则返回 <code class="language-plaintext highlighter-rouge">1</code>，如果数组按降序排序，返回 <code class="language-plaintext highlighter-rouge">-1</code>，如果没有排序，则返回 <code class="language-plaintext highlighter-rouge">0</code>。</p>
+
+<p>计算前两个元素的排序 <code class="language-plaintext highlighter-rouge">direction</code>。使用for循环对数组进行迭代，并对它们进行成对比较。如果 <code class="language-plaintext highlighter-rouge">direction</code> 发生变化，则返回 <code class="language-plaintext highlighter-rouge">0</code>，
+如果到达最后一个元素，则返回 <code class="language-plaintext highlighter-rouge">direction</code>。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="no">T</span> <span class="kd">extends</span> <span class="nc">Comparable</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="no">T</span><span class="o">&gt;&gt;</span> <span class="kt">int</span> <span class="nf">isSorted</span><span class="o">(</span><span class="no">T</span><span class="o">[]</span> <span class="n">arr</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">final</span> <span class="kt">int</span> <span class="n">direction</span> <span class="o">=</span> <span class="n">arr</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="na">compareTo</span><span class="o">(</span><span class="n">arr</span><span class="o">[</span><span class="mi">1</span><span class="o">])</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+        <span class="no">T</span> <span class="n">val</span> <span class="o">=</span> <span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span> <span class="k">return</span> <span class="n">direction</span><span class="o">;</span>
+        <span class="k">else</span> <span class="nf">if</span> <span class="o">((</span><span class="n">val</span><span class="o">.</span><span class="na">compareTo</span><span class="o">(</span><span class="n">arr</span><span class="o">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">])</span> <span class="o">*</span> <span class="n">direction</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">))</span> <span class="k">return</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">direction</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="join">join</h3>
+
+<p>将数组的所有元素连接到字符串中，并返回此字符串。</p>
+
+<p>使用 <code class="language-plaintext highlighter-rouge">IntStream.range</code> 创建一个指定索引的数组。然后，使用 <code class="language-plaintext highlighter-rouge">Stream.reduce</code> 将元素组合成字符串。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="nc">String</span> <span class="nf">join</span><span class="o">(</span><span class="no">T</span><span class="o">[]</span> <span class="n">arr</span><span class="o">,</span> <span class="nc">String</span> <span class="n">separator</span><span class="o">,</span> <span class="nc">String</span> <span class="n">end</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nc">IntStream</span><span class="o">.</span><span class="na">range</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">mapToObj</span><span class="o">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="nc">SimpleEntry</span><span class="o">&lt;&gt;(</span><span class="n">i</span><span class="o">,</span> <span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]))</span>
+            <span class="o">.</span><span class="na">reduce</span><span class="o">(</span><span class="s">""</span><span class="o">,</span> <span class="o">(</span><span class="n">acc</span><span class="o">,</span> <span class="n">val</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">val</span><span class="o">.</span><span class="na">getKey</span><span class="o">()</span> <span class="o">==</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">2</span>
+                    <span class="o">?</span> <span class="n">acc</span> <span class="o">+</span> <span class="n">val</span><span class="o">.</span><span class="na">getValue</span><span class="o">()</span> <span class="o">+</span> <span class="n">end</span>
+                    <span class="o">:</span> <span class="n">val</span><span class="o">.</span><span class="na">getKey</span><span class="o">()</span> <span class="o">==</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">?</span> <span class="n">acc</span> <span class="o">+</span> <span class="n">val</span><span class="o">.</span><span class="na">getValue</span><span class="o">()</span> <span class="o">:</span> <span class="n">acc</span> <span class="o">+</span> <span class="n">val</span><span class="o">.</span><span class="na">getValue</span><span class="o">()</span> <span class="o">+</span> <span class="n">separator</span><span class="o">,</span> <span class="o">(</span><span class="n">fst</span><span class="o">,</span> <span class="n">snd</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">fst</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="nthelement">nthElement</h3>
+
+<p>返回数组的第n个元素。</p>
+
+<p>Use <code class="language-plaintext highlighter-rouge">Arrays.copyOfRange()</code> 优先得到包含第n个元素的数组。</p>
+
+<pre><code class="language-Java">public static &lt;T&gt; T nthElement(T[] arr, int n) {
+    if (n &gt; 0) {
+        return Arrays.copyOfRange(arr, n, arr.length)[0];
+    }
+    return Arrays.copyOfRange(arr, arr.length + n, arr.length)[0];
+}
+</code></pre>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="pick">pick</h3>
+
+<p>从对象中选择与给定键对应的键值对。</p>
+
+<p>使用 <code class="language-plaintext highlighter-rouge">Arrays.stream</code> 过滤 <code class="language-plaintext highlighter-rouge">arr</code> 中存在的所有键。然后，使用 <code class="language-plaintext highlighter-rouge">Collectors.toMap</code> 将所有的key转换为Map。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="no">T</span><span class="o">,</span> <span class="no">R</span><span class="o">&gt;</span> <span class="nc">Map</span><span class="o">&lt;</span><span class="no">T</span><span class="o">,</span> <span class="no">R</span><span class="o">&gt;</span> <span class="nf">pick</span><span class="o">(</span><span class="nc">Map</span><span class="o">&lt;</span><span class="no">T</span><span class="o">,</span> <span class="no">R</span><span class="o">&gt;</span> <span class="n">obj</span><span class="o">,</span> <span class="no">T</span><span class="o">[]</span> <span class="n">arr</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">arr</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="nl">obj:</span><span class="o">:</span><span class="n">containsKey</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="nc">Collectors</span><span class="o">.</span><span class="na">toMap</span><span class="o">(</span><span class="n">k</span> <span class="o">-&gt;</span> <span class="n">k</span><span class="o">,</span> <span class="nl">obj:</span><span class="o">:</span><span class="n">get</span><span class="o">));</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="reducedfilter">reducedFilter</h3>
+
+<p>根据条件筛选对象数组，同时筛选出未指定的键。</p>
+
+<p>使用 <code class="language-plaintext highlighter-rouge">Arrays.stream().filter()</code> 根据谓词 <code class="language-plaintext highlighter-rouge">fn</code> 过滤数组，以便返回条件为真的对象。
+对于每个过滤的Map对象，创建一个新的Map，其中包含 <code class="language-plaintext highlighter-rouge">keys</code> 中的键。最后，将Map对象收集到一个数组中。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">Object</span><span class="o">&gt;[]</span> <span class="nf">reducedFilter</span><span class="o">(</span><span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">Object</span><span class="o">&gt;[]</span> <span class="n">data</span><span class="o">,</span> <span class="nc">String</span><span class="o">[]</span> <span class="n">keys</span><span class="o">,</span> <span class="nc">Predicate</span><span class="o">&lt;</span><span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">Object</span><span class="o">&gt;&gt;</span> <span class="n">fn</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">data</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">fn</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">el</span> <span class="o">-&gt;</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">keys</span><span class="o">).</span><span class="na">filter</span><span class="o">(</span><span class="nl">el:</span><span class="o">:</span><span class="n">containsKey</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="nc">Collectors</span><span class="o">.</span><span class="na">toMap</span><span class="o">(</span><span class="nc">Function</span><span class="o">.</span><span class="na">identity</span><span class="o">(),</span> <span class="nl">el:</span><span class="o">:</span><span class="n">get</span><span class="o">)))</span>
+            <span class="o">.</span><span class="na">toArray</span><span class="o">((</span><span class="nc">IntFunction</span><span class="o">&lt;</span><span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">Object</span><span class="o">&gt;[]&gt;)</span> <span class="nc">Map</span><span class="o">[]::</span><span class="k">new</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="sample">sample</h3>
+
+<p>从数组中返回一个随机元素。</p>
+
+<p>使用 <code class="language-plaintext highlighter-rouge">Math.Randoman()</code> 生成一个随机数，然后将它乘以数组的 <code class="language-plaintext highlighter-rouge">length</code>，然后使用 <code class="language-plaintext highlighter-rouge">Math.floor()</code> 获得一个最近的整数，该方法也适用于字符串。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="no">T</span> <span class="nf">sample</span><span class="o">(</span><span class="no">T</span><span class="o">[]</span> <span class="n">arr</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">arr</span><span class="o">[(</span><span class="kt">int</span><span class="o">)</span> <span class="nc">Math</span><span class="o">.</span><span class="na">floor</span><span class="o">(</span><span class="nc">Math</span><span class="o">.</span><span class="na">random</span><span class="o">()</span> <span class="o">*</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span><span class="o">)];</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="samplesize">sampleSize</h3>
+
+<p>从 <code class="language-plaintext highlighter-rouge">array</code> 到 <code class="language-plaintext highlighter-rouge">array</code> 大小的唯一键获取 <code class="language-plaintext highlighter-rouge">n</code> 个随机元素。</p>
+
+<p>根据<a href="https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle">Fisher-Yates算法</a>，使用 <code class="language-plaintext highlighter-rouge">Array.copyOfRange()</code> 获得优先的 <code class="language-plaintext highlighter-rouge">n</code> 个元素。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="no">T</span><span class="o">[]</span> <span class="nf">sampleSize</span><span class="o">(</span><span class="no">T</span><span class="o">[]</span> <span class="n">input</span><span class="o">,</span> <span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+    <span class="no">T</span><span class="o">[]</span> <span class="n">arr</span> <span class="o">=</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">copyOf</span><span class="o">(</span><span class="n">input</span><span class="o">,</span> <span class="n">input</span><span class="o">.</span><span class="na">length</span><span class="o">);</span>
+    <span class="kt">int</span> <span class="n">length</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="n">length</span><span class="o">;</span>
+    <span class="k">while</span> <span class="o">(</span><span class="n">m</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="nc">Math</span><span class="o">.</span><span class="na">floor</span><span class="o">(</span><span class="nc">Math</span><span class="o">.</span><span class="na">random</span><span class="o">()</span> <span class="o">*</span> <span class="n">m</span><span class="o">--);</span>
+        <span class="no">T</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+        <span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">arr</span><span class="o">[</span><span class="n">m</span><span class="o">];</span>
+        <span class="n">arr</span><span class="o">[</span><span class="n">m</span><span class="o">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">copyOfRange</span><span class="o">(</span><span class="n">arr</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="n">length</span> <span class="o">?</span> <span class="n">length</span> <span class="o">:</span> <span class="n">n</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="shuffle">shuffle</h3>
+
+<p>将数组值的顺序随机化，返回一个新数组。</p>
+
+<p>根据 <a href="https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle">Fisher-Yates 算法</a> 重新排序数组的元素。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="no">T</span><span class="o">[]</span> <span class="nf">shuffle</span><span class="o">(</span><span class="no">T</span><span class="o">[]</span> <span class="n">input</span><span class="o">)</span> <span class="o">{</span>
+    <span class="no">T</span><span class="o">[]</span> <span class="n">arr</span> <span class="o">=</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">copyOf</span><span class="o">(</span><span class="n">input</span><span class="o">,</span> <span class="n">input</span><span class="o">.</span><span class="na">length</span><span class="o">);</span>
+    <span class="kt">int</span> <span class="n">length</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="n">length</span><span class="o">;</span>
+    <span class="k">while</span> <span class="o">(</span><span class="n">m</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="nc">Math</span><span class="o">.</span><span class="na">floor</span><span class="o">(</span><span class="nc">Math</span><span class="o">.</span><span class="na">random</span><span class="o">()</span> <span class="o">*</span> <span class="n">m</span><span class="o">--);</span>
+        <span class="no">T</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+        <span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">arr</span><span class="o">[</span><span class="n">m</span><span class="o">];</span>
+        <span class="n">arr</span><span class="o">[</span><span class="n">m</span><span class="o">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">arr</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="similarity">similarity</h3>
+
+<p>返回出现在两个数组中的元素数组。</p>
+
+<p>使用 <code class="language-plaintext highlighter-rouge">Arrays.stream().filter()</code> 移除，然后使用 <code class="language-plaintext highlighter-rouge">Arrays.stream().anyMatch()</code> 匹配 <code class="language-plaintext highlighter-rouge">second</code> 部分的值。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="no">T</span><span class="o">[]</span> <span class="nf">similarity</span><span class="o">(</span><span class="no">T</span><span class="o">[]</span> <span class="n">first</span><span class="o">,</span> <span class="no">T</span><span class="o">[]</span> <span class="n">second</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">first</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">a</span> <span class="o">-&gt;</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">second</span><span class="o">).</span><span class="na">anyMatch</span><span class="o">(</span><span class="n">b</span> <span class="o">-&gt;</span> <span class="nc">Objects</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">)))</span>
+            <span class="c1">// Make a new array of first's runtime type, but empty content:</span>
+            <span class="o">.</span><span class="na">toArray</span><span class="o">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="no">T</span><span class="o">[])</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">copyOf</span><span class="o">(</span><span class="k">new</span> <span class="nc">Object</span><span class="o">[</span><span class="mi">0</span><span class="o">],</span> <span class="n">i</span><span class="o">,</span> <span class="n">first</span><span class="o">.</span><span class="na">getClass</span><span class="o">()));</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="sortedindex">sortedIndex</h3>
+
+<p>返回值应该插入到数组中的最低索引，以保持其排序顺序。</p>
+
+<p>检查数组是否按降序（松散地）排序。 使用 <code class="language-plaintext highlighter-rouge">IntStream.range().filter()</code> 来找到元素应该被插入的合适的索引。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="no">T</span> <span class="kd">extends</span> <span class="nc">Comparable</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="no">T</span><span class="o">&gt;&gt;</span> <span class="kt">int</span> <span class="nf">sortedIndex</span><span class="o">(</span><span class="no">T</span><span class="o">[]</span> <span class="n">arr</span><span class="o">,</span> <span class="no">T</span> <span class="n">el</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">boolean</span> <span class="n">isDescending</span> <span class="o">=</span> <span class="n">arr</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="na">compareTo</span><span class="o">(</span><span class="n">arr</span><span class="o">[</span><span class="n">arr</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">])</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="k">return</span> <span class="nc">IntStream</span><span class="o">.</span><span class="na">range</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="n">isDescending</span> <span class="o">?</span> <span class="n">el</span><span class="o">.</span><span class="na">compareTo</span><span class="o">(</span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">])</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">:</span> <span class="n">el</span><span class="o">.</span><span class="na">compareTo</span><span class="o">(</span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">])</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">findFirst</span><span class="o">()</span>
+            <span class="o">.</span><span class="na">orElse</span><span class="o">(</span><span class="n">arr</span><span class="o">.</span><span class="na">length</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="symmetricdifference">symmetricDifference</h3>
+
+<p>返回两个数组之间的对称差异。</p>
+
+<p>从每个数组中创建一个 <code class="language-plaintext highlighter-rouge">Set</code>，然后使用 <code class="language-plaintext highlighter-rouge">Arrays.stream().filter()</code> 来保持其他值不包含的值。最后，连接两个数组并创建一个新数组并返回。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="no">T</span><span class="o">[]</span> <span class="nf">symmetricDifference</span><span class="o">(</span><span class="no">T</span><span class="o">[]</span> <span class="n">first</span><span class="o">,</span> <span class="no">T</span><span class="o">[]</span> <span class="n">second</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">Set</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">sA</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashSet</span><span class="o">&lt;&gt;(</span><span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="n">first</span><span class="o">));</span>
+    <span class="nc">Set</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">sB</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashSet</span><span class="o">&lt;&gt;(</span><span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="n">second</span><span class="o">));</span>
+
+    <span class="k">return</span> <span class="nc">Stream</span><span class="o">.</span><span class="na">concat</span><span class="o">(</span>
+            <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">first</span><span class="o">).</span><span class="na">filter</span><span class="o">(</span><span class="n">a</span> <span class="o">-&gt;</span> <span class="o">!</span><span class="n">sB</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">a</span><span class="o">)),</span>
+            <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">second</span><span class="o">).</span><span class="na">filter</span><span class="o">(</span><span class="n">b</span> <span class="o">-&gt;</span> <span class="o">!</span><span class="n">sA</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">b</span><span class="o">))</span>
+    <span class="o">).</span><span class="na">toArray</span><span class="o">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="no">T</span><span class="o">[])</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">copyOf</span><span class="o">(</span><span class="k">new</span> <span class="nc">Object</span><span class="o">[</span><span class="mi">0</span><span class="o">],</span> <span class="n">i</span><span class="o">,</span> <span class="n">first</span><span class="o">.</span><span class="na">getClass</span><span class="o">()));</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="tail">tail</h3>
+
+<p>返回数组中除第一个元素外的所有元素。</p>
+
+<p>如果数组的长度大于1，则返回 <code class="language-plaintext highlighter-rouge">Arrays.copyOfRange(1)</code>，否则返回整个数组。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="no">T</span><span class="o">[]</span> <span class="nf">tail</span><span class="o">(</span><span class="no">T</span><span class="o">[]</span> <span class="n">arr</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span> <span class="o">&gt;</span> <span class="mi">1</span>
+            <span class="o">?</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">copyOfRange</span><span class="o">(</span><span class="n">arr</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span><span class="o">)</span>
+            <span class="o">:</span> <span class="n">arr</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="take">take</h3>
+
+<p>返回一个从开头删除n个元素的数组。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="no">T</span><span class="o">[]</span> <span class="nf">take</span><span class="o">(</span><span class="no">T</span><span class="o">[]</span> <span class="n">arr</span><span class="o">,</span> <span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">copyOfRange</span><span class="o">(</span><span class="n">arr</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">n</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="takeright">takeRight</h3>
+
+<p>返回从末尾移除n个元素的数组。</p>
+
+<p>使用 <code class="language-plaintext highlighter-rouge">Arrays.copyOfRange()</code> 用从末尾取来的 <code class="language-plaintext highlighter-rouge">N</code> 个元素来创建一个数组。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="no">T</span><span class="o">[]</span> <span class="nf">takeRight</span><span class="o">(</span><span class="no">T</span><span class="o">[]</span> <span class="n">arr</span><span class="o">,</span> <span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">copyOfRange</span><span class="o">(</span><span class="n">arr</span><span class="o">,</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="n">n</span><span class="o">,</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="union">union</h3>
+
+<p>返回两个数组中任何一个中存在的每个元素一次。</p>
+
+<p>使用 <code class="language-plaintext highlighter-rouge">a</code> 和 <code class="language-plaintext highlighter-rouge">b</code> 的所有值创建一个 <code class="language-plaintext highlighter-rouge">Set</code>，并将其转换为数组。</p>
+
+<pre><code class="language-Java">public static &lt;T&gt; T[] union(T[] first, T[] second) {
+    Set&lt;T&gt; set = new HashSet&lt;&gt;(Arrays.asList(first));
+    set.addAll(Arrays.asList(second));
+    return set.toArray((T[]) Arrays.copyOf(new Object[0], 0, first.getClass()));
+}
+</code></pre>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="without">without</h3>
+
+<p>筛选出具有指定值之一的数组的元素。</p>
+
+<p>使用 <code class="language-plaintext highlighter-rouge">Arrays.strean().filter()</code> 创建一个数组，排除(使用 <code class="language-plaintext highlighter-rouge">!Arrays.asList(elements).contains()</code>)所有命中的值。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="no">T</span><span class="o">[]</span> <span class="nf">without</span><span class="o">(</span><span class="no">T</span><span class="o">[]</span> <span class="n">arr</span><span class="o">,</span> <span class="no">T</span><span class="o">...</span> <span class="n">elements</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">List</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">excludeElements</span> <span class="o">=</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="n">elements</span><span class="o">);</span>
+    <span class="k">return</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">arr</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">el</span> <span class="o">-&gt;</span> <span class="o">!</span><span class="n">excludeElements</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">el</span><span class="o">))</span>
+            <span class="o">.</span><span class="na">toArray</span><span class="o">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="no">T</span><span class="o">[])</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">copyOf</span><span class="o">(</span><span class="k">new</span> <span class="nc">Object</span><span class="o">[</span><span class="mi">0</span><span class="o">],</span> <span class="n">i</span><span class="o">,</span> <span class="n">arr</span><span class="o">.</span><span class="na">getClass</span><span class="o">()));</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="zip">zip</h3>
+
+<p>根据原始数组中的位置创建元素数组。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Object</span><span class="o">[]&gt;</span> <span class="nf">zip</span><span class="o">(</span><span class="nc">Object</span><span class="o">[]...</span> <span class="n">arrays</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">OptionalInt</span> <span class="n">max</span> <span class="o">=</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">arrays</span><span class="o">).</span><span class="na">mapToInt</span><span class="o">(</span><span class="n">arr</span> <span class="o">-&gt;</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span><span class="o">).</span><span class="na">max</span><span class="o">();</span>
+    <span class="k">return</span> <span class="nc">IntStream</span><span class="o">.</span><span class="na">range</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">max</span><span class="o">.</span><span class="na">getAsInt</span><span class="o">())</span>
+            <span class="o">.</span><span class="na">mapToObj</span><span class="o">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">arrays</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">arr</span> <span class="o">-&gt;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span> <span class="o">?</span> <span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">:</span> <span class="kc">null</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">toArray</span><span class="o">())</span>
+            <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="nc">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="zipobject">zipObject</h3>
+
+<p>给定有效的属性标识符数组和值数组，返回将属性与值关联的对象。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">Object</span><span class="o">&gt;</span> <span class="nf">zipObject</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">props</span><span class="o">,</span> <span class="nc">Object</span><span class="o">[]</span> <span class="n">values</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nc">IntStream</span><span class="o">.</span><span class="na">range</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">props</span><span class="o">.</span><span class="na">length</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">mapToObj</span><span class="o">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="nc">SimpleEntry</span><span class="o">&lt;&gt;(</span><span class="n">props</span><span class="o">[</span><span class="n">i</span><span class="o">],</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">values</span><span class="o">.</span><span class="na">length</span> <span class="o">?</span> <span class="n">values</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">:</span> <span class="kc">null</span><span class="o">))</span>
+            <span class="o">.</span><span class="na">collect</span><span class="o">(</span>
+                    <span class="nl">HashMap:</span><span class="o">:</span><span class="k">new</span><span class="o">,</span> <span class="o">(</span><span class="n">m</span><span class="o">,</span> <span class="n">v</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">m</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">v</span><span class="o">.</span><span class="na">getKey</span><span class="o">(),</span> <span class="n">v</span><span class="o">.</span><span class="na">getValue</span><span class="o">()),</span> <span class="nl">HashMap:</span><span class="o">:</span><span class="n">putAll</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h2 id="maths">Maths</h2>
+
+<h3 id="average">average</h3>
+
+<p>返回两个或两个以上数字的平均值。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">double</span> <span class="nf">average</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nc">IntStream</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">arr</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">average</span><span class="o">()</span>
+            <span class="o">.</span><span class="na">orElseThrow</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="nc">IllegalArgumentException</span><span class="o">(</span><span class="s">"Array is empty"</span><span class="o">));</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="gcd">gcd</h3>
+
+<p>计算一系列数字的最大公约数(gcd)。</p>
+
+<p>使用 <code class="language-plaintext highlighter-rouge">Arrays.stream().reduce()</code> 和 GCD（使用递归公式）计算一组数字的最大公约数。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="nc">OptionalInt</span> <span class="nf">gcd</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">numbers</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">numbers</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">reduce</span><span class="o">((</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">gcd</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">));</span>
+<span class="o">}</span>
+
+<span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">gcd</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">a</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="nf">gcd</span><span class="o">(</span><span class="n">b</span><span class="o">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="lcm">lcm</h3>
+
+<p>计算数字数组的最低公共倍数(LCM)。</p>
+
+<p>使用 <code class="language-plaintext highlighter-rouge">Arrays.stream().reduce()</code> 和 LCM公式(使用递归)来计算数字数组的最低公共倍数。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="nc">OptionalInt</span> <span class="nf">lcm</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">numbers</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">IntBinaryOperator</span> <span class="n">lcm</span> <span class="o">=</span> <span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="o">)</span> <span class="o">/</span> <span class="n">gcd</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">);</span>
+    <span class="k">return</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">numbers</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">reduce</span><span class="o">((</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">lcm</span><span class="o">.</span><span class="na">applyAsInt</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">));</span>
+<span class="o">}</span>
+
+<span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">gcd</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">a</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="nf">gcd</span><span class="o">(</span><span class="n">b</span><span class="o">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="findnextpositivepoweroftwo">findNextPositivePowerOfTwo</h3>
+
+<p>查找大于或等于该值的下一个幂。</p>
+
+<p>该方法使用左移运算符将1与右侧的值位移。右侧使用 <code class="language-plaintext highlighter-rouge">Integer.numberOfLeadingZeros</code>方法。
+<code class="language-plaintext highlighter-rouge">001 &lt;&lt; 2</code> would be <code class="language-plaintext highlighter-rouge">100</code>. <code class="language-plaintext highlighter-rouge">100</code> in decimal is equal to <code class="language-plaintext highlighter-rouge">4</code>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Integer.numberOfLeadingZeros</code> 给出了数值前导零的数目。例如，调用 <code class="language-plaintext highlighter-rouge">Integer.numberOfLeadingZeros(3)</code> 将赋值为30。
+这是因为3在二进制中表示为 <code class="language-plaintext highlighter-rouge">11</code>。由于整数有32位，所以有30位有0位。左移运算符的右边变为 <code class="language-plaintext highlighter-rouge">32-30 = 2</code>。
+左移1，即 <code class="language-plaintext highlighter-rouge">001 &lt;&lt; 2</code> 将是 <code class="language-plaintext highlighter-rouge">100</code>，十进制中的 <code class="language-plaintext highlighter-rouge">100</code> 等于 <code class="language-plaintext highlighter-rouge">4</code>。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">findNextPositivePowerOfTwo</span><span class="o">(</span><span class="kt">int</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="o">(</span><span class="mi">32</span> <span class="o">-</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">numberOfLeadingZeros</span><span class="o">(</span><span class="n">value</span> <span class="o">-</span> <span class="mi">1</span><span class="o">));</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="iseven">isEven</h3>
+
+<p>检查数字是否是偶数。</p>
+
+<p>这个方法使用按位运算符，<code class="language-plaintext highlighter-rouge">0b1</code> 是1的二进制表示。
+因为Java 7可以通过用 <code class="language-plaintext highlighter-rouge">0b</code> 或 <code class="language-plaintext highlighter-rouge">0B</code> 作为前缀来编写二进制文字。
+数字为偶数时，<code class="language-plaintext highlighter-rouge">＆</code> 运算符将返回0。 例如，<code class="language-plaintext highlighter-rouge">IsEven(4)</code> 会导致 <code class="language-plaintext highlighter-rouge">100</code> <code class="language-plaintext highlighter-rouge">&amp;</code> <code class="language-plaintext highlighter-rouge">001</code>，<code class="language-plaintext highlighter-rouge">＆</code> 的结果将是 <code class="language-plaintext highlighter-rouge">000</code>。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isEven</span><span class="o">(</span><span class="kd">final</span> <span class="kt">int</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="o">(</span><span class="n">value</span> <span class="o">&amp;</span> <span class="mb">0b1</span><span class="o">)</span> <span class="o">==</span> <span class="mi">0</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="ispoweroftwo">isPowerOfTwo</h3>
+
+<p>检查一个值是2的正幂。</p>
+
+<p>为了理解它是如何工作的，让我们假设我们调用了 <code class="language-plaintext highlighter-rouge">IsPowerOfTwo(4)</code>。</p>
+
+<p>当值大于0时，将评估 <code class="language-plaintext highlighter-rouge">&amp;&amp;</code> 运算符的右侧。</p>
+
+<p><code class="language-plaintext highlighter-rouge">(~value + 1)</code> 的结果等于值本身，<code class="language-plaintext highlighter-rouge">~100 + 001</code> =&gt; <code class="language-plaintext highlighter-rouge">011 + 001</code> =&gt; <code class="language-plaintext highlighter-rouge">100</code>。</p>
+
+<p><code class="language-plaintext highlighter-rouge">(value &amp; value)</code> 的结果是value，<code class="language-plaintext highlighter-rouge">100</code> &amp; <code class="language-plaintext highlighter-rouge">100</code> =&gt; <code class="language-plaintext highlighter-rouge">100</code>.。</p>
+
+<p>当值等于值时，这将把值表达为真值。</p>
+
+<pre><code class="language-Java">public static boolean isPowerOfTwo(final int value) {
+    return value &gt; 0 &amp;&amp; ((value &amp; (~value + 1)) == value);
+}
+</code></pre>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="generaterandomint">generateRandomInt</h3>
+
+<p>生成一个介于 <code class="language-plaintext highlighter-rouge">Integer.MIN_VALUE</code> 和 <code class="language-plaintext highlighter-rouge">Integer.MAX_VALUE</code> 之间的随机数。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">generateRandomInt</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nc">ThreadLocalRandom</span><span class="o">.</span><span class="na">current</span><span class="o">().</span><span class="na">nextInt</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h2 id="string">String</h2>
+
+<h3 id="anagrams">anagrams</h3>
+
+<p>生成一个字符串的所有字符（包含重复）。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="nf">anagrams</span><span class="o">(</span><span class="nc">String</span> <span class="n">input</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">input</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">input</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">==</span> <span class="mi">2</span>
+                <span class="o">?</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="n">input</span><span class="o">,</span> <span class="n">input</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span> <span class="o">+</span> <span class="n">input</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">1</span><span class="o">))</span>
+                <span class="o">:</span> <span class="nc">Collections</span><span class="o">.</span><span class="na">singletonList</span><span class="o">(</span><span class="n">input</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="nc">IntStream</span><span class="o">.</span><span class="na">range</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">input</span><span class="o">.</span><span class="na">length</span><span class="o">())</span>
+            <span class="o">.</span><span class="na">mapToObj</span><span class="o">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="nc">SimpleEntry</span><span class="o">&lt;&gt;(</span><span class="n">i</span><span class="o">,</span> <span class="n">input</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="n">i</span><span class="o">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)))</span>
+            <span class="o">.</span><span class="na">flatMap</span><span class="o">(</span><span class="n">entry</span> <span class="o">-&gt;</span>
+                    <span class="n">anagrams</span><span class="o">(</span><span class="n">input</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">entry</span><span class="o">.</span><span class="na">getKey</span><span class="o">())</span> <span class="o">+</span> <span class="n">input</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="n">entry</span><span class="o">.</span><span class="na">getKey</span><span class="o">()</span> <span class="o">+</span> <span class="mi">1</span><span class="o">))</span>
+                            <span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+                            <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">s</span> <span class="o">-&gt;</span> <span class="n">entry</span><span class="o">.</span><span class="na">getValue</span><span class="o">()</span> <span class="o">+</span> <span class="n">s</span><span class="o">))</span>
+            <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="nc">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="bytesize">byteSize</h3>
+
+<p>以字节为单位返回字符串的长度。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">byteSize</span><span class="o">(</span><span class="nc">String</span> <span class="n">input</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">input</span><span class="o">.</span><span class="na">getBytes</span><span class="o">().</span><span class="na">length</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="capitalize">capitalize</h3>
+
+<p>将字符串首字母大写。</p>
+
+<pre><code class="language-Java">public static String capitalize(String input, boolean lowerRest) {
+    return input.substring(0, 1).toUpperCase() +
+            (lowerRest
+                    ? input.substring(1, input.length()).toLowerCase()
+                    : input.substring(1, input.length()));
+}
+</code></pre>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="capitalizeeveryword">capitalizeEveryWord</h3>
+
+<p>将字符串中每个单词的首字母大写。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">capitalizeEveryWord</span><span class="o">(</span><span class="kd">final</span> <span class="nc">String</span> <span class="n">input</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nc">Pattern</span><span class="o">.</span><span class="na">compile</span><span class="o">(</span><span class="s">"\\b(?=\\w)"</span><span class="o">).</span><span class="na">splitAsStream</span><span class="o">(</span><span class="n">input</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">w</span> <span class="o">-&gt;</span> <span class="n">capitalize</span><span class="o">(</span><span class="n">w</span><span class="o">,</span> <span class="kc">false</span><span class="o">))</span>
+            <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="nc">Collectors</span><span class="o">.</span><span class="na">joining</span><span class="o">());</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="countvowels">countVowels</h3>
+
+<p>在提供的字符串中返回元音的个数。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">countVowels</span><span class="o">(</span><span class="nc">String</span> <span class="n">input</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">input</span><span class="o">.</span><span class="na">replaceAll</span><span class="o">(</span><span class="s">"[^aeiouAEIOU]"</span><span class="o">,</span> <span class="s">""</span><span class="o">).</span><span class="na">length</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="escaperegexp">escapeRegExp</h3>
+
+<p>转义要在正则表达式中使用的字符串。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">escapeRegExp</span><span class="o">(</span><span class="nc">String</span> <span class="n">input</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nc">Pattern</span><span class="o">.</span><span class="na">quote</span><span class="o">(</span><span class="n">input</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="fromcamelcase">fromCamelCase</h3>
+
+<p>从驼峰式转换字符串。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">fromCamelCase</span><span class="o">(</span><span class="nc">String</span> <span class="n">input</span><span class="o">,</span> <span class="nc">String</span> <span class="n">separator</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">input</span>
+            <span class="o">.</span><span class="na">replaceAll</span><span class="o">(</span><span class="s">"([a-z\\d])([A-Z])"</span><span class="o">,</span> <span class="s">"$1"</span> <span class="o">+</span> <span class="n">separator</span> <span class="o">+</span> <span class="s">"$2"</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">toLowerCase</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="isabsoluteurl">isAbsoluteUrl</h3>
+
+<p>如果给定的字符串是绝对URL，则返回 <code class="language-plaintext highlighter-rouge">true</code>，否则返回 <code class="language-plaintext highlighter-rouge">false</code>。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isAbsoluteUrl</span><span class="o">(</span><span class="nc">String</span> <span class="n">url</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nc">Pattern</span><span class="o">.</span><span class="na">compile</span><span class="o">(</span><span class="s">"^[a-z][a-z0-9+.-]*:"</span><span class="o">).</span><span class="na">matcher</span><span class="o">(</span><span class="n">url</span><span class="o">).</span><span class="na">find</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="islowercase">isLowerCase</h3>
+
+<p>检查字符串是否为小写。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isLowerCase</span><span class="o">(</span><span class="nc">String</span> <span class="n">input</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nc">Objects</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">input</span><span class="o">,</span> <span class="n">input</span><span class="o">.</span><span class="na">toLowerCase</span><span class="o">());</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="isuppercase">isUpperCase</h3>
+
+<p>检查字符串是否为大写。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isUpperCase</span><span class="o">(</span><span class="nc">String</span> <span class="n">input</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nc">Objects</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">input</span><span class="o">,</span> <span class="n">input</span><span class="o">.</span><span class="na">toUpperCase</span><span class="o">());</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="ispalindrome">isPalindrome</h3>
+
+<p>判断一个字符串是否回文。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isPalindrome</span><span class="o">(</span><span class="nc">String</span> <span class="n">input</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">String</span> <span class="n">s</span> <span class="o">=</span> <span class="n">input</span><span class="o">.</span><span class="na">toLowerCase</span><span class="o">().</span><span class="na">replaceAll</span><span class="o">(</span><span class="s">"[\\W_]"</span><span class="o">,</span> <span class="s">""</span><span class="o">);</span>
+    <span class="k">return</span> <span class="nc">Objects</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span>
+            <span class="n">s</span><span class="o">,</span>
+            <span class="k">new</span> <span class="nf">StringBuilder</span><span class="o">(</span><span class="n">s</span><span class="o">).</span><span class="na">reverse</span><span class="o">().</span><span class="na">toString</span><span class="o">()</span>
+    <span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="isnumeric">isNumeric</h3>
+
+<p>检查字符串是否为数字。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isNumeric</span><span class="o">(</span><span class="kd">final</span> <span class="nc">String</span> <span class="n">input</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nc">IntStream</span><span class="o">.</span><span class="na">range</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">input</span><span class="o">.</span><span class="na">length</span><span class="o">())</span>
+            <span class="o">.</span><span class="na">allMatch</span><span class="o">(</span><span class="n">i</span> <span class="o">-&gt;</span> <span class="nc">Character</span><span class="o">.</span><span class="na">isDigit</span><span class="o">(</span><span class="n">input</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">)));</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="mask">mask</h3>
+
+<p>用指定的掩码字符替换除最后 <code class="language-plaintext highlighter-rouge">num</code> 个字符以外的所有字符。</p>
+
+<pre><code class="language-Java">public static String mask(String input, int num, String mask) {
+    int length = input.length();
+    return num &gt; 0
+            ?
+            input.substring(0, length - num).replaceAll(".", mask)
+                    + input.substring(length - num)
+            :
+            input.substring(0, Math.negateExact(num))
+                    + input.substring(Math.negateExact(num), length).replaceAll(".", mask);
+}
+</code></pre>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="reversestring">reverseString</h3>
+
+<p>反转字符串。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">reverseString</span><span class="o">(</span><span class="nc">String</span> <span class="n">input</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nf">StringBuilder</span><span class="o">(</span><span class="n">input</span><span class="o">).</span><span class="na">reverse</span><span class="o">().</span><span class="na">toString</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="sortcharactersinstring">sortCharactersInString</h3>
+
+<p>按字母顺序排列字符串中的字符。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">sortCharactersInString</span><span class="o">(</span><span class="nc">String</span> <span class="n">input</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">input</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">""</span><span class="o">)).</span><span class="na">sorted</span><span class="o">().</span><span class="na">collect</span><span class="o">(</span><span class="nc">Collectors</span><span class="o">.</span><span class="na">joining</span><span class="o">());</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="splitlines">splitLines</h3>
+
+<p>将多行字符串拆分为行数组。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span><span class="o">[]</span> <span class="nf">splitLines</span><span class="o">(</span><span class="nc">String</span> <span class="n">input</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">input</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">"\\r?\\n"</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="tocamelcase">toCamelCase</h3>
+
+<p>转换一个字符串为驼峰式。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">toCamelCase</span><span class="o">(</span><span class="nc">String</span> <span class="n">input</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">Matcher</span> <span class="n">matcher</span> <span class="o">=</span> <span class="nc">Pattern</span><span class="o">.</span><span class="na">compile</span><span class="o">(</span><span class="s">"[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+"</span><span class="o">).</span><span class="na">matcher</span><span class="o">(</span><span class="n">input</span><span class="o">);</span>
+    <span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">matchedParts</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+    <span class="k">while</span> <span class="o">(</span><span class="n">matcher</span><span class="o">.</span><span class="na">find</span><span class="o">())</span> <span class="o">{</span>
+        <span class="n">matchedParts</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">matcher</span><span class="o">.</span><span class="na">group</span><span class="o">(</span><span class="mi">0</span><span class="o">));</span>
+    <span class="o">}</span>
+    <span class="nc">String</span> <span class="n">s</span> <span class="o">=</span> <span class="n">matchedParts</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+            <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">x</span> <span class="o">-&gt;</span> <span class="n">x</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">1</span><span class="o">).</span><span class="na">toUpperCase</span><span class="o">()</span> <span class="o">+</span> <span class="n">x</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">1</span><span class="o">).</span><span class="na">toLowerCase</span><span class="o">())</span>
+            <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="nc">Collectors</span><span class="o">.</span><span class="na">joining</span><span class="o">());</span>
+    <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">1</span><span class="o">).</span><span class="na">toLowerCase</span><span class="o">()</span> <span class="o">+</span> <span class="n">s</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="tokebabcase">toKebabCase</h3>
+
+<p>将字符串转换为kebab大小写。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">toKebabCase</span><span class="o">(</span><span class="nc">String</span> <span class="n">input</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">Matcher</span> <span class="n">matcher</span> <span class="o">=</span> <span class="nc">Pattern</span><span class="o">.</span><span class="na">compile</span><span class="o">(</span><span class="s">"[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+"</span><span class="o">).</span><span class="na">matcher</span><span class="o">(</span><span class="n">input</span><span class="o">);</span>
+    <span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">matchedParts</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+    <span class="k">while</span> <span class="o">(</span><span class="n">matcher</span><span class="o">.</span><span class="na">find</span><span class="o">())</span> <span class="o">{</span>
+        <span class="n">matchedParts</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">matcher</span><span class="o">.</span><span class="na">group</span><span class="o">(</span><span class="mi">0</span><span class="o">));</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">matchedParts</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+            <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="nl">String:</span><span class="o">:</span><span class="n">toLowerCase</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="nc">Collectors</span><span class="o">.</span><span class="na">joining</span><span class="o">(</span><span class="s">"-"</span><span class="o">));</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="match">match</h3>
+
+<p>正则匹配。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="nf">match</span><span class="o">(</span><span class="nc">String</span> <span class="n">input</span><span class="o">,</span> <span class="nc">String</span> <span class="n">regex</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">Matcher</span> <span class="n">matcher</span> <span class="o">=</span> <span class="nc">Pattern</span><span class="o">.</span><span class="na">compile</span><span class="o">(</span><span class="n">regex</span><span class="o">).</span><span class="na">matcher</span><span class="o">(</span><span class="n">input</span><span class="o">);</span>
+    <span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">matchedParts</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+    <span class="k">while</span> <span class="o">(</span><span class="n">matcher</span><span class="o">.</span><span class="na">find</span><span class="o">())</span> <span class="o">{</span>
+        <span class="n">matchedParts</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">matcher</span><span class="o">.</span><span class="na">group</span><span class="o">(</span><span class="mi">0</span><span class="o">));</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">matchedParts</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="tosnakecase">toSnakeCase</h3>
+
+<p>将字符串转换为蛇形小写，如 <code class="language-plaintext highlighter-rouge">Im_Biezhi</code>。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">toSnakeCase</span><span class="o">(</span><span class="nc">String</span> <span class="n">input</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">Matcher</span> <span class="n">matcher</span> <span class="o">=</span> <span class="nc">Pattern</span><span class="o">.</span><span class="na">compile</span><span class="o">(</span><span class="s">"[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+"</span><span class="o">).</span><span class="na">matcher</span><span class="o">(</span><span class="n">input</span><span class="o">);</span>
+    <span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">matchedParts</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+    <span class="k">while</span> <span class="o">(</span><span class="n">matcher</span><span class="o">.</span><span class="na">find</span><span class="o">())</span> <span class="o">{</span>
+        <span class="n">matchedParts</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">matcher</span><span class="o">.</span><span class="na">group</span><span class="o">(</span><span class="mi">0</span><span class="o">));</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">matchedParts</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+            <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="nl">String:</span><span class="o">:</span><span class="n">toLowerCase</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="nc">Collectors</span><span class="o">.</span><span class="na">joining</span><span class="o">(</span><span class="s">"_"</span><span class="o">));</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="truncatestring">truncateString</h3>
+
+<p>将字符串截断到指定的长度。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">truncateString</span><span class="o">(</span><span class="nc">String</span> <span class="n">input</span><span class="o">,</span> <span class="kt">int</span> <span class="n">num</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">input</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">&gt;</span> <span class="n">num</span>
+            <span class="o">?</span> <span class="n">input</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">3</span> <span class="o">?</span> <span class="n">num</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">:</span> <span class="n">num</span><span class="o">)</span> <span class="o">+</span> <span class="s">"..."</span>
+            <span class="o">:</span> <span class="n">input</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="words">words</h3>
+
+<p>将给定的字符串转换为单词数组。</p>
+
+<pre><code class="language-Java">public static String[] words(String input) {
+    return Arrays.stream(input.split("[^a-zA-Z-]+"))
+            .filter(s -&gt; !s.isEmpty())
+            .toArray(String[]::new);
+}
+</code></pre>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="stringtointegers">stringToIntegers</h3>
+
+<p>将由空格分隔的数字字符串转换为 int 数组。</p>
+
+<pre><code class="language-Java">public static int[] stringToIntegers(String numbers) {
+        return Arrays.stream(numbers.split(" ")).mapToInt(Integer::parseInt).toArray();
+}
+</code></pre>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h2 id="io">IO</h2>
+
+<h3 id="convertinputstreamtostring">convertInputStreamToString</h3>
+
+<p>将InputStream转换为字符串。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">convertInputStreamToString</span><span class="o">(</span><span class="kd">final</span> <span class="nc">InputStream</span> <span class="n">in</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">IOException</span> <span class="o">{</span>
+    <span class="nc">ByteArrayOutputStream</span> <span class="n">result</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ByteArrayOutputStream</span><span class="o">();</span>
+    <span class="kt">byte</span><span class="o">[]</span> <span class="n">buffer</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="mi">1024</span><span class="o">];</span>
+    <span class="kt">int</span> <span class="n">length</span><span class="o">;</span>
+    <span class="k">while</span> <span class="o">((</span><span class="n">length</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">buffer</span><span class="o">))</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">result</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">buffer</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">length</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">result</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="nc">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">.</span><span class="na">name</span><span class="o">());</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="readfileasstring">readFileAsString</h3>
+
+<p>将文件内容读入字符串。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="nc">String</span> <span class="nf">readFileAsString</span><span class="o">(</span><span class="nc">Path</span> <span class="n">path</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">IOException</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nf">String</span><span class="o">(</span><span class="nc">Files</span><span class="o">.</span><span class="na">readAllBytes</span><span class="o">(</span><span class="n">path</span><span class="o">));</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="getcurrentworkingdirectorypath">getCurrentWorkingDirectoryPath</h3>
+
+<p>获取当前工作目录。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">getCurrentWorkingDirectoryPath</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nc">FileSystems</span><span class="o">.</span><span class="na">getDefault</span><span class="o">().</span><span class="na">getPath</span><span class="o">(</span><span class="s">""</span><span class="o">).</span><span class="na">toAbsolutePath</span><span class="o">().</span><span class="na">toString</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="tmpdirname">tmpDirName</h3>
+
+<p>返回 <code class="language-plaintext highlighter-rouge">java.io.tmpdir</code> 系统属性的值。如果末尾没有分隔符，则追加分隔符。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">tmpDirName</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nc">String</span> <span class="n">tmpDirName</span> <span class="o">=</span> <span class="nc">System</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">"java.io.tmpdir"</span><span class="o">);</span>
+    <span class="k">if</span> <span class="o">(!</span><span class="n">tmpDirName</span><span class="o">.</span><span class="na">endsWith</span><span class="o">(</span><span class="nc">File</span><span class="o">.</span><span class="na">separator</span><span class="o">))</span> <span class="o">{</span>
+        <span class="n">tmpDirName</span> <span class="o">+=</span> <span class="nc">File</span><span class="o">.</span><span class="na">separator</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="k">return</span> <span class="n">tmpDirName</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h2 id="exception">Exception</h2>
+
+<h3 id="stacktraceasstring">stackTraceAsString</h3>
+
+<p>将异常堆栈跟踪转换为字符串。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">stackTraceAsString</span><span class="o">(</span><span class="kd">final</span> <span class="nc">Throwable</span> <span class="n">throwable</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">final</span> <span class="nc">StringWriter</span> <span class="n">sw</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringWriter</span><span class="o">();</span>
+    <span class="n">throwable</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">(</span><span class="k">new</span> <span class="nc">PrintWriter</span><span class="o">(</span><span class="n">sw</span><span class="o">));</span>
+    <span class="k">return</span> <span class="n">sw</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h2 id="system">System</h2>
+
+<h3 id="osname">osName</h3>
+
+<p>以小写字符串的形式获取操作系统的名称。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">osName</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nc">System</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">"os.name"</span><span class="o">).</span><span class="na">toLowerCase</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="isdebuggerenabled">isDebuggerEnabled</h3>
+
+<p>检查JVM是否为debug模式。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isDebuggerAttached</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kd">final</span> <span class="nc">RuntimeMXBean</span> <span class="n">runtimeMXBean</span> <span class="o">=</span> <span class="nc">ManagementFactory</span><span class="o">.</span><span class="na">getRuntimeMXBean</span><span class="o">();</span>
+    <span class="k">return</span> <span class="n">runtimeMXBean</span><span class="o">.</span><span class="na">getInputArguments</span><span class="o">()</span>
+            <span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+            <span class="o">.</span><span class="na">anyMatch</span><span class="o">(</span><span class="n">arg</span> <span class="o">-&gt;</span> <span class="n">arg</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="s">"-agentlib:jdwp"</span><span class="o">));</span>
+
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h2 id="class">Class</h2>
+
+<h3 id="getallinterfaces">getAllInterfaces</h3>
+
+<p>此方法返回由给定类及其超类实现的所有接口。</p>
+
+<p>该方法通过连接两个Stream来工作。第一个Stream是通过创建带有接口的流和接口实现的所有接口来递归构建的。
+第二个Stream对超类也是如此。其结果是删除重复项后将两个Stream连接起来。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Class</span><span class="o">&lt;?&gt;&gt;</span> <span class="n">getAllInterfaces</span><span class="o">(</span><span class="nc">Class</span><span class="o">&lt;?&gt;</span> <span class="n">cls</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nc">Stream</span><span class="o">.</span><span class="na">concat</span><span class="o">(</span>
+            <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">cls</span><span class="o">.</span><span class="na">getInterfaces</span><span class="o">()).</span><span class="na">flatMap</span><span class="o">(</span><span class="n">intf</span> <span class="o">-&gt;</span>
+                    <span class="nc">Stream</span><span class="o">.</span><span class="na">concat</span><span class="o">(</span><span class="nc">Stream</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">intf</span><span class="o">),</span> <span class="n">getAllInterfaces</span><span class="o">(</span><span class="n">intf</span><span class="o">).</span><span class="na">stream</span><span class="o">())),</span>
+            <span class="n">cls</span><span class="o">.</span><span class="na">getSuperclass</span><span class="o">()</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">?</span> <span class="nc">Stream</span><span class="o">.</span><span class="na">empty</span><span class="o">()</span> <span class="o">:</span> <span class="n">getAllInterfaces</span><span class="o">(</span><span class="n">cls</span><span class="o">.</span><span class="na">getSuperclass</span><span class="o">()).</span><span class="na">stream</span><span class="o">()</span>
+    <span class="o">).</span><span class="na">distinct</span><span class="o">().</span><span class="na">collect</span><span class="o">(</span><span class="nc">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h3 id="isinnerclass">isInnerClass</h3>
+
+<p>此方法检查指定的类是内部类还是静态嵌套类。</p>
+
+<pre><code class="language-Java">public static boolean isInnerClass(final Class&lt;?&gt; cls) {
+    return cls != null &amp;&amp; cls.getEnclosingClass() != null;
+}
+</code></pre>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+
+<h2 id="enum">Enum</h2>
+
+<h3 id="getenummap">getEnumMap</h3>
+
+<p>将枚举转换为 Map，其中 key 是枚举名，value 是枚举本身。</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="o">&lt;</span><span class="no">E</span> <span class="kd">extends</span> <span class="nc">Enum</span><span class="o">&lt;</span><span class="no">E</span><span class="o">&gt;&gt;</span> <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="no">E</span><span class="o">&gt;</span> <span class="nf">getEnumMap</span><span class="o">(</span><span class="kd">final</span> <span class="nc">Class</span><span class="o">&lt;</span><span class="no">E</span><span class="o">&gt;</span> <span class="n">enumClass</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">enumClass</span><span class="o">.</span><span class="na">getEnumConstants</span><span class="o">())</span>
+            <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="nc">Collectors</span><span class="o">.</span><span class="na">toMap</span><span class="o">(</span><span class="nl">Enum:</span><span class="o">:</span><span class="n">name</span><span class="o">,</span> <span class="nc">Function</span><span class="o">.</span><span class="na">identity</span><span class="o">()));</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><br /><a href="#目录"> 回到顶部</a></p>
+:ET

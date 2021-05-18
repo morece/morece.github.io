@@ -1,0 +1,198 @@
+I"� <h1 id="docker-常用命令">Docker 常用命令</h1>
+
+<blockquote>
+  <p>自己整理的一些Docker常用的命令集，后续会逐步更新~</p>
+</blockquote>
+
+<h3 id="基本">基本</h3>
+
+<ul>
+  <li>
+    <p><strong>查：</strong>查看 Docker 版本</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker version
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>查：</strong>查看Docker配置信息</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker info
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>改：</strong>配置Docker镜像加速器</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 切换到Docker配置目录</span>
+<span class="nb">cd</span> /etc/docker
+  
+<span class="c"># 配置守护线程</span>
+vim daemon.json
+  
+<span class="c"># 示例（阿里云镜像加速器地址：容器镜像服务 --&gt; 镜像中心 --&gt; 镜像加速器）</span>
+<span class="o">{</span>
+  <span class="s2">"registry-mirrors"</span>: <span class="o">[</span><span class="s2">"https://pw4fs4ui.mirror.aliyuncs.com"</span><span class="o">]</span>
+<span class="o">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="镜像images">镜像（Images）</h3>
+
+<ul>
+  <li>
+    <p><strong>增：</strong>从 Dockerfile文件构建 Docker镜像</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker build <span class="nt">-t</span> image-name docker-file-location
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>用：</strong>运行 Docker 镜像</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-d</span> image-name
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>查：</strong>查看可用的 Docker 映像</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker images
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>查：</strong>查看所有镜像ID</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker images <span class="nt">-q</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>删：</strong>删除一个镜像</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker rmi image-name
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>删：</strong>强制删除一个镜像</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker rmi <span class="nt">-f</span> image-name
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>删：</strong>删除所有镜像</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker rmi <span class="si">$(</span>docker images <span class="nt">-q</span><span class="si">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>删：</strong>强制删除所有镜像</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker rmi <span class="nt">-f</span> <span class="si">$(</span>docker images <span class="nt">-q</span><span class="si">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>删：</strong>删除所有虚悬镜像</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker rmi <span class="si">$(</span>docker images <span class="nt">-q</span> <span class="nt">-f</span> <span class="nv">dangling</span><span class="o">=</span><span class="nb">true</span><span class="si">)</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="容器ps">容器（ps）</h3>
+
+<ul>
+  <li>
+    <p><strong>查：</strong>查看所有正在运行的容器</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker ps
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>查：</strong>查看所有容器</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker ps <span class="nt">-a</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>查：</strong>查看最近运行的容器</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker ps <span class="nt">-l</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>查：</strong>查看所有容器ID</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker ps <span class="nt">-q</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>停：</strong>停止运行容器</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker stop container_id
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>删：</strong>删除一个容器</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker <span class="nb">rm </span>container_id
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>删：</strong>强制删除一个容器</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker <span class="nb">rm</span> <span class="nt">-f</span> container_id
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>删：</strong>删除所有容器</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker <span class="nb">rm</span> <span class="si">$(</span>docker ps <span class="nt">-q</span><span class="si">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>删：</strong>强制删除所有容器</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker <span class="nb">rm</span> <span class="nt">-f</span> <span class="si">$(</span>docker ps <span class="nt">-q</span><span class="si">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>入：</strong>进入 Docker 容器</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker <span class="nb">exec</span> <span class="nt">-it</span> container-id /bin/bash
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>文件：</strong>主机 复制文件到 容器</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker <span class="nb">cp </span>host_path containerID:container_path
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>文件：</strong>容器 复制文件到 主机</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker <span class="nb">cp </span>containerID:container_path host_path
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="数据卷volume">数据卷（volume）</h3>
+
+<ul>
+  <li>
+    <p><strong>查：</strong>查看所有数据卷</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker volume <span class="nb">ls</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>删：</strong>删除指定数据卷</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker volume <span class="nb">rm</span> <span class="o">[</span>volume_name]
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>删：</strong>删除所有未关联的数据卷</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker volume <span class="nb">rm</span> <span class="si">$(</span>docker volume <span class="nb">ls</span> <span class="nt">-qf</span> <span class="nv">dangling</span><span class="o">=</span><span class="nb">true</span><span class="si">)</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+:ET

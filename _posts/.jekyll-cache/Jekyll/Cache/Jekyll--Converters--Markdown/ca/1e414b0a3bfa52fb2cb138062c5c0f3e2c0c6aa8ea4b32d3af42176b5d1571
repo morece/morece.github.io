@@ -1,0 +1,666 @@
+I"3�<h2 id="dubbo构建示例">Dubbo构建示例</h2>
+
+<h3 id="一说明">一、说明</h3>
+
+<ul>
+  <li>基于<a href="https://github.com/alibaba/spring-cloud-alibaba/tree/master/spring-cloud-alibaba-examples/spring-cloud-alibaba-dubbo-examples">alibaba-dubbo</a>最新支持版本示例
+    <ul>
+      <li><a href="https://github.com/alibaba/spring-cloud-alibaba/blob/master/pom.xml">spring-cloud-alibaba-dependencies</a> <code class="language-plaintext highlighter-rouge">2.2.0</code></li>
+      <li>同上spring boot 版本<code class="language-plaintext highlighter-rouge">2.2.0</code></li>
+      <li>同上dubbo版本 <code class="language-plaintext highlighter-rouge">2.7.4.1</code></li>
+    </ul>
+  </li>
+  <li>
+    <p>启动<a href="https://github.com/alibaba/nacos/releases">Nacos</a><code class="language-plaintext highlighter-rouge">1.2.0</code></p>
+
+    <ul>
+      <li>192.168.31.219:8848</li>
+    </ul>
+  </li>
+  <li>
+    <p>实现服务消费方hello-apache-dubbo-consumer的外部化配置文件</p>
+  </li>
+  <li>
+    <p>实现服务提供方/消费方通信告诉序列化（Kryo）</p>
+
+    <ul>
+      <li>
+        <p>dubbo-serialization-kryo 版本使用apache 而非 alibaba版本</p>
+      </li>
+      <li>
+        <p>Kryo同步版本<code class="language-plaintext highlighter-rouge">2.7.4.1</code></p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="二创建项目工程">二、创建项目工程</h3>
+
+<p><strong>创建hello-apache-dubbo项目POM工程</strong></p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">"http://maven.apache.org/POM/4.0.0"</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+         <span class="na">xsi:schemaLocation=</span><span class="s">"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+    <span class="nt">&lt;parent&gt;</span>
+        <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+        <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-parent<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;version&gt;</span>2.2.0.RELEASE<span class="nt">&lt;/version&gt;</span>
+        <span class="nt">&lt;relativePath/&gt;</span>
+    <span class="nt">&lt;/parent&gt;</span>
+
+    <span class="nt">&lt;groupId&gt;</span>com.my<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>hello-apache-dubbo<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>0.0.1-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;name&gt;</span>hello-apache-dubbo<span class="nt">&lt;/name&gt;</span>
+    <span class="nt">&lt;packaging&gt;</span>pom<span class="nt">&lt;/packaging&gt;</span>
+
+    <span class="nt">&lt;modules&gt;</span>
+        <span class="nt">&lt;module&gt;</span>hello-apache-dubbo-dependencies<span class="nt">&lt;/module&gt;</span>
+        <span class="nt">&lt;module&gt;</span>hello-apache-dubbo-api<span class="nt">&lt;/module&gt;</span>
+        <span class="nt">&lt;module&gt;</span>hello-apache-dubbo-provider<span class="nt">&lt;/module&gt;</span>
+        <span class="nt">&lt;module&gt;</span>hello-apache-dubbo-consumer<span class="nt">&lt;/module&gt;</span>
+    <span class="nt">&lt;/modules&gt;</span>
+
+    <span class="nt">&lt;licenses&gt;</span>
+        <span class="nt">&lt;license&gt;</span>
+            <span class="nt">&lt;name&gt;</span>Apache 2.0<span class="nt">&lt;/name&gt;</span>
+            <span class="nt">&lt;url&gt;</span>https://www.apache.org/licenses/LICENSE-2.0.txt<span class="nt">&lt;/url&gt;</span>
+        <span class="nt">&lt;/license&gt;</span>
+    <span class="nt">&lt;/licenses&gt;</span>
+
+    <span class="nt">&lt;properties&gt;</span>
+        <span class="nt">&lt;java.version&gt;</span>1.8<span class="nt">&lt;/java.version&gt;</span>
+        <span class="nt">&lt;maven.compiler.source&gt;</span>${java.version}<span class="nt">&lt;/maven.compiler.source&gt;</span>
+        <span class="nt">&lt;maven.compiler.target&gt;</span>${java.version}<span class="nt">&lt;/maven.compiler.target&gt;</span>
+        <span class="nt">&lt;project.build.sourceEncoding&gt;</span>UTF-8<span class="nt">&lt;/project.build.sourceEncoding&gt;</span>
+    <span class="nt">&lt;/properties&gt;</span>
+
+    <span class="nt">&lt;developers&gt;</span>
+        <span class="nt">&lt;developer&gt;</span>
+            <span class="nt">&lt;id&gt;</span>zhanghaitao<span class="nt">&lt;/id&gt;</span>
+            <span class="nt">&lt;name&gt;</span>Haitao Zhang<span class="nt">&lt;/name&gt;</span>
+            <span class="nt">&lt;email&gt;</span>2636461000@qq.com<span class="nt">&lt;/email&gt;</span>
+        <span class="nt">&lt;/developer&gt;</span>
+    <span class="nt">&lt;/developers&gt;</span>
+
+    <span class="nt">&lt;dependencyManagement&gt;</span>
+        <span class="nt">&lt;dependencies&gt;</span>
+            <span class="nt">&lt;dependency&gt;</span>
+                <span class="nt">&lt;groupId&gt;</span>com.my<span class="nt">&lt;/groupId&gt;</span>
+                <span class="nt">&lt;artifactId&gt;</span>hello-apache-dubbo-dependencies<span class="nt">&lt;/artifactId&gt;</span>
+                <span class="nt">&lt;version&gt;</span>${project.version}<span class="nt">&lt;/version&gt;</span>
+                <span class="nt">&lt;type&gt;</span>pom<span class="nt">&lt;/type&gt;</span>
+               <span class="nt">&lt;scope&gt;</span>import<span class="nt">&lt;/scope&gt;</span>
+           <span class="nt">&lt;/dependency&gt;</span>
+        <span class="nt">&lt;/dependencies&gt;</span>
+    <span class="nt">&lt;/dependencyManagement&gt;</span>
+
+    <span class="nt">&lt;profiles&gt;</span>
+        <span class="nt">&lt;profile&gt;</span>
+            <span class="nt">&lt;id&gt;</span>default<span class="nt">&lt;/id&gt;</span>
+            <span class="nt">&lt;activation&gt;</span>
+                <span class="nt">&lt;activeByDefault&gt;</span>true<span class="nt">&lt;/activeByDefault&gt;</span>
+            <span class="nt">&lt;/activation&gt;</span>
+            <span class="nt">&lt;properties&gt;</span>
+                <span class="nt">&lt;spring-javaformat.version&gt;</span>0.0.12<span class="nt">&lt;/spring-javaformat.version&gt;</span>
+            <span class="nt">&lt;/properties&gt;</span>
+            <span class="nt">&lt;build&gt;</span>
+                <span class="nt">&lt;plugins&gt;</span>
+                    <span class="nt">&lt;plugin&gt;</span>
+                        <span class="nt">&lt;groupId&gt;</span>io.spring.javaformat<span class="nt">&lt;/groupId&gt;</span>
+                        <span class="nt">&lt;artifactId&gt;</span>spring-javaformat-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+                        <span class="nt">&lt;version&gt;</span>${spring-javaformat.version}<span class="nt">&lt;/version&gt;</span>
+                    <span class="nt">&lt;/plugin&gt;</span>
+                    <span class="nt">&lt;plugin&gt;</span>
+                        <span class="nt">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
+                        <span class="nt">&lt;artifactId&gt;</span>maven-surefire-plugin<span class="nt">&lt;/artifactId&gt;</span>
+                        <span class="nt">&lt;configuration&gt;</span>
+                            <span class="nt">&lt;includes&gt;</span>
+                                <span class="nt">&lt;include&gt;</span>**/*Tests.java<span class="nt">&lt;/include&gt;</span>
+                            <span class="nt">&lt;/includes&gt;</span>
+                            <span class="nt">&lt;excludes&gt;</span>
+                                <span class="nt">&lt;exclude&gt;</span>**/Abstract*.java<span class="nt">&lt;/exclude&gt;</span>
+                            <span class="nt">&lt;/excludes&gt;</span>
+                            <span class="nt">&lt;systemPropertyVariables&gt;</span>
+                                <span class="nt">&lt;java.security.egd&gt;</span>file:/dev/./urandom<span class="nt">&lt;/java.security.egd&gt;</span>
+                                <span class="nt">&lt;java.awt.headless&gt;</span>true<span class="nt">&lt;/java.awt.headless&gt;</span>
+                            <span class="nt">&lt;/systemPropertyVariables&gt;</span>
+                        <span class="nt">&lt;/configuration&gt;</span>
+                    <span class="nt">&lt;/plugin&gt;</span>
+                    <span class="nt">&lt;plugin&gt;</span>
+                        <span class="nt">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
+                        <span class="nt">&lt;artifactId&gt;</span>maven-enforcer-plugin<span class="nt">&lt;/artifactId&gt;</span>
+                        <span class="nt">&lt;executions&gt;</span>
+                            <span class="nt">&lt;execution&gt;</span>
+                                <span class="nt">&lt;id&gt;</span>enforce-rules<span class="nt">&lt;/id&gt;</span>
+                                <span class="nt">&lt;goals&gt;</span>
+                                    <span class="nt">&lt;goal&gt;</span>enforce<span class="nt">&lt;/goal&gt;</span>
+                                <span class="nt">&lt;/goals&gt;</span>
+                                <span class="nt">&lt;configuration&gt;</span>
+                                    <span class="nt">&lt;rules&gt;</span>
+                                        <span class="nt">&lt;bannedDependencies&gt;</span>
+                                            <span class="nt">&lt;excludes&gt;</span>
+                                                <span class="nt">&lt;exclude&gt;</span>commons-logging:*:*<span class="nt">&lt;/exclude&gt;</span>
+                                            <span class="nt">&lt;/excludes&gt;</span>
+                                            <span class="nt">&lt;searchTransitive&gt;</span>true<span class="nt">&lt;/searchTransitive&gt;</span>
+                                        <span class="nt">&lt;/bannedDependencies&gt;</span>
+                                    <span class="nt">&lt;/rules&gt;</span>
+                                    <span class="nt">&lt;fail&gt;</span>true<span class="nt">&lt;/fail&gt;</span>
+                                <span class="nt">&lt;/configuration&gt;</span>
+                            <span class="nt">&lt;/execution&gt;</span>
+                        <span class="nt">&lt;/executions&gt;</span>
+                    <span class="nt">&lt;/plugin&gt;</span>
+                    <span class="nt">&lt;plugin&gt;</span>
+                        <span class="nt">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
+                        <span class="nt">&lt;artifactId&gt;</span>maven-install-plugin<span class="nt">&lt;/artifactId&gt;</span>
+                        <span class="nt">&lt;configuration&gt;</span>
+                            <span class="nt">&lt;skip&gt;</span>true<span class="nt">&lt;/skip&gt;</span>
+                        <span class="nt">&lt;/configuration&gt;</span>
+                    <span class="nt">&lt;/plugin&gt;</span>
+                    <span class="nt">&lt;plugin&gt;</span>
+                        <span class="nt">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
+                        <span class="nt">&lt;artifactId&gt;</span>maven-javadoc-plugin<span class="nt">&lt;/artifactId&gt;</span>
+                        <span class="nt">&lt;configuration&gt;</span>
+                            <span class="nt">&lt;skip&gt;</span>true<span class="nt">&lt;/skip&gt;</span>
+                        <span class="nt">&lt;/configuration&gt;</span>
+                        <span class="nt">&lt;inherited&gt;</span>true<span class="nt">&lt;/inherited&gt;</span>
+                    <span class="nt">&lt;/plugin&gt;</span>
+                <span class="nt">&lt;/plugins&gt;</span>
+            <span class="nt">&lt;/build&gt;</span>
+        <span class="nt">&lt;/profile&gt;</span>
+    <span class="nt">&lt;/profiles&gt;</span>
+    <span class="nt">&lt;pluginRepositories&gt;</span>
+        <span class="nt">&lt;pluginRepository&gt;</span>
+            <span class="nt">&lt;id&gt;</span>spring-milestone<span class="nt">&lt;/id&gt;</span>
+            <span class="nt">&lt;name&gt;</span>Spring Milestone<span class="nt">&lt;/name&gt;</span>
+            <span class="nt">&lt;url&gt;</span>https://repo.spring.io/milestone<span class="nt">&lt;/url&gt;</span>
+            <span class="nt">&lt;snapshots&gt;</span>
+                <span class="nt">&lt;enabled&gt;</span>false<span class="nt">&lt;/enabled&gt;</span>
+            <span class="nt">&lt;/snapshots&gt;</span>
+        <span class="nt">&lt;/pluginRepository&gt;</span>
+        <span class="nt">&lt;pluginRepository&gt;</span>
+            <span class="nt">&lt;id&gt;</span>spring-snapshot<span class="nt">&lt;/id&gt;</span>
+            <span class="nt">&lt;name&gt;</span>Spring Snapshot<span class="nt">&lt;/name&gt;</span>
+            <span class="nt">&lt;url&gt;</span>https://repo.spring.io/snapshot<span class="nt">&lt;/url&gt;</span>
+            <span class="nt">&lt;snapshots&gt;</span>
+                <span class="nt">&lt;enabled&gt;</span>true<span class="nt">&lt;/enabled&gt;</span>
+            <span class="nt">&lt;/snapshots&gt;</span>
+        <span class="nt">&lt;/pluginRepository&gt;</span>
+    <span class="nt">&lt;/pluginRepositories&gt;</span>
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></div></div>
+
+<h3 id="三创建共用依赖">三、创建共用依赖</h3>
+
+<p><strong>创建hello-apache-dubbo-dependencies共用依赖POM工程</strong></p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">"http://maven.apache.org/POM/4.0.0"</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+         <span class="na">xsi:schemaLocation=</span><span class="s">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+
+    <span class="nt">&lt;parent&gt;</span>
+        <span class="nt">&lt;groupId&gt;</span>com.my<span class="nt">&lt;/groupId&gt;</span>
+        <span class="nt">&lt;artifactId&gt;</span>hello-apache-dubbo<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;version&gt;</span>0.0.1-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;/parent&gt;</span>
+
+    <span class="nt">&lt;artifactId&gt;</span>hello-apache-dubbo-dependencies<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>0.0.1-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;packaging&gt;</span>pom<span class="nt">&lt;/packaging&gt;</span>
+
+    <span class="nt">&lt;licenses&gt;</span>
+        <span class="nt">&lt;license&gt;</span>
+            <span class="nt">&lt;name&gt;</span>Apache 2.0<span class="nt">&lt;/name&gt;</span>
+            <span class="nt">&lt;url&gt;</span>https://www.apache.org/licenses/LICENSE-2.0.txt<span class="nt">&lt;/url&gt;</span>
+        <span class="nt">&lt;/license&gt;</span>
+    <span class="nt">&lt;/licenses&gt;</span>
+    <span class="nt">&lt;developers&gt;</span>
+        <span class="nt">&lt;developer&gt;</span>
+            <span class="nt">&lt;id&gt;</span>zhanghaitao<span class="nt">&lt;/id&gt;</span>
+            <span class="nt">&lt;name&gt;</span>Haitao Zhang<span class="nt">&lt;/name&gt;</span>
+            <span class="nt">&lt;email&gt;</span>2636461000@qq.com<span class="nt">&lt;/email&gt;</span>
+        <span class="nt">&lt;/developer&gt;</span>
+    <span class="nt">&lt;/developers&gt;</span>
+
+    <span class="nt">&lt;properties&gt;</span>
+        <span class="nt">&lt;alibaba-spring-cloud.version&gt;</span>2.2.0.RELEASE<span class="nt">&lt;/alibaba-spring-cloud.version&gt;</span>
+      	<span class="nt">&lt;dubbo-kryo.version&gt;</span>2.7.4.1<span class="nt">&lt;/dubbo-kryo.version&gt;</span>
+    <span class="nt">&lt;/properties&gt;</span>
+
+    <span class="nt">&lt;dependencyManagement&gt;</span>
+        <span class="nt">&lt;dependencies&gt;</span>
+            <span class="nt">&lt;dependency&gt;</span>
+                <span class="nt">&lt;groupId&gt;</span>com.alibaba.cloud<span class="nt">&lt;/groupId&gt;</span>
+                <span class="nt">&lt;artifactId&gt;</span>spring-cloud-alibaba-dependencies<span class="nt">&lt;/artifactId&gt;</span>
+                <span class="nt">&lt;version&gt;</span>${alibaba-spring-cloud.version}<span class="nt">&lt;/version&gt;</span>
+                <span class="nt">&lt;type&gt;</span>pom<span class="nt">&lt;/type&gt;</span>
+                <span class="nt">&lt;scope&gt;</span>import<span class="nt">&lt;/scope&gt;</span>
+            <span class="nt">&lt;/dependency&gt;</span>
+            <span class="nt">&lt;dependency&gt;</span>
+                <span class="nt">&lt;groupId&gt;</span>org.apache.dubbo<span class="nt">&lt;/groupId&gt;</span>
+                <span class="nt">&lt;artifactId&gt;</span>dubbo-serialization-kryo<span class="nt">&lt;/artifactId&gt;</span>
+                <span class="nt">&lt;version&gt;</span>${dubbo-kryo.version}<span class="nt">&lt;/version&gt;</span>
+            <span class="nt">&lt;/dependency&gt;</span>
+        <span class="nt">&lt;/dependencies&gt;</span>
+    <span class="nt">&lt;/dependencyManagement&gt;</span>
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></div></div>
+
+<h3 id="四定义dubbo服务接口">四、定义Dubbo服务接口</h3>
+
+<p><strong>1、创建hello-apache-dubbo-api服务JAR接口</strong></p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">"http://maven.apache.org/POM/4.0.0"</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+         <span class="na">xsi:schemaLocation=</span><span class="s">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+
+    <span class="nt">&lt;parent&gt;</span>
+        <span class="nt">&lt;groupId&gt;</span>com.my<span class="nt">&lt;/groupId&gt;</span>
+        <span class="nt">&lt;artifactId&gt;</span>hello-apache-dubbo<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;version&gt;</span>0.0.1-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;/parent&gt;</span>
+
+    <span class="nt">&lt;artifactId&gt;</span>hello-apache-dubbo-api<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>0.0.1-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;packaging&gt;</span>jar<span class="nt">&lt;/packaging&gt;</span>
+
+    <span class="nt">&lt;licenses&gt;</span>
+        <span class="nt">&lt;license&gt;</span>
+            <span class="nt">&lt;name&gt;</span>Apache 2.0<span class="nt">&lt;/name&gt;</span>
+            <span class="nt">&lt;url&gt;</span>https://www.apache.org/licenses/LICENSE-2.0.txt<span class="nt">&lt;/url&gt;</span>
+        <span class="nt">&lt;/license&gt;</span>
+    <span class="nt">&lt;/licenses&gt;</span>
+    <span class="nt">&lt;developers&gt;</span>
+        <span class="nt">&lt;developer&gt;</span>
+            <span class="nt">&lt;id&gt;</span>zhanghaitao<span class="nt">&lt;/id&gt;</span>
+            <span class="nt">&lt;name&gt;</span>Haitao Zhang<span class="nt">&lt;/name&gt;</span>
+            <span class="nt">&lt;email&gt;</span>2636461000@qq.com<span class="nt">&lt;/email&gt;</span>
+        <span class="nt">&lt;/developer&gt;</span>
+    <span class="nt">&lt;/developers&gt;</span>
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></div></div>
+
+<p><strong>2、创建服务共用接口EchoService</strong></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">com.my.apache.dubbo.api</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">EchoService</span> <span class="o">{</span>
+    <span class="nc">String</span> <span class="nf">echo</span><span class="o">(</span><span class="nc">String</span> <span class="n">string</span><span class="o">);</span>
+<span class="o">}</span>
+
+</code></pre></div></div>
+
+<h3 id="五实现dubbo服务提供方">五、实现Dubbo服务提供方</h3>
+
+<p><strong>1、创建hello-apache-dubbo-provider服务提供方JAR工程</strong></p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">"http://maven.apache.org/POM/4.0.0"</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+         <span class="na">xsi:schemaLocation=</span><span class="s">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+
+    <span class="nt">&lt;parent&gt;</span>
+        <span class="nt">&lt;groupId&gt;</span>com.my<span class="nt">&lt;/groupId&gt;</span>
+        <span class="nt">&lt;artifactId&gt;</span>hello-apache-dubbo<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;version&gt;</span>0.0.1-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+        <span class="nt">&lt;relativePath&gt;</span>../pom.xml<span class="nt">&lt;/relativePath&gt;</span>
+    <span class="nt">&lt;/parent&gt;</span>
+
+    <span class="nt">&lt;artifactId&gt;</span>hello-apache-dubbo-provider<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;packaging&gt;</span>jar<span class="nt">&lt;/packaging&gt;</span>
+
+    <span class="nt">&lt;licenses&gt;</span>
+        <span class="nt">&lt;license&gt;</span>
+            <span class="nt">&lt;name&gt;</span>Apache 2.0<span class="nt">&lt;/name&gt;</span>
+            <span class="nt">&lt;url&gt;</span>https://www.apache.org/licenses/LICENSE-2.0.txt<span class="nt">&lt;/url&gt;</span>
+        <span class="nt">&lt;/license&gt;</span>
+    <span class="nt">&lt;/licenses&gt;</span>
+    <span class="nt">&lt;developers&gt;</span>
+        <span class="nt">&lt;developer&gt;</span>
+            <span class="nt">&lt;id&gt;</span>zhanghaitao<span class="nt">&lt;/id&gt;</span>
+            <span class="nt">&lt;name&gt;</span>Haitao Zhang<span class="nt">&lt;/name&gt;</span>
+            <span class="nt">&lt;email&gt;</span>2636461000@qq.com<span class="nt">&lt;/email&gt;</span>
+        <span class="nt">&lt;/developer&gt;</span>
+    <span class="nt">&lt;/developers&gt;</span>
+
+    <span class="nt">&lt;dependencies&gt;</span>
+        <span class="nt">&lt;dependency&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>com.my<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>hello-apache-dubbo-api<span class="nt">&lt;/artifactId&gt;</span>
+            <span class="nt">&lt;version&gt;</span>${project.version}<span class="nt">&lt;/version&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
+
+        <span class="c">&lt;!-- Spring Boot dependencies --&gt;</span>
+        <span class="nt">&lt;dependency&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>spring-boot-actuator<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
+
+        <span class="c">&lt;!-- Dubbo Spring Cloud Starter --&gt;</span>
+        <span class="nt">&lt;dependency&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>com.alibaba.cloud<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>spring-cloud-starter-dubbo<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
+
+        <span class="c">&lt;!-- Spring Cloud Nacos Service Discovery --&gt;</span>
+        <span class="nt">&lt;dependency&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>com.alibaba.cloud<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>spring-cloud-alibaba-nacos-discovery<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
+
+        <span class="c">&lt;!-- kryo 高速序列化 --&gt;</span>
+        <span class="nt">&lt;dependency&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>org.apache.dubbo<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>dubbo-serialization-kryo<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
+    <span class="nt">&lt;/dependencies&gt;</span>
+
+    <span class="nt">&lt;build&gt;</span>
+        <span class="nt">&lt;plugins&gt;</span>
+            <span class="nt">&lt;plugin&gt;</span>
+                <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+                <span class="nt">&lt;artifactId&gt;</span>spring-boot-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+                <span class="nt">&lt;configuration&gt;</span>
+                    <span class="nt">&lt;mainClass&gt;</span>com.my.apache.dubbo.provider.ProviderApplication<span class="nt">&lt;/mainClass&gt;</span>
+                <span class="nt">&lt;/configuration&gt;</span>
+            <span class="nt">&lt;/plugin&gt;</span>
+        <span class="nt">&lt;/plugins&gt;</span>
+    <span class="nt">&lt;/build&gt;</span>
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></div></div>
+
+<p><strong>2、创建服务入口ProviderApplication</strong></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">com.my.apache.dubbo.provider</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.springframework.boot.SpringApplication</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.boot.autoconfigure.SpringBootApplication</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.cloud.client.discovery.EnableDiscoveryClient</span><span class="o">;</span>
+
+<span class="nd">@SpringBootApplication</span>
+<span class="nd">@EnableDiscoveryClient</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ProviderApplication</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">SpringApplication</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="nc">DubboProviderApplication</span><span class="o">.</span><span class="na">class</span><span class="o">,</span><span class="n">args</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><strong>3、创建服务提供方实现EchoServiceImpl</strong></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">com.my.apache.dubbo.provider.service</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.my.apache.dubbo.api.EchoService</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.dubbo.config.annotation.Service</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Value</span><span class="o">;</span>
+
+<span class="nd">@Service</span><span class="o">(</span><span class="n">version</span> <span class="o">=</span> <span class="s">"1.0.0"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">EchoServiceImpl</span> <span class="kd">implements</span> <span class="nc">EchoService</span> <span class="o">{</span>
+
+    <span class="nd">@Value</span><span class="o">(</span><span class="s">"${dubbo.protocol.port}"</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">port</span><span class="o">;</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">echo</span><span class="o">(</span><span class="nc">String</span> <span class="n">string</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"zht :"</span> <span class="o">+</span> <span class="n">port</span> <span class="o">+</span> <span class="s">" : "</span> <span class="o">+</span> <span class="n">string</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+</code></pre></div></div>
+
+<p><strong>4、创建配置文件bootstrap.yaml</strong></p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dubbo</span><span class="pi">:</span>
+  <span class="c1"># 修改dubbo的负载均衡策略为轮询</span>
+  <span class="na">provider</span><span class="pi">:</span>
+    <span class="na">loadbalance</span><span class="pi">:</span> <span class="s">roundrobin</span>
+  <span class="na">scan</span><span class="pi">:</span>
+    <span class="na">base-packages</span><span class="pi">:</span> <span class="s">com.my.apache.dubbo.provider.service</span>
+  <span class="na">protocol</span><span class="pi">:</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s">dubbo</span>
+    <span class="na">port</span><span class="pi">:</span> <span class="s">-1</span>
+    <span class="na">serialization</span><span class="pi">:</span> <span class="s">kryo</span>
+  <span class="na">registry</span><span class="pi">:</span>
+    <span class="na">address</span><span class="pi">:</span> <span class="s">spring-cloud://localhost</span>
+
+<span class="na">spring</span><span class="pi">:</span>
+  <span class="na">application</span><span class="pi">:</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s">dubbo-provider</span>
+  <span class="na">main</span><span class="pi">:</span>
+    <span class="na">allow-bean-definition-overriding</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">cloud</span><span class="pi">:</span>
+    <span class="na">nacos</span><span class="pi">:</span>
+      <span class="na">discovery</span><span class="pi">:</span>
+        <span class="na">server-addr</span><span class="pi">:</span> <span class="s">192.168.31.219:8848</span>
+</code></pre></div></div>
+
+<h3 id="六实现dubbo服务消费方">六、实现Dubbo服务消费方</h3>
+
+<p><strong>1、创建hello-apache-dubbo-consumer服务消费方工程</strong></p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">"http://maven.apache.org/POM/4.0.0"</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+         <span class="na">xsi:schemaLocation=</span><span class="s">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+
+    <span class="nt">&lt;parent&gt;</span>
+        <span class="nt">&lt;groupId&gt;</span>com.my<span class="nt">&lt;/groupId&gt;</span>
+        <span class="nt">&lt;artifactId&gt;</span>hello-apache-dubbo<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;version&gt;</span>0.0.1-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+        <span class="nt">&lt;relativePath&gt;</span>../pom.xml<span class="nt">&lt;/relativePath&gt;</span>
+    <span class="nt">&lt;/parent&gt;</span>
+
+    <span class="nt">&lt;artifactId&gt;</span>hello-apache-dubbo-consumer<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;packaging&gt;</span>jar<span class="nt">&lt;/packaging&gt;</span>
+
+    <span class="nt">&lt;licenses&gt;</span>
+        <span class="nt">&lt;license&gt;</span>
+            <span class="nt">&lt;name&gt;</span>Apache 2.0<span class="nt">&lt;/name&gt;</span>
+            <span class="nt">&lt;url&gt;</span>https://www.apache.org/licenses/LICENSE-2.0.txt<span class="nt">&lt;/url&gt;</span>
+        <span class="nt">&lt;/license&gt;</span>
+    <span class="nt">&lt;/licenses&gt;</span>
+    <span class="nt">&lt;developers&gt;</span>
+        <span class="nt">&lt;developer&gt;</span>
+            <span class="nt">&lt;id&gt;</span>zhanghaitao<span class="nt">&lt;/id&gt;</span>
+            <span class="nt">&lt;name&gt;</span>Haitao Zhang<span class="nt">&lt;/name&gt;</span>
+            <span class="nt">&lt;email&gt;</span>2636461000@qq.com<span class="nt">&lt;/email&gt;</span>
+        <span class="nt">&lt;/developer&gt;</span>
+    <span class="nt">&lt;/developers&gt;</span>
+
+    <span class="nt">&lt;dependencies&gt;</span>
+        <span class="nt">&lt;dependency&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>com.my<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>hello-apache-dubbo-api<span class="nt">&lt;/artifactId&gt;</span>
+            <span class="nt">&lt;version&gt;</span>${project.version}<span class="nt">&lt;/version&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
+
+        <span class="c">&lt;!-- Spring Boot dependencies --&gt;</span>
+        <span class="nt">&lt;dependency&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-web<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
+        <span class="nt">&lt;dependency&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>spring-boot-actuator<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
+
+        <span class="c">&lt;!-- Dubbo Spring Cloud Starter --&gt;</span>
+        <span class="nt">&lt;dependency&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>com.alibaba.cloud<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>spring-cloud-starter-dubbo<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
+
+        <span class="c">&lt;!-- Spring Cloud Nacos Service Discovery --&gt;</span>
+        <span class="nt">&lt;dependency&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>com.alibaba.cloud<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>spring-cloud-alibaba-nacos-discovery<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
+        <span class="nt">&lt;dependency&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>com.alibaba.cloud<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>spring-cloud-alibaba-nacos-config<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
+
+        <span class="c">&lt;!-- kryo 高速序列化 --&gt;</span>
+        <span class="nt">&lt;dependency&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>org.apache.dubbo<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>dubbo-serialization-kryo<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
+    <span class="nt">&lt;/dependencies&gt;</span>
+    <span class="nt">&lt;build&gt;</span>
+        <span class="nt">&lt;plugins&gt;</span>
+            <span class="nt">&lt;plugin&gt;</span>
+                <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+                <span class="nt">&lt;artifactId&gt;</span>spring-boot-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+                <span class="nt">&lt;configuration&gt;</span>
+                    <span class="nt">&lt;mainClass&gt;</span>com.my.apache.dubbo.consumer.ConsumerApplication<span class="nt">&lt;/mainClass&gt;</span>
+                <span class="nt">&lt;/configuration&gt;</span>
+            <span class="nt">&lt;/plugin&gt;</span>
+        <span class="nt">&lt;/plugins&gt;</span>
+    <span class="nt">&lt;/build&gt;</span>
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></div></div>
+
+<p><strong>2、创建服务入口ConsumerApplication</strong></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">com.my.apache.dubbo.consumer</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.springframework.boot.SpringApplication</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.boot.autoconfigure.SpringBootApplication</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.cloud.client.discovery.EnableDiscoveryClient</span><span class="o">;</span>
+
+<span class="nd">@SpringBootApplication</span>
+<span class="nd">@EnableDiscoveryClient</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ConsumerApplication</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">SpringApplication</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="nc">ConsumerApplication</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">args</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><strong>3、创建服务消费实现EchoController</strong></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">com.my.apache.dubbo.consumer.controller</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.my.apache.dubbo.provider.api.EchoService</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.dubbo.config.annotation.Reference</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Value</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.cloud.context.config.annotation.RefreshScope</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.GetMapping</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.PathVariable</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.RestController</span><span class="o">;</span>
+
+<span class="nd">@RefreshScope</span>
+<span class="nd">@RestController</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">EchoController</span> <span class="o">{</span>
+
+    <span class="nd">@Reference</span><span class="o">(</span><span class="n">version</span> <span class="o">=</span> <span class="s">"1.0.0"</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">EchoService</span> <span class="n">echoService</span><span class="o">;</span>
+ 		<span class="nd">@Value</span><span class="o">(</span><span class="s">"${user.name}"</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">username</span><span class="o">;</span>
+
+    <span class="nd">@GetMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">"/echo/{string}"</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">echo</span><span class="o">(</span><span class="nd">@PathVariable</span> <span class="nc">String</span> <span class="n">string</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">echoService</span><span class="o">.</span><span class="na">echo</span><span class="o">(</span><span class="n">string</span><span class="o">)</span> <span class="o">+</span> <span class="s">" --  "</span> <span class="o">+</span> <span class="n">username</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><strong>4、创建Nacos外置配置文件bootstrap.properties</strong></p>
+
+<div class="language-properties highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="py">spring.application.name</span><span class="p">=</span><span class="s">dubbo-consumer-config</span>
+<span class="py">spring.cloud.nacos.server-addr</span><span class="p">=</span><span class="s">192.168.31.219:8848</span>
+<span class="py">spring.cloud.nacos.config.file-extension</span><span class="p">=</span><span class="s">yaml</span>
+</code></pre></div></div>
+
+<p><strong>5、Nacos创建配置文件dubbo-consumer-config.yaml</strong></p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">spring</span><span class="pi">:</span>
+  <span class="c1"># Spring 应用名称，用于 Spring Cloud 服务注册和发现</span>
+  <span class="c1"># 该值在 Dubbo Spring Cloud 加持下被视作 dubbo.application.name</span>
+  <span class="c1"># 无需再显示地配置 dubbo.application.name</span>
+  <span class="na">application</span><span class="pi">:</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s">dubbo-consumer</span>
+  <span class="c1"># Spring Boot 2.1 需要设定  </span>
+  <span class="na">main</span><span class="pi">:</span>
+    <span class="na">allow-bean-definition-overriding</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="c1"># Nacos注册中心配置  </span>
+  <span class="na">cloud</span><span class="pi">:</span>
+    <span class="na">nacos</span><span class="pi">:</span>
+      <span class="na">discovery</span><span class="pi">:</span>
+        <span class="na">server-addr</span><span class="pi">:</span> <span class="s">192.168.31.219:8848</span>
+<span class="na">dubbo</span><span class="pi">:</span>
+  <span class="c1"># 指定 Dubbo 服务实现类的扫描基准包</span>
+  <span class="na">scan</span><span class="pi">:</span>
+    <span class="na">base-packages</span><span class="pi">:</span> <span class="s">com.my.apache.dubbo.consumer.controller</span>
+  <span class="c1"># Dubbo 服务暴露的协议配置，其中子属性 name 为协议名称，port 为协议端口（ -1 表示自增端口，从 20880 开始）</span>
+  <span class="na">protocol</span><span class="pi">:</span>
+    <span class="na">name</span><span class="pi">:</span> <span class="s">dubbo</span>
+    <span class="na">port</span><span class="pi">:</span> <span class="s">-1</span>
+    <span class="c1"># 使用kryo高速序列化</span>
+    <span class="na">serialization</span><span class="pi">:</span> <span class="s">kryo</span>
+  <span class="c1"># 挂载到 当前配置的Spring Cloud注册中心    </span>
+  <span class="na">registry</span><span class="pi">:</span>
+    <span class="na">address</span><span class="pi">:</span> <span class="s">spring-cloud://localhost</span>
+  <span class="c1"># 订阅服务提供方的应用名称的列表，若需订阅多应用，使用 "," 分割。 不推荐使用默认值为 "*"，它将订阅所有应用。</span>
+  <span class="na">cloud</span><span class="pi">:</span>
+    <span class="na">subscribed-services</span><span class="pi">:</span> <span class="s">dubbo-provider</span>
+    
+<span class="na">server</span><span class="pi">:</span>
+  <span class="na">port</span><span class="pi">:</span> <span class="m">9090</span>
+  
+<span class="na">endpoints</span><span class="pi">:</span>
+  <span class="na">dubbo</span><span class="pi">:</span>
+    <span class="na">enabled</span><span class="pi">:</span> <span class="no">true</span>
+<span class="na">management</span><span class="pi">:</span>
+  <span class="na">health</span><span class="pi">:</span>
+    <span class="na">dubbo</span><span class="pi">:</span>
+      <span class="na">status</span><span class="pi">:</span>
+        <span class="na">defaults</span><span class="pi">:</span> <span class="s">memory</span>
+        <span class="na">extras</span><span class="pi">:</span> <span class="s">threadpool</span>
+  <span class="na">endpoints</span><span class="pi">:</span>
+    <span class="na">web</span><span class="pi">:</span>
+      <span class="na">exposure</span><span class="pi">:</span>
+        <span class="na">include</span><span class="pi">:</span> <span class="s2">"</span><span class="s">*"</span>
+        
+<span class="na">user</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s1">'</span><span class="s">测试动态配置变动'</span>        
+</code></pre></div></div>
+
+<h3 id="七dubbo服务提供方负载均衡">七、Dubbo服务提供方负载均衡</h3>
+
+<h4 id="配置负载均衡">配置负载均衡</h4>
+
+<ul>
+  <li>修改 <code class="language-plaintext highlighter-rouge">dubbo-provider</code> 项目的负载均衡策略，默认的负载均衡策略是 <strong>随机</strong>，我们修改为 <strong>轮循</strong>，可配置的值分别是：<code class="language-plaintext highlighter-rouge">random（随机）</code>，<code class="language-plaintext highlighter-rouge">roundrobin（轮询）</code>，<code class="language-plaintext highlighter-rouge">leastactive（最少活跃数）</code>，<code class="language-plaintext highlighter-rouge">consistenthash（一致性Hash）</code></li>
+</ul>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dubbo</span><span class="pi">:</span>
+  <span class="na">provider</span><span class="pi">:</span>
+    <span class="na">loadbalance</span><span class="pi">:</span> <span class="s">roundrobin</span>
+</code></pre></div></div>
+
+<ul>
+  <li>修改 <code class="language-plaintext highlighter-rouge">dubbo-provider</code> 的协议端口为 20880 和 20881，并启动多个实例，IDEA 中依次点击 <strong>Run</strong> -&gt; <strong>Edit Configurations</strong> 并勾选 <strong>Allow parallel run</strong> 以允许 IDEA 多实例运行项目</li>
+</ul>
+
+<p><img src="http://www.qfdmy.com/wp-content/uploads/2019/08/9b0a0ba30182ae3.png" alt="img" /></p>
+
+<ul>
+  <li>Nacos Server 控制台可以看到 <code class="language-plaintext highlighter-rouge">dubbo-provider</code> 有 2 个实例</li>
+</ul>
+
+<p><img src="http://www.qfdmy.com/wp-content/uploads/2019/08/6b78be78da8dc0a.png" alt="img" /></p>
+
+<h3 id="八dubbo服务消费方外部化配置文件">八、Dubbo服务消费方外部化配置文件</h3>
+
+<p>略~</p>
+
+<blockquote>
+  <p>参考: <a href="http://www.qfdmy.com">千峰达摩院</a></p>
+</blockquote>
+:ET

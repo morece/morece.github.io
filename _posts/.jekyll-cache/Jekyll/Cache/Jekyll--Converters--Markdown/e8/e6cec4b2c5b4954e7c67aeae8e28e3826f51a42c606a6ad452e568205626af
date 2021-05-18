@@ -1,0 +1,82 @@
+I"k<h2 id="dubbo负载均衡">Dubbo负载均衡</h2>
+
+<blockquote>
+  <p>Nacos 负载均衡策略 默认采用 <code class="language-plaintext highlighter-rouge">RoundRobin LoadBalance</code> 轮询</p>
+
+  <p>Dubbo 负载均衡策略 默认采用<code class="language-plaintext highlighter-rouge"> Random LoadBalance</code> 随机</p>
+</blockquote>
+
+<h3 id="一负载均衡策略分类">一、负载均衡策略分类</h3>
+
+<h4 id="1随机">1、随机</h4>
+
+<p><strong>Random LoadBalance：</strong> 按权重设置随机概率，在一个截面上碰撞的概率高，但调用量越大分布越均匀，而且按概率使用权重后也比较均匀，有利于动态调整提供者权重。</p>
+
+<h4 id="2轮循">2、轮循</h4>
+
+<p><strong>RoundRobin LoadBalance：</strong> 按公约后的权重设置轮询比率，存在慢的提供者累积请求的问题，比如：第二台机器很慢，但没挂，当请求调到第二台时就卡在那，久而久之，所有请求都卡在调到第二台上。</p>
+
+<h4 id="3最少活跃调用数">3、最少活跃调用数</h4>
+
+<p><strong>LeastActive LoadBalance：</strong> 相同活跃数的随机，活跃数指调用前后计数差，使慢的提供者收到更少请求，因为越慢的提供者的调用前后计数差会越大。</p>
+
+<h4 id="4一致性-hash">4、一致性 Hash</h4>
+
+<p><strong>ConsistentHash LoadBalance：</strong> 相同参数的请求总是发到同一提供者。当某一台提供者挂时，原本发往该提供者的请求，基于虚拟节点，平摊到其它提供者，不会引起剧烈变动。</p>
+
+<p>算法参见：<a href="http://www.qfdmy.com/wp-content/themes/quanbaike/go.php?url=aHR0cDovL2VuLndpa2lwZWRpYS5vcmcvd2lraS9Db25zaXN0ZW50X2hhc2hpbmc=">http://en.wikipedia.org/wiki/Consistent_hashing</a> ，缺省只对第一个参数 Hash，如果要修改，请配置 <code class="language-plaintext highlighter-rouge">，缺省用 160 份虚拟节点，如果要修改，请配置</code></p>
+
+<h3 id="二配置dubbo的负载均衡策略">二、配置Dubbo的负载均衡策略</h3>
+
+<ul>
+  <li>修改 <code class="language-plaintext highlighter-rouge">dubbo-provider</code> 项目的负载均衡策略，默认的负载均衡策略是 <strong>随机</strong>，我们修改为 <strong>轮循</strong>，可配置的值分别是：<code class="language-plaintext highlighter-rouge">random</code>，<code class="language-plaintext highlighter-rouge">roundrobin</code>，<code class="language-plaintext highlighter-rouge">leastactive</code>，<code class="language-plaintext highlighter-rouge">consistenthash</code></li>
+</ul>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dubbo</span><span class="pi">:</span>
+  <span class="na">provider</span><span class="pi">:</span>
+    <span class="na">loadbalance</span><span class="pi">:</span> <span class="s">roundrobin</span>
+</code></pre></div></div>
+
+<ul>
+  <li>修改 <code class="language-plaintext highlighter-rouge">dubbo-provider</code> 的协议端口为 20880 和 20881，并启动多个实例，IDEA 中依次点击 <strong>Run</strong> -&gt; <strong>Edit Configurations</strong> 并勾选 <strong>Allow parallel run</strong> 以允许 IDEA 多实例运行项目</li>
+</ul>
+
+<p><img src="http://www.qfdmy.com/wp-content/uploads/2019/08/9b0a0ba30182ae3.png" alt="img" /></p>
+
+<ul>
+  <li>Nacos Server 控制台可以看到 <code class="language-plaintext highlighter-rouge">dubbo-provider</code> 有 2 个实例</li>
+</ul>
+
+<p><img src="http://www.qfdmy.com/wp-content/uploads/2019/08/6b78be78da8dc0a.png" alt="img" /></p>
+
+<ul>
+  <li>修改 <code class="language-plaintext highlighter-rouge">dubbo-provider</code> 项目的 <code class="language-plaintext highlighter-rouge">EchoServiceImpl</code> 中的测试方法</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">com.funtl.apache.dubbo.provider.service</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.funtl.apache.dubbo.provider.api.EchoService</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.dubbo.config.annotation.Service</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Value</span><span class="o">;</span>
+<span class="nd">@Service</span><span class="o">(</span><span class="n">version</span> <span class="o">=</span> <span class="s">"1.0.0"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">EchoServiceImpl</span> <span class="kd">implements</span> <span class="nc">EchoService</span> <span class="o">{</span>
+    <span class="nd">@Value</span><span class="o">(</span><span class="s">"${dubbo.protocol.port}"</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">port</span><span class="o">;</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">echo</span><span class="o">(</span><span class="nc">String</span> <span class="n">string</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"Echo Hello Dubbo "</span> <span class="o">+</span> <span class="n">string</span> <span class="o">+</span> <span class="s">" i am from port: "</span> <span class="o">+</span> <span class="n">port</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>重启服务，通过浏览器访问 <a href="http://www.qfdmy.com/wp-content/themes/quanbaike/go.php?url=aHR0cDovL2xvY2FsaG9zdDo4MDgwL2VjaG8vaGk=">http://localhost:8080/echo/hi</a> ，反复刷新浏览器，浏览器<strong>交替显示</strong></li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Echo Hello Dubbo hi i am from port: 20880
+Echo Hello Dubbo hi i am from port: 20881
+</code></pre></div></div>
+
+<blockquote>
+  <p>参考: <a href="http://www.qfdmy.com">千峰达摩院</a></p>
+</blockquote>
+:ET
