@@ -58,6 +58,6 @@ I generally prefer languages that are close to ML ("Meta Language"), i.e. _mostl
 
 ##### Talks
 
-- [天津万卷书网络科技有限公司][1] · 2020
+- [天津xxx网络科技有限公司][1] · 2020
 
-[1]: //www.zaowandushu.com/
+[1]: //www.xxx.com/
