@@ -1,4 +1,4 @@
-I"�<blockquote>
+I"�<blockquote>
   <p>Git常用命令集合，Fork于<a href="https://github.com/git-tips/tips">tips</a>项目</p>
 </blockquote>
 
@@ -678,7 +678,7 @@ git config <span class="nt">--global</span> <span class="nt">--list</span> <span
 
 <h2 id="一图详解">一图详解</h2>
 
-<p><img src="https://raw.githubusercontent.com/caojiele/caojiele.github.io/master/img/in-post/2019.04/02/git.png" alt="git.png" /></p>
+<p><img src="http://qt1dnkgs0.hb-bkt.clouddn.com/uPic/2021-05-18/git-17%3A04%3A26.png" alt="git.png" /></p>
 
 <p><strong><a href="#目录">⬆ 返回顶部</a></strong></p>
 :ET
