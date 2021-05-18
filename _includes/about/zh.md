@@ -2,7 +2,7 @@
 
 Hey，我是米斯特尔·张，Java攻城狮。目前主要负责XXX公司App后端开发、渠道分销系统开发以及维护、微服务技术实施、基础设施构建等工作。
 
-- QQ: 2636461000
+- QQ: 505021612
 - Wechat: zhang02085301
 - Github: [http://github.com/morece](http://github.com/morece)
 - Gitee:  [https://gitee.com/zht417](https://gitee.com/zht417)
